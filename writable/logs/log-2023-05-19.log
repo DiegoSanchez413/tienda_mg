@@ -1,0 +1,421 @@
+INFO - 2023-05-19 03:31:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 03:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 03:31:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 03:32:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 03:33:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 04:34:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 04:34:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 04:34:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 04:34:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 04:34:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 04:34:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:20:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:20:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:26:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:28:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:44:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:44:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:44:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:45:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:45:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 15:45:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:03:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:05:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:05:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:06:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:06:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:07:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:07:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:25:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 16:25:41 --> Undefined variable $generar_codigo
+in APPPATH\Views\ventas\ventas.php on line 15.
+ 1 APPPATH\Views\ventas\ventas.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $generar_codigo', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php', 15)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 5 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 6 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 16:26:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:28:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:30:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:32:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:32:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:53:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:54:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 16:56:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:18:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:18:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:24:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:42:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:43:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:43:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:43:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:49:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:49:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:49:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:51:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:51:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:51:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:52:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 17:52:28 --> Invalid file: "ClientesT.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('ClientesT.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ClientesT', [], true)
+ 3 APPPATH\Controllers\ClientesT.php(19): view('ClientesT')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ClientesT->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientesT))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 17:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:02:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:03:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:03:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:39:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:44:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 18:44:54 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 18:46:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 18:46:28 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 18:47:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 18:47:19 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 19:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 19:38:46 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 19:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 19:40:37 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 19:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 19:40:40 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 19:40:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:40:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:41:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:41:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 19:41:15 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 19:41:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:43:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:46:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:46:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:46:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:06:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:06:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:07:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:07:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:07:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 20:07:06 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:08:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 20:08:18 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:09:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:13:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:14:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:14:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 20:14:06 --> include(modal.php): Failed to open stream: No such file or directory
+in APPPATH\Views\carrito\carrito.php on line 43.
+ 1 APPPATH\Views\carrito\carrito.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(modal.php): Failed to open stream: No such file or directory', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\carrito\\carrito.php', 43)
+ 2 APPPATH\Views\carrito\carrito.php(43): include()
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\carrito\\carrito.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('carrito/carrito', [], true)
+ 6 APPPATH\Controllers\BaseController.php(93): view('carrito/carrito')
+ 7 APPPATH\Controllers\Carrito.php(10): App\Controllers\BaseController->estructuraTienda('carrito/carrito')
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Carrito->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:17:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:17:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:18:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:18:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:18:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:18:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:18:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:18:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:20:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:20:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:24:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:24:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:24:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:24:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:28:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:28:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:28:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:28:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:28:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 20:28:59 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 20:32:02 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:34:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 20:34:52 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:35:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:37:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 20:37:51 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:38:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 20:39:45 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:40:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:40:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:41:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 20:41:51 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:42:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 20:42:05 --> Undefined array key "ID_Producto"
+in APPPATH\Views\ventas\modal.php on line 69.
+ 1 APPPATH\Views\ventas\modal.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Producto"', 'C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php', 69)
+ 2 APPPATH\Views\ventas\ventas.php(43): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\modal.php')
+ 3 SYSTEMPATH\View\View.php(213): include('C:\\Xampp\\htdocs\\Tienda_MG\\app\\Views\\ventas\\ventas.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/ventas', [], true)
+ 6 APPPATH\Controllers\BaseController.php(72): view('ventas/ventas', [...])
+ 7 APPPATH\Controllers\Ventas.php(26): App\Controllers\BaseController->estructura('ventas/ventas', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
