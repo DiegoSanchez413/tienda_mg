@@ -1,1 +1,593 @@
 INFO - 2023-06-01 14:22:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:27:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:27:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:30:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:32:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:33:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:34:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 14:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 21:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 21:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 21:56:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 21:56:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 21:56:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 21:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 21:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 21:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 21:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:00:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:03:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:06:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:07:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:08:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-01 22:08:15 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:174
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/MySQLi/Connection.php(174): mysqli->real_connect()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/Tienda_MG/system/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/Tienda_MG/app/Models/ProductosModel.php(53): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/Tienda_MG/app/Controllers/Productost.php(13): App\Models\ProductosModel->getlistarProductos()
+#6 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\Productost->index()
+#7 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#8 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:218
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#3 /var/www/Tienda_MG/app/Models/ProductosModel.php(53): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/Tienda_MG/app/Controllers/Productost.php(13): App\Models\ProductosModel->getlistarProductos()
+#5 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\Productost->index()
+#6 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#9 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#10 {main}
+CRITICAL - 2023-06-01 22:08:15 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+in SYSTEMPATH/Database/BaseConnection.php on line 427.
+ 1 SYSTEMPATH/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 3 APPPATH/Models/ProductosModel.php(53): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH/Controllers/Productost.php(13): App\Models\ProductosModel->getlistarProductos()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Productost->index()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 22:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:12:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-01 22:12:51 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:174
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/MySQLi/Connection.php(174): mysqli->real_connect()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/Tienda_MG/system/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/Tienda_MG/app/Models/ClientesModel.php(54): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/Tienda_MG/app/Controllers/Login.php(44): App\Models\ClientesModel->verificar_inicio_sesion()
+#6 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\Login->verificacion_acceso()
+#7 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#8 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:218
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#3 /var/www/Tienda_MG/app/Models/ClientesModel.php(54): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/Tienda_MG/app/Controllers/Login.php(44): App\Models\ClientesModel->verificar_inicio_sesion()
+#5 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\Login->verificacion_acceso()
+#6 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#9 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#10 {main}
+CRITICAL - 2023-06-01 22:12:51 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+in SYSTEMPATH/Database/BaseConnection.php on line 427.
+ 1 SYSTEMPATH/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 3 APPPATH/Models/ClientesModel.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH/Controllers/Login.php(44): App\Models\ClientesModel->verificar_inicio_sesion()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Login->verificacion_acceso()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 22:12:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-01 22:16:05 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:174
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/MySQLi/Connection.php(174): mysqli->real_connect()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/Tienda_MG/system/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/Tienda_MG/app/Models/ProductosModel.php(53): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/Tienda_MG/app/Controllers/Productost.php(13): App\Models\ProductosModel->getlistarProductos()
+#6 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\Productost->index()
+#7 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#8 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:218
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#3 /var/www/Tienda_MG/app/Models/ProductosModel.php(53): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/Tienda_MG/app/Controllers/Productost.php(13): App\Models\ProductosModel->getlistarProductos()
+#5 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\Productost->index()
+#6 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#9 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#10 {main}
+CRITICAL - 2023-06-01 22:16:05 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+in SYSTEMPATH/Database/BaseConnection.php on line 427.
+ 1 SYSTEMPATH/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 3 APPPATH/Models/ProductosModel.php(53): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH/Controllers/Productost.php(13): App\Models\ProductosModel->getlistarProductos()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Productost->index()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 22:17:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-01 22:17:32 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:174
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/MySQLi/Connection.php(174): mysqli->real_connect()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/Tienda_MG/system/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/Tienda_MG/app/Models/ProductosModel.php(53): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/Tienda_MG/app/Controllers/Productost.php(13): App\Models\ProductosModel->getlistarProductos()
+#6 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\Productost->index()
+#7 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#8 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:218
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#3 /var/www/Tienda_MG/app/Models/ProductosModel.php(53): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/Tienda_MG/app/Controllers/Productost.php(13): App\Models\ProductosModel->getlistarProductos()
+#5 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\Productost->index()
+#6 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#9 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#10 {main}
+CRITICAL - 2023-06-01 22:17:32 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+in SYSTEMPATH/Database/BaseConnection.php on line 427.
+ 1 SYSTEMPATH/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 3 APPPATH/Models/ProductosModel.php(53): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH/Controllers/Productost.php(13): App\Models\ProductosModel->getlistarProductos()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Productost->index()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 22:20:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:20:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:21:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:22:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:23:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:23:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:23:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-01 22:24:33 --> mysqli_sql_exception: Table 'bd_mgnetworks.Cliente' doesn't exist in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/MySQLi/Connection.php(295): mysqli->query()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/Tienda_MG/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/Tienda_MG/system/Validation/StrictRules/Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/Tienda_MG/system/Validation/Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique()
+#6 /var/www/Tienda_MG/system/Validation/Validation.php(170): CodeIgniter\Validation\Validation->processRules()
+#7 /var/www/Tienda_MG/system/Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 /var/www/Tienda_MG/app/Controllers/ClientesT.php(84): CodeIgniter\Controller->validate()
+#9 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+#10 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#11 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#12 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#13 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#14 {main}
+CRITICAL - 2023-06-01 22:24:33 --> Table 'bd_mgnetworks.Cliente' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Validation/StrictRules/Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/Validation/Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique()
+ 7 SYSTEMPATH/Validation/Validation.php(170): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH/Controllers/ClientesT.php(84): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 22:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-01 22:34:43 --> mysqli_sql_exception: Table 'bd_mgnetworks.Cliente' doesn't exist in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/MySQLi/Connection.php(295): mysqli->query()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/Tienda_MG/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/Tienda_MG/system/Validation/StrictRules/Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/Tienda_MG/system/Validation/Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique()
+#6 /var/www/Tienda_MG/system/Validation/Validation.php(170): CodeIgniter\Validation\Validation->processRules()
+#7 /var/www/Tienda_MG/system/Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 /var/www/Tienda_MG/app/Controllers/ClientesT.php(84): CodeIgniter\Controller->validate()
+#9 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+#10 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#11 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#12 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#13 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#14 {main}
+CRITICAL - 2023-06-01 22:34:43 --> Table 'bd_mgnetworks.Cliente' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Validation/StrictRules/Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/Validation/Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique()
+ 7 SYSTEMPATH/Validation/Validation.php(170): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH/Controllers/ClientesT.php(84): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 22:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:34:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-01 22:35:14 --> mysqli_sql_exception: Table 'bd_mgnetworks.Cliente' doesn't exist in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/MySQLi/Connection.php(295): mysqli->query()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/Tienda_MG/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/Tienda_MG/system/Validation/StrictRules/Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/Tienda_MG/system/Validation/Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique()
+#6 /var/www/Tienda_MG/system/Validation/Validation.php(170): CodeIgniter\Validation\Validation->processRules()
+#7 /var/www/Tienda_MG/system/Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 /var/www/Tienda_MG/app/Controllers/ClientesT.php(84): CodeIgniter\Controller->validate()
+#9 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+#10 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#11 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#12 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#13 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#14 {main}
+CRITICAL - 2023-06-01 22:35:14 --> Table 'bd_mgnetworks.Cliente' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Validation/StrictRules/Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/Validation/Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique()
+ 7 SYSTEMPATH/Validation/Validation.php(170): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH/Controllers/ClientesT.php(84): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 22:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-01 22:35:30 --> mysqli_sql_exception: Table 'bd_mgnetworks.Cliente' doesn't exist in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/MySQLi/Connection.php(295): mysqli->query()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/Tienda_MG/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/Tienda_MG/system/Validation/StrictRules/Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/Tienda_MG/system/Validation/Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique()
+#6 /var/www/Tienda_MG/system/Validation/Validation.php(170): CodeIgniter\Validation\Validation->processRules()
+#7 /var/www/Tienda_MG/system/Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 /var/www/Tienda_MG/app/Controllers/ClientesT.php(84): CodeIgniter\Controller->validate()
+#9 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+#10 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#11 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#12 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#13 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#14 {main}
+CRITICAL - 2023-06-01 22:35:30 --> Table 'bd_mgnetworks.Cliente' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Validation/StrictRules/Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/Validation/Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique()
+ 7 SYSTEMPATH/Validation/Validation.php(170): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH/Controllers/ClientesT.php(84): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 22:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:35:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:35:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-01 22:35:41 --> mysqli_sql_exception: Table 'bd_mgnetworks.Cliente' doesn't exist in /var/www/Tienda_MG/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /var/www/Tienda_MG/system/Database/MySQLi/Connection.php(295): mysqli->query()
+#1 /var/www/Tienda_MG/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/Tienda_MG/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/Tienda_MG/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/Tienda_MG/system/Validation/StrictRules/Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/Tienda_MG/system/Validation/Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique()
+#6 /var/www/Tienda_MG/system/Validation/Validation.php(170): CodeIgniter\Validation\Validation->processRules()
+#7 /var/www/Tienda_MG/system/Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 /var/www/Tienda_MG/app/Controllers/ClientesT.php(84): CodeIgniter\Controller->validate()
+#9 /var/www/Tienda_MG/system/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+#10 /var/www/Tienda_MG/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#11 /var/www/Tienda_MG/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#12 /var/www/Tienda_MG/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#13 /var/www/Tienda_MG/system/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda...')
+#14 {main}
+CRITICAL - 2023-06-01 22:35:41 --> Table 'bd_mgnetworks.Cliente' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Validation/StrictRules/Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/Validation/Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique()
+ 7 SYSTEMPATH/Validation/Validation.php(170): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH/Controllers/ClientesT.php(84): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 22:36:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:37:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:37:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:37:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:38:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:43:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:43:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:44:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:45:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:45:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:47:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-01 22:47:40 --> Call to undefined method App\Validation\ClientValidator::validate()
+in APPPATH/Controllers/ClientesT.php on line 28.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 22:47:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:47:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:47:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:48:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:48:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-01 22:48:23 --> Undefined variable: data
+in APPPATH/Validation/ClientValidator.php on line 26.
+ 1 APPPATH/Validation/ClientValidator.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ClientesT.php(28): App\Validation\ClientValidator->validate()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 22:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:48:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:50:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:50:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:50:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:50:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:59:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 22:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:00:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-01 23:00:57 --> Call to a member function listErrors() on null
+in APPPATH/Controllers/ClientesT.php on line 87.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 23:01:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-01 23:01:33 --> Call to undefined method App\Validation\ClientValidator::getErrors()
+in APPPATH/Controllers/ClientesT.php on line 88.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 23:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-01 23:01:37 --> Call to undefined method App\Validation\ClientValidator::getErrors()
+in APPPATH/Controllers/ClientesT.php on line 88.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 23:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:02:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-01 23:02:10 --> Call to undefined method App\Validation\ClientValidator::getErrors()
+in APPPATH/Controllers/ClientesT.php on line 87.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 23:03:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:11:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:12:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:14:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:14:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-01 23:14:26 --> Class 'App\Validation\ClientesTModel' not found
+in APPPATH/Validation/ClientValidator.php on line 56.
+ 1 APPPATH/Controllers/ClientesT.php(29): App\Validation\ClientValidator->validate()
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 23:14:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-01 23:14:46 --> Undefined property: App\Validation\ClientValidator::$request
+in APPPATH/Validation/ClientValidator.php on line 58.
+ 1 APPPATH/Validation/ClientValidator.php(58): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ClientesT.php(29): App\Validation\ClientValidator->validate()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 23:15:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-01 23:15:01 --> Undefined variable: client
+in APPPATH/Controllers/ClientesT.php on line 36.
+ 1 APPPATH/Controllers/ClientesT.php(36): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 23:15:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:15:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:15:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:16:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:17:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:18:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-01 23:18:08 --> Undefined property: App\Validation\ClientValidator::$request
+in APPPATH/Validation/ClientValidator.php on line 58.
+ 1 APPPATH/Validation/ClientValidator.php(58): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ClientesT.php(29): App\Validation\ClientValidator->validate()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 23:18:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-01 23:18:35 --> Too few arguments to function CodeIgniter\Validation\Validation::setRule(), 2 passed in /var/www/Tienda_MG/app/Validation/ClientValidator.php on line 61 and at least 3 expected
+in SYSTEMPATH/Validation/Validation.php on line 429.
+ 1 APPPATH/Validation/ClientValidator.php(61): CodeIgniter\Validation\Validation->setRule()
+ 2 APPPATH/Controllers/ClientesT.php(29): App\Validation\ClientValidator->validate()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->Registrar()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 23:19:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:26:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:26:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:26:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:29:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:30:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:30:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:30:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:37:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:37:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:38:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:39:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:44:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:45:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-01 23:48:22 --> Call to undefined function asset_url()
+in APPPATH/Views/clientest/clientet.php on line 79.
+ 1 SYSTEMPATH/View/View.php(213): include()
+ 2 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/BaseController.php(93): view()
+ 5 APPPATH/Controllers/ClientesT.php(22): App\Controllers\BaseController->estructuraTienda()
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ClientesT->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/var/www/Tienda_MG/public/index.php')
+INFO - 2023-06-01 23:48:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:49:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:49:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:49:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:50:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:50:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:51:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:51:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:52:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:52:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:53:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:53:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:56:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:57:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:57:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:57:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-01 23:59:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

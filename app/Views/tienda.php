@@ -5,12 +5,14 @@
             <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
             <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
         </ol>
+
+    
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/banner_img_01.jpg" alt="">
+                            <img class="img-fluid" src="<?= config('App')->baseURL . '/assets/img/banner_img_01.jpg' ?>" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
@@ -83,12 +85,12 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6 p-5 mt-3">
-                <a href="#"><img src="./assets/img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
+                <a href="#"><img src="<?= base_url(); ?>/assets/img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3">Computadoras</h5>
                 <p class="text-center"><a class="btn btn-success">Comprar</a></p>
             </div>
             <div class="col-12 col-md-6 p-5 mt-3">
-                <a href="#"><img src="./assets/img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
+                <a href="#"><img src="<?= base_url(); ?>/assets/img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Componentes</h2>
                 <p class="text-center"><a class="btn btn-success">Comprar</a></p>
             </div>

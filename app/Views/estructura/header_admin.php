@@ -24,13 +24,11 @@
 <body class="app sidebar-mini">
   <script>
     base_url = '<?= base_url() ?>'
-  </script> <!-- la ruta base-->
-  <!-- Navbar-->
-  <header class="app-header"><a class="app-header__logo" href="<?= base_url(); ?>/dashboard">Mg - Networks</a>
-    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
-    <!-- Navbar Right Menu-->
+  </script> 
+
+<header class="app-header"><a class="app-header__logo" href="<?= base_url(); ?>">Mg - Networks</a>
+   <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
     <ul class="app-nav">
-      <!-- User Menu-->
       <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
         <ul class="dropdown-menu settings-menu dropdown-menu-right">
           <li><a class="dropdown-item" href="<?= base_url(); ?>/opciones"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
@@ -39,4 +37,4 @@
         </ul>
       </li>
     </ul>
-  </header>
+</header>

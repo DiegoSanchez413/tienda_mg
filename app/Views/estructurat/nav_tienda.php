@@ -26,7 +26,6 @@
     </nav>
     <!-- Close Top Nav -->
 
-
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
@@ -80,8 +79,8 @@
 
                     <a class="nav-icon position-relative text-decoration-none" href="<?= base_url(); ?>tlogin">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                        <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                        <span id="client_fullname"></span>
                     </a>
                 </div>
 
@@ -89,10 +88,10 @@
 
         </div>
     </nav>
+
     <nav class="navbar navbar-expand-sm navbar-light shadow bg-secondary"  >
         <div class="container d-flex justify-content-between align-items-center">
-            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
-                id="templatemo_main_nav">
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">

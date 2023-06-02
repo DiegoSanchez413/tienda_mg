@@ -1,7 +1,4 @@
-
-    <!-- Start Footer -->
-    <footer class="bg-dark" id="tempaltemo_footer">
-
+<footer class="bg-dark" id="tempaltemo_footer">
         <div class="w-100 bg-black py-3">
             <div class="container">
                 <div class="row pt-2">
@@ -15,15 +12,12 @@
         </div>
 
     </footer>
-    <!-- End Footer -->
-
-    <!-- Start Script -->
     <script src="<?= base_url(); ?>/js/jquery-1.11.0.min.js"></script>
     <script src="<?= base_url(); ?>/js/jquery-migrate-1.2.1.min.js"></script>
     <script src="<?= base_url(); ?>/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url(); ?>/js/templatemo.js"></script>
     <script src="<?= base_url(); ?>/js/custom.js"></script>
-    <!-- End Script -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="<?= base_url(); ?>/js/clientes/register_client.js"></script>
 </body>
-
 </html>

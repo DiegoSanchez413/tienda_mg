@@ -1,10 +1,7 @@
-<div class="text-center">
-
-</div>
-
-<main class="container-fluid center">
-    <form id="formClientet" name="formClientet" class="needs-validation" method="post"
-        action=" <?= base_url(); ?>/registro_clientest" novalidate>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-lg-6">
+    <form id="formClientet" name="formClientet" class="needs-validation" prevent-default>
         <input type="hidden" id="idCliente" name="idCliente" value="">
         <p class="text-primary mt-4 mb-2 ">Todos los campos son obligatorios*.</p>
 
@@ -73,6 +70,7 @@
         <div class="mb-4 text-center">
 
             <a class="btn btn-link  " href="<?= base_url(); ?>tlogin">Ingresar</a>
-        </div>
     </form>
-</main>
+    </div>
+  </div>
+</div>
