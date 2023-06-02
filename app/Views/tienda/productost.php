@@ -1,3 +1,42 @@
+
+
+<div class="container mydiv">
+    <div class="row">
+        <!-- bbb_deals -->
+        <?php foreach ($productos as $producto): ?>
+            <div class="col-md-4">
+                <div class="bbb_deals">
+                    <div class="bbb_deals_slider_container">
+                        <div class=" bbb_deals_item"  onCLick="location.href='<?= base_url() . 'producto/' . $producto['Nombre_Producto'] . '-' . $producto['ID_Producto']; ?>'">
+                            <div class="bbb_deals_image text-center"><img style="width:250px;height:250px"
+                                    src="<?php echo "img/productos/" . $producto['Imagen_Producto']; ?>" alt=""></div>
+                            <div class="bbb_deals_content">
+                                <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
+                                    <div class="bbb_deals_item_category"></div>
+                                </div>
+                                <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
+                                    <div class="bbb_deals_item_name text-center font-weight">
+                                        <?php echo $producto['Nombre_Producto']; ?>
+                                    </div>
+                                    <div class="bbb_deals_item_price ml-auto text-danger font-weight">
+                                        <?php echo $producto['Precio_Producto']; ?>
+                                    </div>
+                                </div>
+                                <div class="product-links">
+                                    <a href=""><i class="fa fa-heart"></i></a>
+                                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+
+</div>
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
 
@@ -233,44 +272,4 @@
     }
 </style>
 
-
-<div class="container mydiv">
-    <div class="row">
-
-        <!-- bbb_deals -->
-        <?php foreach ($productos as $producto): ?>
-            <div class="col-md-4">
-                <div class="bbb_deals">
-                    <div class="bbb_deals_slider_container">
-                        <div class=" bbb_deals_item">
-                            <div class="bbb_deals_image text-center"><img style="width:250px;height:250px"
-                                    src="<?php echo "img/productos/" . $producto['Imagen_Producto']; ?>" alt=""></div>
-                            <div class="bbb_deals_content">
-                                <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
-                                    <div class="bbb_deals_item_category"></div>
-                                </div>
-                                <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
-                                    <div class="bbb_deals_item_name text-center font-weight">
-                                        <?php echo $producto['Nombre_Producto']; ?>
-                                    </div>
-                                    <div class="bbb_deals_item_price ml-auto text-danger font-weight">
-                                        <?php echo $producto['Precio_Producto']; ?>
-                                    </div>
-                                </div>
-                                <div class="product-links">
-                                    <a href=""><i class="fa fa-heart"></i></a>
-                                    <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
-
-
-    </div>
-
-
-</div>
 <script src="js\tienda\producto.js"> </script>

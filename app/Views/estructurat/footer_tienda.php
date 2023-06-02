@@ -1,4 +1,5 @@
-<footer class="bg-dark" id="tempaltemo_footer">
+    <footer class="bg-dark" id="tempaltemo_footer">
+
         <div class="w-100 bg-black py-3">
             <div class="container">
                 <div class="row pt-2">

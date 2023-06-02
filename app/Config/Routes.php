@@ -100,6 +100,9 @@ $routes->get('carrito', 'Carrito::index');
 
 //TIENDA
 $routes->get('productost', 'Productost::index');
+
+$routes->get('producto/(:any)', 'Productost::search/$1');
+
 $routes->get('contacto', 'Contactot::index');
 /*
  * --------------------------------------------------------------------

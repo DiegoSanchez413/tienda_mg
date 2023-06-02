@@ -21,7 +21,6 @@ class Categorias extends BaseController{
 
     }
 
-
     public function RegistrarEditar()
     {
         $respuesta = array();
