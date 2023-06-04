@@ -10,16 +10,14 @@
     <meta name="theme-color" content="#1F618D">
     <link rel="shortcut icon" href="<?= base_url(); ?>/images/favicon.ico">
     <title>Inicio de sesion</title>
-    <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/css/main.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/css/bootstrap-select.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/css/style.css">
     <script src="<?= base_url(); ?>/js/jquery-3.3.1.min.js"></script>
-    <!-- Sweet Alert 2-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         base_url = '<?= base_url() ?>'
-    </script> <!-- la ruta base-->
+    </script>
 </head>
 
 <body>
@@ -68,11 +66,8 @@
                             <button class="btn btn-primary text-uppercase" type="submit">Ingresar</button>
                         </div>
                         <div class="mb-4 text-center">
-                            
                             <a class="btn btn-link  "  href="<?= base_url(); ?>tcliente" >Registrate</a>
                         </div>
-
-                        
                     </form>
                 </div>
             </div>
@@ -81,14 +76,11 @@
 
     <footer>
         <script src="<?=base_url()?>/js/tlogin/script.js"></script>
-        <!-- Essential javascripts for application to work-->
         <script src="<?= base_url(); ?>/js/popper.min.js"></script>
         <script src="<?= base_url(); ?>/js/bootstrap.min.js"></script>
         <script src="<?= base_url(); ?>/js/main.js"></script>
         <script src="<?= base_url(); ?>/js/fontawesome.js"></script>
-        <!-- The javascript plugin to display page loading on top-->
         <script src="<?= base_url(); ?>/js/plugins/pace.min.js"></script>
-        <!-- Page specific javascripts-->
     </footer>
 </body>
 

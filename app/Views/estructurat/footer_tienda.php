@@ -20,5 +20,7 @@
     <script src="<?= base_url(); ?>/js/custom.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="<?= base_url(); ?>/js/clientes/register_client.js"></script>
+    <script src="<?= base_url(); ?>/js/cart_badge/index.js"></script>
+    <script src="<?= base_url(); ?>/js/cart_badge/list.js"></script>
 </body>
 </html>

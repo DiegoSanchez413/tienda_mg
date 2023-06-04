@@ -12,14 +12,16 @@ formulario.submit(function (e) {
         processData: false,
         success: function (response) {
             if (response.error == "") {
-                swal.fire({
-                    title: response.ok,
-                    html: "¡Sigamos mejorando nuestra comunidad!",
-                    icon: "success",
-                    timer: 3000,
-                    showConfirmButton: false,
-                });
-                location.href = base_url + 'inicio'; //redirige a la pagina
+                // swal.fire({
+                //     title: response.ok,
+                //     html: "¡Sigamos mejorando nuestra comunidad!",
+                //     icon: "success",
+                //     timer: 3000,
+                //     showConfirmButton: false,
+                // });
+                saveUserInStorage(response.user);
+                // location.href = base_url + 'inicio';
+                location.href = base_url;
             } else {
                 swal.fire({
                     title: "¡Error!",
@@ -31,3 +33,9 @@ formulario.submit(function (e) {
         }
     });
 });
+
+
+// function saveUserInStorage(user) {
+//     localStorage.setItem('user', JSON.stringify(user));
+//     client_fullname.innerHTML = simplifyName(user.Nombre_Cliente) + ' ' + simplifyName(user.Apellido_Cliente);
+// }

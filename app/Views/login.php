@@ -10,17 +10,14 @@
     <meta name="theme-color" content="#1F618D">
     <link rel="shortcut icon" href="<?= base_url(); ?>/images/favicon.ico">
     <title>Tienda Virtual - Inicio de sesion</title>
-    <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/css/main.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/css/bootstrap-select.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/css/style.css">
     <script src="<?= base_url(); ?>/js/jquery-3.3.1.min.js"></script>
-   
-    <!-- Sweet Alert 2-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         base_url = '<?= base_url() ?>'
-    </script> <!-- la ruta base-->
+    </script>
 </head>
 
 <body>

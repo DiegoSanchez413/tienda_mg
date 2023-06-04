@@ -97,6 +97,7 @@ $routes->get('ventas', 'Ventas::index');
 
 //CARRITO
 $routes->get('carrito', 'Carrito::index');
+$routes->post('carrito/create-paypal-order', 'Carrito::create_paypal_order');
 
 //TIENDA
 $routes->get('productost', 'Productost::index');

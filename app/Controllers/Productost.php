@@ -18,7 +18,7 @@ class Productost extends BaseController
         $id = explode("-", $name)[1];
         $vista = "tienda/producto";
         $p = new ProductosModel();
-        $producto = $p->getProductos($id);
+        $producto = $p->getProductos($id)[0];
         $this->estructuraTienda($vista,compact ('producto'));
     }
 }

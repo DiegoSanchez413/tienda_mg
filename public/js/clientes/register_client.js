@@ -18,6 +18,7 @@ $(formClientet).submit(function (e) {
         contentType: false,
         processData: false, //para que reconozca el ajax
         success: function (response) {
+            console.log(response);
             if (response.ok) {
                 formClientet[0].reset();
                 // Swal.fire({

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ClientesModel;
+use App\Models\ClientesTModel;
 
 class Login extends BaseController
 {
@@ -10,6 +11,7 @@ class Login extends BaseController
     public function __construct()
     {
         $this->ClientesModel = new ClientesModel();
+        $this->ClientesTModel = new ClientesTModel();
     }
     public function index()
     {
@@ -70,8 +72,12 @@ class Login extends BaseController
                             'direccion' => $direccion,
                         ];
                         $this->session->set($newdata);
+                        $user = $this->ClientesTModel->getClientexEmail($newdata['correo'])[0];
                         $respuesta['error'] = "";
+                        $respuesta['user'] = $user;
                         $respuesta['ok'] = "Bienvenido " . $nombre;
+                        
+
                     } else {
                         $respuesta['error'] = 'Usuario y/o contraseña incorrecta';
                     }
