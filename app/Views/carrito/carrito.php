@@ -208,7 +208,7 @@
   </div>
 </section>
 
-<section id="checkout_completed" style="min-height: 75vh">
+<section id="checkout_completed" style="min-height: 75vh; display: none;">
   <div class="container">
     <div class="row">
       <div class="col">

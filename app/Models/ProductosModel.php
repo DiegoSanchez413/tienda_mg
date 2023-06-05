@@ -54,14 +54,4 @@ class ProductosModel extends Model{
         $this->db->close();
         return $query->getResultArray();
     }
-
-
-
-
-
-
-
-
-
-
 }

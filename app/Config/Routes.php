@@ -107,6 +107,8 @@ $routes->get('carrito/show-paypal-order/(:any)', 'Carrito::show_order_details/$1
 $routes->get('productost', 'Productost::index');
 
 $routes->get('producto/(:any)', 'Productost::search/$1');
+$routes->post('product/list', 'Productost::list');
+$routes->get('brand/list', 'Productost::brand_list');
 
 $routes->get('contacto', 'Contactot::index');
 /*
