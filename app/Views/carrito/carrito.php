@@ -1,3 +1,4 @@
+<script src="https://www.paypal.com/sdk/js?client-id=AYJ4va2pFD3uGmMW0d4xUwXADUhCXO2FEF3G3aX-T9fsWKgLWSbNKOaCJ0ZjKPm-qe8QcNz03dCmjKja&currency=USD"></script>
 <section class="bg-light py-5" id="cart_container">
   <div class="container">
     <div class="row">
@@ -205,52 +206,130 @@
   </div>
 </div>
 </section>
-<script src="https://www.paypal.com/sdk/js?client-id=AYJ4va2pFD3uGmMW0d4xUwXADUhCXO2FEF3G3aX-T9fsWKgLWSbNKOaCJ0ZjKPm-qe8QcNz03dCmjKja&currency=USD"></script>
+
+
+
+
+
 <script>
       paypal.Buttons({
         // Order is created on the server and the order id is returned
-        createOrder() {
-          return fetch("/carrito/create-paypal-order", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            // use the "body" param to optionally pass additional order information
-            // like product skus and quantities
-            body: JSON.stringify({
+        createOrder: async function (){
+          try {
+            const response = await fetch("/carrito/create-paypal-order", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+              orderID: "fino",
               cart: [
                 {
                   sku: "YOUR_PRODUCT_STOCK_KEEPING_UNIT",
                   quantity: "YOUR_PRODUCT_QUANTITY",
                 },
               ],
-            }),
-          })
-          .then((response) => response.json())
-          .then((order) => order.id);
+              }),
+            });
+            const order = await response.json();
+            return order.id;
+            
+          } catch (error) {
+            console.log("error", error);
+          }
         },
         // Finalize the transaction on the server after payer approval
-        onApprove(data) {
-          return fetch("/my-server/capture-paypal-order", {
-            method: "POST",
+        onApprove: async function(data) {
+          const response = await fetch("/carrito/authenticate", {
+            method: "GET",
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-              orderID: data.orderID
-            })
-          })
-          .then((response) => response.json())
-          .then((orderData) => {
-            // Successful capture! For dev/demo purposes:
-            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-            const transaction = orderData.purchase_units[0].payments.captures[0];
-            alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
-            // When ready to go live, remove the alert and show a success message within this page. For example:
-            // const element = document.getElementById('paypal-button-container');
-            // element.innerHTML = '<h3>Thank you for your payment!</h3>';
-            // Or go to another URL:  window.location.href = 'thank_you.html';
           });
+
+          const { access_token } = await response.json();
+
+          const response2 = await fetch('https://api-m.sandbox.paypal.com/v2/checkout/orders/' + data.orderID + '/capture', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + access_token,
+                'Content-Type': 'application/json'
+            }
+          });
+          const orderData = await response2.json();
+          console.log(orderData);
+          // try {
+          //   const response = await fetch("/carrito/capture-paypal-order", {
+          //     method: "POST",
+          //     headers: {
+          //       "Content-Type": "application/json",
+          //     },
+          //     body: JSON.stringify({
+          //       orderID: data.orderID,
+          //     }),
+          //   });
+          //   // const orderData = await response;
+          //   console.log(response);
+          //   // console.log(orderData);
+          //   // Handle the order data here
+          // } catch (error) {
+          //   // Handle any errors
+          //   console.error(error);
+          // }
         }
-      }).render('#paypal-button-container');
-    </script>
+     }).render('#paypal-button-container');
+
+// function parseData(){
+//   const payload = {
+//     intent: "CAPTURE",
+//     purchase_units: {
+//       reference_id : Math.floor(Math.random() * 1000000).toString(),
+//       description: "Compra en tienda",
+//       custom_id: Math.floor(Math.random() * 1000000).toString(),
+//       invoice_id: Math.floor(Math.random() * 1000000).toString(),
+//       soft_descriptor: "Compra en tienda",
+//       items: [],
+//       amount: {
+//         currency_code: "PEN",
+//         value: "1.00",
+//       },
+//       payee: {
+//         email_address: "sb-6ktwc10544935@business.example.com",
+//         merchant_id: "98YFQZTNXDWHU",
+//       },
+//       shipping: {
+//         type: "SHIPPING",
+//         name: {
+//           given_name: JSON.parse(localStorage.getItem('user')).Nombre_Cliente + " " + JSON.parse(localStorage.getItem('user')).Apellido_Cliente,
+//           sur_name : JSON.parse(localStorage.getItem('user')).Apellido_Cliente,
+//         },
+//         address: {
+//           address_line_1: "2211 N First Street",
+//           address_line_2: "Building 17",
+//           admin_area_2: "San Jose",
+//           admin_area_1: "CA",
+//           postal_code: "95131",
+//           country_code: "US"
+//         }
+//       }
+//     }
+//   }
+
+//   const cart = JSON.parse(localStorage.getItem('cart'));
+  
+//   cart.forEach(element => {
+//     payload.purchase_units.items.push({
+//       name: element.Nombre_Producto,
+//         quantity: element.quantity,
+//         description: element.Descripcion_Producto,
+//         sku: element.Stock_Producto,
+//         category: element.Marca_Producto,
+//         unit_amount: {
+//           currency_code: "PEN",
+//           value: element.Precio_Producto,
+//         },
+//       quantity: element.quantity
+//     })
+//   });
+//   return payload;
+
+// }
+</script>
