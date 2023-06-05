@@ -51,10 +51,16 @@ function showCart() {
     const cart_container_empty = document.getElementById('cart_container_empty');
     const cart = JSON.parse(localStorage.getItem('cart'));
     if (cart) {
-        cart_container.style.display = 'block';
-        cart_container_empty.style.display = 'none';
+        if (cart_container && cart_container_empty) {
+            cart_container.style.display = 'block';
+            cart_container_empty.style.display = 'none';
+        }
+
     } else {
-        cart_container.style.display = 'none';
-        cart_container_empty.style.display = 'block';
+        if (cart_container && cart_container_empty) {
+            cart_container.style.display = 'none';
+            cart_container_empty.style.display = 'block';
+        }
+
     }
 }

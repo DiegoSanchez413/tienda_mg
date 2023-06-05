@@ -53,29 +53,75 @@ class Carrito extends BaseController
     {
         $url = "https://api-m.sandbox.paypal.com/v2/checkout/orders";
         $accessToken = json_decode($this->authenticate())->access_token;
-
+        $cart = json_decode($this->request->getPostGet('cart'));
+        // $cart = json_decode($json);
         $data = array(
             "intent" => "CAPTURE",
-            "purchase_units" => array(
-                array(
-                    "reference_id" => "d9f80740-38f0-11e8-b467-66666666666666666",
-                    "amount" => array(
-                        "currency_code" => "USD",
-                        "value" => "10.00"
-                    ),
-                    "shipping" => array(
-                        "address" => array(
-                            "address_line_1" => "2211 N First Street",
-                            "address_line_2" => "Building 17",
-                            "admin_area_2" => "San Jose",
-                            "admin_area_1" => "CA",
-                            "postal_code" => "95131",
-                            "country_code" => "US"
-                        )
+            "purchase_units" => array()
+        );
+        
+        foreach ($cart as $item) {
+            $purchaseUnit = array(
+                "reference_id" => $item->ID_Producto,
+                "amount" => array(
+                    "currency_code" => "USD",
+                    "value" => $item->Precio_Producto * $item->quantity
+                ),
+                "shipping" => array(
+                    "address" => array(
+                        "address_line_1" => "2211 N First Street",
+                        "address_line_2" => "Building 17",
+                        "admin_area_2" => "San Jose",
+                        "admin_area_1" => "CA",
+                        "postal_code" => "95131",
+                        "country_code" => "US"
                     )
                 )
-            ),
-        );
+            );
+        
+            $data["purchase_units"][] = $purchaseUnit;
+        }
+
+
+        // $data = array(
+        //     "intent" => "CAPTURE",
+        //     "purchase_units" => array(
+        //         array(
+        //             "reference_id" => "1",
+        //             "amount" => array(
+        //                 "currency_code" => "USD",
+        //                 "value" => "10.00"
+        //             ),
+        //             "shipping" => array(
+        //                 "address" => array(
+        //                     "address_line_1" => "2211 N First Street",
+        //                     "address_line_2" => "Building 17",
+        //                     "admin_area_2" => "San Jose",
+        //                     "admin_area_1" => "CA",
+        //                     "postal_code" => "95131",
+        //                     "country_code" => "US"
+        //                 )
+        //             )
+        //                 ),
+        //         array(
+        //             "reference_id" => "2",
+        //             "amount" => array(
+        //                 "currency_code" => "USD",
+        //                 "value" => "20.00"
+        //             ),
+        //             "shipping" => array(
+        //                 "address" => array(
+        //                     "address_line_1" => "2211 N First Street",
+        //                     "address_line_2" => "Building 17",
+        //                     "admin_area_2" => "San Jose",
+        //                     "admin_area_1" => "CA",
+        //                     "postal_code" => "95131",
+        //                     "country_code" => "US"
+        //                 )
+        //             )
+        //         )
+        //     ),
+        // );
 
         $headers = array(
             "Content-Type: application/json",
@@ -133,7 +179,6 @@ class Carrito extends BaseController
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     
         $response = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     
         if ($response === false) {
             $error = curl_error($ch);
@@ -144,9 +189,6 @@ class Carrito extends BaseController
         curl_close($ch);
         return $response;
     }
-    
-
-
 
     public function show_order_details($orderId)
     {
@@ -159,20 +201,27 @@ class Carrito extends BaseController
         );
 
         $ch = curl_init();
-
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
         $response = curl_exec($ch);
-
         if ($response === false) {
             $error = curl_error($ch);
+            curl_close($ch);
             return $error;
-        } else {
-            return $response;
         }
-
+    
         curl_close($ch);
+        return $response;
+    }
+
+    public function store_checkout(){
+        $order = $this->request->getPostGet('orderData');
+        $clientId = $this->request->getPostGet('clientId');
+        $builder = \Config\Database::connect();
+        $query = $builder->query("CALL store_sale(?,?)", array([$order], intval($clientId)));
+        $results = $query->getResult();
+        return json_encode($results);
     }
 }

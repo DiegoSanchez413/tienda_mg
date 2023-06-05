@@ -18,184 +18,157 @@
         </button>
         <!-- Collapsible wrapper -->
         <div class="collapse card d-lg-block mb-5" id="navbarSupportedContent">
-          <div class="accordion" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button
-                        class="accordion-button text-dark bg-light"
-                        type="button"
-                        data-mdb-toggle="collapse"
-                        data-mdb-target="#panelsStayOpen-collapseOne"
-                        aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseOne"
-                        >
-                   Categorias
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
-                <div class="accordion-body">
-                  <ul class="list-unstyled">
-                    <li><a href="#" class="text-dark">Electronics </a></li>
-                    <li><a href="#" class="text-dark">Home items </a></li>
-                    <li><a href="#" class="text-dark">Books, Magazines </a></li>
-                    <li><a href="#" class="text-dark">Men's clothing </a></li>
-                    <li><a href="#" class="text-dark">Interiors items </a></li>
-                    <li><a href="#" class="text-dark">Underwears </a></li>
-                    <li><a href="#" class="text-dark">Shoes for men </a></li>
-                    <li><a href="#" class="text-dark">Accessories </a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button
-                        class="accordion-button text-dark bg-light"
-                        type="button"
-                        data-mdb-toggle="collapse"
-                        data-mdb-target="#panelsStayOpen-collapseTwo"
-                        aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseTwo"
-                        >
-                  Marca
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
-                <div class="accordion-body">
-                  <div>
-                    <!-- Checked checkbox -->
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1" checked />
-                      <label class="form-check-label" for="flexCheckChecked1">Mercedes</label>
-                      <span class="badge badge-secondary float-end">120</span>
-                    </div>
-                    <!-- Checked checkbox -->
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2" checked />
-                      <label class="form-check-label" for="flexCheckChecked2">Toyota</label>
-                      <span class="badge badge-secondary float-end">15</span>
-                    </div>
-                    <!-- Checked checkbox -->
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3" checked />
-                      <label class="form-check-label" for="flexCheckChecked3">Mitsubishi</label>
-                      <span class="badge badge-secondary float-end">35</span>
-                    </div>
-                    <!-- Checked checkbox -->
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4" checked />
-                      <label class="form-check-label" for="flexCheckChecked4">Nissan</label>
-                      <span class="badge badge-secondary float-end">89</span>
-                    </div>
-                    <!-- Default checkbox -->
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                      <label class="form-check-label" for="flexCheckDefault">Honda</label>
-                      <span class="badge badge-secondary float-end">30</span>
-                    </div>
-                    <!-- Default checkbox -->
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                      <label class="form-check-label" for="flexCheckDefault">Suzuki</label>
-                      <span class="badge badge-secondary float-end">30</span>
-                    </div>
+
+
+
+
+
+
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+              <!-- <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Categorías
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <ul class="list-unstyled">
+                      <li><a href="#" class="text-dark">Electronics </a></li>
+                      <li><a href="#" class="text-dark">Home items </a></li>
+                      <li><a href="#" class="text-dark">Books, Magazines </a></li>
+                      <li><a href="#" class="text-dark">Men's clothing </a></li>
+                      <li><a href="#" class="text-dark">Interiors items </a></li>
+                      <li><a href="#" class="text-dark">Underwears </a></li>
+                      <li><a href="#" class="text-dark">Shoes for men </a></li>
+                      <li><a href="#" class="text-dark">Accessories </a></li>
+                    </ul>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button
-                        class="accordion-button text-dark bg-light"
-                        type="button"
-                        data-mdb-toggle="collapse"
-                        data-mdb-target="#panelsStayOpen-collapseThree"
-                        aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseThree"
-                        >
-                  Precio
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree">
-                <div class="accordion-body">
-                  <div class="range">
-                    <input type="range" class="form-range" id="customRange1" />
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-6">
-                      <p class="mb-0">
-                        Min
-                      </p>
-                      <div class="form-outline">
-                        <input type="number" id="typeNumber" class="form-control" />
-                        <label class="form-label" for="typeNumber">$0</label>
+              </div> -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Marca
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div>
+                      <!-- Checked checkbox -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1" checked />
+                        <label class="form-check-label" for="flexCheckChecked1">Mercedes</label>
+                        <span class="badge badge-secondary float-end">120</span>
                       </div>
-                    </div>
-                    <div class="col-6">
-                      <p class="mb-0">
-                        Max
-                      </p>
-                      <div class="form-outline">
-                        <input type="number" id="typeNumber" class="form-control" />
-                        <label class="form-label" for="typeNumber">$1,0000</label>
+                      <!-- Checked checkbox -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2" checked />
+                        <label class="form-check-label" for="flexCheckChecked2">Toyota</label>
+                        <span class="badge badge-secondary float-end">15</span>
+                      </div>
+                      <!-- Checked checkbox -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3" checked />
+                        <label class="form-check-label" for="flexCheckChecked3">Mitsubishi</label>
+                        <span class="badge badge-secondary float-end">35</span>
+                      </div>
+                      <!-- Checked checkbox -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4" checked />
+                        <label class="form-check-label" for="flexCheckChecked4">Nissan</label>
+                        <span class="badge badge-secondary float-end">89</span>
+                      </div>
+                      <!-- Default checkbox -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">Honda</label>
+                        <span class="badge badge-secondary float-end">30</span>
+                      </div>
+                      <!-- Default checkbox -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">Suzuki</label>
+                        <span class="badge badge-secondary float-end">30</span>
                       </div>
                     </div>
                   </div>
-                  <button type="button" class="btn btn-white w-100 border border-secondary">Aplicar</button>
                 </div>
               </div>
-            </div>
-        
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button
-                        class="accordion-button text-dark bg-light"
-                        type="button"
-                        data-mdb-toggle="collapse"
-                        data-mdb-target="#panelsStayOpen-collapseFive"
-                        aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseFive"
-                        >
-                  Puntuación
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingThree">
-                <div class="accordion-body">
-                  <!-- Default checkbox -->
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                    <label class="form-check-label" for="flexCheckDefault">
-                      <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-                      <i class="fas fa-star text-warning"></i>
-                    </label>
-                  </div>
-                  <!-- Default checkbox -->
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                    <label class="form-check-label" for="flexCheckDefault">
-                      <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-                      <i class="fas fa-star text-secondary"></i>
-                    </label>
-                  </div>
-                  <!-- Default checkbox -->
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                    <label class="form-check-label" for="flexCheckDefault">
-                      <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-secondary"></i>
-                      <i class="fas fa-star text-secondary"></i>
-                    </label>
-                  </div>
-                  <!-- Default checkbox -->
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                    <label class="form-check-label" for="flexCheckDefault">
-                      <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>
-                      <i class="fas fa-star text-secondary"></i>
-                    </label>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Precio
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <div class="range">
+                        <input type="range" class="form-range" id="customRange1" />
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col-6">
+                          <p class="mb-0">
+                            Min
+                          </p>
+                          <div class="form-outline">
+                            <input type="number" id="typeNumber" class="form-control" />
+                            <label class="form-label" for="typeNumber">$0</label>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <p class="mb-0">
+                            Max
+                          </p>
+                          <div class="form-outline">
+                            <input type="number" id="typeNumber" class="form-control" />
+                            <label class="form-label" for="typeNumber">$1,0000</label>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-white w-100 border border-secondary">Aplicar</button>
                   </div>
                 </div>
               </div>
-            </div>
+              <!-- <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    Puntuación
+                  </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
           </div>
         </div>
       </div>
@@ -210,14 +183,14 @@
               <option value="2">Menor precio</option>
               <option value="3">Mayor precio</option>
             </select>
-            <div class="btn-group shadow-0 border">
+            <!-- <div class="btn-group shadow-0 border">
               <a href="#" class="btn btn-light" title="List view">
                 <i class="fa fa-bars fa-lg"></i>
               </a>
               <a href="#" class="btn btn-light active" title="Grid view">
                 <i class="fa fa-th fa-lg"></i>
               </a>
-            </div>
+            </div> -->
           </div>
         </header>
 

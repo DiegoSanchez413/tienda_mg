@@ -100,7 +100,8 @@ $routes->get('carrito', 'Carrito::index');
 $routes->get('carrito/authenticate', 'Carrito::authenticate');
 $routes->post('carrito/create-paypal-order', 'Carrito::create_order');
 $routes->post('carrito/capture-paypal-order', 'Carrito::capture_order');
-// $routes->get('carrito/show-paypal-order/(:any)', 'Carrito::show_order_details/$1');
+$routes->post('carrito/store-checkout', 'Carrito::store_checkout');
+$routes->get('carrito/show-paypal-order/(:any)', 'Carrito::show_order_details/$1');
 
 //TIENDA
 $routes->get('productost', 'Productost::index');
