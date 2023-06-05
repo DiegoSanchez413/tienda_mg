@@ -12,7 +12,7 @@
                     Categorías
                   </button>
                 </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" >
                   <div class="accordion-body">
                     <ul class="list-unstyled">
                       <li><a href="#" class="text-dark">Electronics </a></li>
@@ -34,19 +34,9 @@
                   </button>
                 </h2>
                 <!-- Marca -->
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" >
                   <div class="accordion-body">
                     <div id="brand-list">
-                      <!-- <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4" checked />
-                        <label class="form-check-label" for="flexCheckChecked4">Nissan</label>
-                        <span class="badge badge-secondary float-end">89</span>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Honda</label>
-                        <span class="badge badge-secondary float-end">30</span>
-                      </div> -->
                     </div>
                   </div>
                 </div>
@@ -58,10 +48,10 @@
                     Precio
                   </button>
                 </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" >
                   <div class="accordion-body">
                       <div class="range">
-                        <input type="range" class="form-range" id="customRange1" />
+                        <input type="range" class="form-range" id="product-list-range"  value="0" min="0" max="10000" step="1" />
                       </div>
                       <div class="row mb-3">
                         <div class="col-6">
@@ -69,8 +59,8 @@
                             Min
                           </p>
                           <div class="form-outline">
-                            <input type="number" id="typeNumber" class="form-control" />
-                            <label class="form-label" for="typeNumber">$0</label>
+                            <input type="number" id="min-range" class="form-control"  value="0"/>
+                            <!-- <label class="form-label" for="typeNumber">$0</label> -->
                           </div>
                         </div>
                         <div class="col-6">
@@ -78,12 +68,13 @@
                             Max
                           </p>
                           <div class="form-outline">
-                            <input type="number" id="typeNumber" class="form-control" />
-                            <label class="form-label" for="typeNumber">$1,0000</label>
+                            <input type="number" id="max-range" class="form-control" value="5000"/>
+                            <!-- <label class="form-label" for="typeNumber">$1,0000</label> -->
                           </div>
                         </div>
                       </div>
-                      <button type="button" class="btn btn-white w-100 border border-secondary">Aplicar</button>
+                      <button type="button" class="btn btn-white w-100 border border-secondary" onclick="filterByPrice()"
+                      >Aplicar</button>
                   </div>
                 </div>
               </div>
@@ -93,7 +84,7 @@
                     Puntuación
                   </button>
                 </h2>
-                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" >
                   <div class="accordion-body">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
@@ -132,7 +123,7 @@
 
       <div class="col-lg-9">
         <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
-          <strong class="d-block py-2">32 Productos encontrados</strong>
+          <strong class="d-block py-2" id="total-product-list"></strong>
           <div class="ms-auto">
             <select class="form-select d-inline-block w-auto border pt-1">
               <option value="0">Más recientes</option>

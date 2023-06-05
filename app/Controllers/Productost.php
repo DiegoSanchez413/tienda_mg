@@ -20,32 +20,27 @@ class Productost extends BaseController
         $this->estructuraTienda($vista,compact ('producto'));
     }
 
-    // public function list(){
-    //     $filters = $this->request->getPostGet('filters');
-    //     // $brands = json_decode($filters)->brand;
-    //     $brands1 = '["HP","lenovo"]';
-    //     $builder = \Config\Database::connect();
-    //     $query = $builder->query("CALL search_products(?)", array($brands1));
-    //     $results = $query->getResult();
-    //     $data['productos'] = $results;
-    //     return json_encode($data);
-    // }
     public function list()
     {
-        $filters = $this->request->getPostGet('filters');
-        $payload = json_decode($filters);
+        $brand = json_decode($this->request->getPostGet('brand'));
+        $range = json_decode($this->request->getPostGet('range'));
         
-        if (isset($payload->brand)) {
-            $brands = implode(',', $payload->brand); // Cast to comma-separated string
+        if (isset($brand->brand)) {
+            $brands = implode(',', $brand->brand); // Cast to comma-separated string
         }else{
             $brands = '';
         }
-
-
-
+        
+        if (isset($range->range)) {
+            $min =  $range->range->min;
+            $max = $range->range->max;
+        }else{
+            $min = 0;
+            $max = 100000000;
+        }
 
         $builder = \Config\Database::connect();
-        $query = $builder->query("CALL search_products(?)", $brands);
+        $query = $builder->query("CALL search_products(?, ?, ?)", [$brands, $min, $max]);
         $results = $query->getResult();
         $data['productos'] = $results;
         return json_encode($data);

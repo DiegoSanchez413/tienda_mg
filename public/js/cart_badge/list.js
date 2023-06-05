@@ -3,11 +3,20 @@ const cart_container = document.getElementById('cart_container');
 const cart_container_empty = document.getElementById('cart_container_empty');
 const product_list = document.getElementById('product-list');
 const brand_list = document.getElementById('brand-list');
+const product_list_range = document.getElementById('product-list-range');
+const min_range = document.getElementById('min-range');
+const max_range = document.getElementById('max-range');
 
 $(document).ready(function () {
     if (product_list) {
         listBrands();
         listProducts();
+
+        product_list_range.addEventListener('change', () => {
+            const value = product_list_range.value;
+            max_range.value = value;
+        });
+
 
     }
     if (cart_container && cart_container_empty) {
@@ -17,6 +26,27 @@ $(document).ready(function () {
         listCart();
     }
 });
+
+async function filterByPrice() {
+    const min = min_range.value;
+    const max = max_range.value;
+
+    let range = {
+        min,
+        max
+    }
+
+    if (localStorage.getItem('range')) {
+        localStorage.setItem('range', JSON.stringify({
+            range
+        }));
+    } else {
+        localStorage.setItem('range', JSON.stringify({
+            range
+        }));
+    }
+    await filterProducts();
+}
 
 
 function listCart() {
@@ -84,6 +114,8 @@ async function listProducts() {
             },
         });
         const data = await response.json();
+        const total_product_list = document.getElementById('total-product-list');
+        total_product_list.innerHTML = data.productos.length + ' Productos encontrados';
         buildCard(data.productos);
     } catch (error) {
         console.log(error);
@@ -121,18 +153,19 @@ async function buildBrand(brands) {
             const checked = Array.from(brand_checkboxes).filter(i => i.checked).map(i => i.value);
             if (checked.length > 0) {
                 let brand = checked
-                // if local storage with key filters exists, update it else create it
-                if (localStorage.getItem('filters')) {
-                    localStorage.setItem('filters', JSON.stringify({
+                if (localStorage.getItem('brand')) {
+                    localStorage.setItem('brand', JSON.stringify({
                         brand: brand
                     }));
                 } else {
-                    localStorage.setItem('filters', JSON.stringify({
+                    localStorage.setItem('brand', JSON.stringify({
                         brand: brand
                     }));
                 }
-
                 await filterProducts();
+            } else {
+                localStorage.removeItem('brand');
+                await listProducts();
             }
         })
     })
@@ -142,7 +175,8 @@ async function buildBrand(brands) {
 async function filterProducts() {
     try {
         let formData = new FormData();
-        formData.append('filters', JSON.stringify(JSON.parse(localStorage.getItem('filters'))));
+        formData.append('brand', JSON.stringify(JSON.parse(localStorage.getItem('brand'))));
+        formData.append('range', JSON.stringify(JSON.parse(localStorage.getItem('range'))));
 
         const response = await fetch("/product/list", {
             method: 'POST',
@@ -158,8 +192,6 @@ async function filterProducts() {
 
     }
 }
-
-
 
 function buildCard(products) {
     product_list.innerHTML = '';
@@ -183,7 +215,7 @@ function buildCard(products) {
             </div>
             <div class="col-md-6 col-lg-6 col-xl-6">
                 <h5> ${product.Nombre_Producto} </h5>
-                <div class="d-flex flex-row">
+                <!-- <div class="d-flex flex-row">
                 <div class="text-danger mb-1 me-2">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -191,7 +223,7 @@ function buildCard(products) {
                     <i class="fa fa-star"></i>
                 </div>
                 <span>310</span>
-                </div>
+                </div> -->
                 <div class="mt-1 mb-0 text-muted small">
                 <span> Marca: ${product.Nombre_Producto}</span><br>
                 <!-- <span class="text-primary"> • </span>
@@ -213,9 +245,9 @@ function buildCard(products) {
             <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                 <div class="d-flex flex-row align-items-center mb-1">
                 <h4 class="mb-1 me-1"> S/.${product.Precio_Producto}</h4>
-                <span class="text-danger"><s>$20.99</s></span>
+                <!-- <span class="text-danger"><s>$20.99</s></span>  -->
                 </div>
-                <h6 class="text-success">Free shipping</h6>
+                <!-- <h6 class="text-success">Free shipping</h6> -->
                 <div class="d-flex flex-column mt-4">
                 <button class="btn btn-primary btn-sm" type="button">Detalles</button>
                 <button class="btn btn-outline-primary btn-sm mt-2" type="button">
