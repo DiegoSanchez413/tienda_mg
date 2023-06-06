@@ -1,4 +1,4 @@
-CREATE PROCEDURE bd_mgnetworks.search_products(
+CREATE PROCEDURE search_products(
 in _brands TEXT,
 in _min_range int,
 in _max_range int,
@@ -69,6 +69,3 @@ END
 LIMIT 10
 OFFSET _offset;
 END;
-
-
-

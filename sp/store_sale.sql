@@ -1,4 +1,4 @@
-CREATE PROCEDURE bd_mgnetworks.store_sale(
+CREATE PROCEDURE store_sale(
 in _sale JSON,
 in _client_id INT
 )
