@@ -224,4 +224,60 @@ class Carrito extends BaseController
         $results = $query->getResult();
         return json_encode($results);
     }
+
+    public function purchases(){
+        $vista = "purchases/list";
+        $this->estructuraTienda($vista);
+    }
+
+    public function list_purchases(){
+        $clientId = $this->request->getPostGet('id');
+        $builder = \Config\Database::connect();
+        $query = $builder->query("CALL get_sales(?)",  array($clientId));
+        $results = $query->getResult();
+
+        foreach ($results as $index => $value) {
+            $sub_array = array();
+            $sub_array[]  = $index + 1;
+            $sub_array[] = $value->ID_Venta;
+            $sub_array[] = $value->cliente;
+            $sub_array[] =  $value->Total_Venta;
+            $sub_array[] = '
+            <div class="btn-group" role="group" aria-label="Button group">
+                <a class="btn btn-primary btn-sm" onClick="checkDetail(' . $value->ID_Venta . ')" title="Visualizar"><i class="fas fa-eye"></i></a>
+            </div>';
+         
+  
+            $data[] = $sub_array;
+        }
+        $results = array(
+            "sEcho" => 1,
+            "iTotalRecords" => count($data),
+            "iTotalDisplayRecords" => count($data),
+            "aaData" => $data
+        );
+        echo json_encode($results);
+    }
+
+    public function purchase_detail($purchaseId){
+        $builder = \Config\Database::connect();
+        $query = $builder->query("CALL get_sale_detail(?)",  array($purchaseId));
+        $results = $query->getResult();
+        foreach ($results as $index => $value) {
+            $sub_array = array();
+            $sub_array[] = $index + 1;
+            $sub_array[] = $value->Nombre_Producto;
+            $sub_array[] = "<div class='text-center'><img src='" . base_url() . "/img/productos/" . $value->Imagen_Producto . "' class='img-thumbnail mx-auto' width='75' height='75' /></div>";
+            $sub_array[] = $value->Cantidad_DetalleVenta;
+            $sub_array[] =  $value->Precio_DetalleVenta;
+            $data[] = $sub_array;
+        }
+        $results = array(
+            "sEcho" => 1,
+            "iTotalRecords" => count($data),
+            "iTotalDisplayRecords" => count($data),
+            "aaData" => $data
+        );
+        echo json_encode($results);
+    }
 }

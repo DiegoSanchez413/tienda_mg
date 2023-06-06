@@ -111,6 +111,13 @@ $routes->post('product/list', 'Productost::list');
 $routes->get('brand/list', 'Productost::brand_list');
 
 $routes->get('contacto', 'Contactot::index');
+
+// Purchases
+$routes->get('mis-compras', 'Carrito::purchases');
+$routes->post('mis-compras/lista', 'Carrito::list_purchases');
+$routes->get('mis-compras/detalle/(:any)', 'Carrito::purchase_detail/$1');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

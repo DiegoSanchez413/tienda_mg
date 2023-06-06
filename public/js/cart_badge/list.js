@@ -8,10 +8,6 @@ const min_range = document.getElementById('min-range');
 const max_range = document.getElementById('max-range');
 const sor_by = document.getElementById('sort-by');
 
-
-
-
-
 $(document).ready(function () {
     if (product_list) {
         listBrands();
@@ -21,13 +17,12 @@ $(document).ready(function () {
             const value = product_list_range.value;
             max_range.value = value;
         });
-
-
     }
 
     if (cart_container && cart_container_empty) {
         showCart()
     };
+
     if (cart_list) {
         listCart();
     }
@@ -179,21 +174,24 @@ async function buildBrand(brands) {
 
 }
 
-sor_by.addEventListener('change', async function () {
-    let sort = sor_by.value;
-    if (localStorage.getItem('sort')) {
-        localStorage.setItem('sort', JSON.stringify({
-            sort: sort
-        }));
-    } else {
-        localStorage.setItem('sort', JSON.stringify({
-            sort: sort
-        }));
+if (sor_by) {
+    sor_by.addEventListener('change', async function () {
+        let sort = sor_by.value;
+        if (localStorage.getItem('sort')) {
+            localStorage.setItem('sort', JSON.stringify({
+                sort: sort
+            }));
+        } else {
+            localStorage.setItem('sort', JSON.stringify({
+                sort: sort
+            }));
+        }
+        localStorage.setItem('page', 1);
+        await filterProducts();
     }
-    localStorage.setItem('page', 1);
-    await filterProducts();
+    )
 }
-)
+
 
 async function filterProducts(page = null) {
     try {

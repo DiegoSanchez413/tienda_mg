@@ -71,6 +71,12 @@
                             </span>
                         </button>
                     </a>
+                    
+                    <a class="nav-icon position-relative text-decoration-none" href="<?= base_url(); ?>mis-compras">
+                        <button type="button" class="btn btn-outline-light position-relative">
+                            <i class="fa fa-fw  fa-list-alt text-dark mr-1"></i>
+                        </button>
+                    </a>
 
                     <a class="nav-icon position-relative text-decoration-none" href="<?= base_url(); ?>tlogin">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
