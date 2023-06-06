@@ -34,7 +34,7 @@
                   </button>
                 </h2>
                 <!-- Marca -->
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" >
+                <div id="flush-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="flush-headingTwo" >
                   <div class="accordion-body">
                     <div id="brand-list">
                     </div>
@@ -48,7 +48,7 @@
                     Precio
                   </button>
                 </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" >
+                <div id="flush-collapseThree" class="accordion-collapse collapse show" aria-labelledby="flush-headingThree" >
                   <div class="accordion-body">
                       <div class="range">
                         <input type="range" class="form-range" id="product-list-range"  value="0" min="0" max="10000" step="1" />
@@ -125,7 +125,7 @@
         <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
           <strong class="d-block py-2" id="total-product-list"></strong>
           <div class="ms-auto">
-            <select class="form-select d-inline-block w-auto border pt-1">
+            <select class="form-select d-inline-block w-auto border pt-1" id="sort-by">
               <option value="0">Más recientes</option>
               <option value="1">Más vendidos</option>
               <option value="2">Menor precio</option>
@@ -142,28 +142,27 @@
           </div>
         </header>
 
-      <div id="product-list"></div>
+      <div id="product-list" style="overflow-y: scroll; height: 500px; overflow-x: hidden;">></div>
 
 
 
         <!-- Pagination -->
         <nav aria-label="Page navigation example" class="d-flex justify-content-center mt-3">
-          <ul class="pagination">
-            <li class="page-item disabled">
+          <ul class="pagination" id="pagination">
+            <!-- <li class="page-item disabled">
               <a class="page-link" href="#" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
               </a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">5</a></li>
-            <li class="page-item">
+            </li> -->
+            <!-- <li class="page-item active"><a class="page-link" data-page="1">1</a></li>
+            <li class="page-item"><a class="page-link" data-page="2">2</a></li>
+            <li class="page-item"><a class="page-link" data-page="3">3</a></li>
+            <li class="page-item"><a class="page-link" data-page="4">4</a></li> -->
+            <!-- <li class="page-item">
               <a class="page-link" href="#" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
               </a>
-            </li>
+            </li> -->
           </ul>
         </nav>
         <!-- Pagination -->

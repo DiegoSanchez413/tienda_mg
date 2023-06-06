@@ -6,6 +6,11 @@ const brand_list = document.getElementById('brand-list');
 const product_list_range = document.getElementById('product-list-range');
 const min_range = document.getElementById('min-range');
 const max_range = document.getElementById('max-range');
+const sor_by = document.getElementById('sort-by');
+
+
+
+
 
 $(document).ready(function () {
     if (product_list) {
@@ -19,6 +24,7 @@ $(document).ready(function () {
 
 
     }
+
     if (cart_container && cart_container_empty) {
         showCart()
     };
@@ -117,6 +123,7 @@ async function listProducts() {
         const total_product_list = document.getElementById('total-product-list');
         total_product_list.innerHTML = data.productos.length + ' Productos encontrados';
         buildCard(data.productos);
+        buildPagination(data.productos[0]._total_rows);
     } catch (error) {
         console.log(error);
     }
@@ -172,12 +179,35 @@ async function buildBrand(brands) {
 
 }
 
-async function filterProducts() {
+sor_by.addEventListener('change', async function () {
+    let sort = sor_by.value;
+    if (localStorage.getItem('sort')) {
+        localStorage.setItem('sort', JSON.stringify({
+            sort: sort
+        }));
+    } else {
+        localStorage.setItem('sort', JSON.stringify({
+            sort: sort
+        }));
+    }
+    localStorage.setItem('page', 1);
+    await filterProducts();
+}
+)
+
+async function filterProducts(page = null) {
     try {
         let formData = new FormData();
         formData.append('brand', JSON.stringify(JSON.parse(localStorage.getItem('brand'))));
         formData.append('range', JSON.stringify(JSON.parse(localStorage.getItem('range'))));
+        formData.append('sort', JSON.stringify(JSON.parse(localStorage.getItem('sort'))));
 
+        if (page != null) {
+            formData.append('page', JSON.stringify(page));
+        } else {
+            formData.append('page', JSON.stringify(JSON.parse(localStorage.getItem('page'))));
+
+        }
         const response = await fetch("/product/list", {
             method: 'POST',
             mode: 'no-cors',
@@ -188,9 +218,64 @@ async function filterProducts() {
         });
         const data = await response.json();
         buildCard(data.productos);
+        // buildPagination(data.productos[0]._total_rows);
     } catch (error) {
 
     }
+}
+
+function buildPagination(total_rows) {
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+    const total_pages = Math.ceil(total_rows / 10);
+    if (total_pages > 1) {
+        pagination.innerHTML += `
+        <li class="page-item disabled">
+            <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li> 
+        `;
+        for (let i = 1; i <= total_pages; i++) {
+            if (i == 1) {
+                pagination.innerHTML += `
+                <li class="page-item active" ><a class="page-link" onclick="setPage(${i})" id="page-item-${i}" data-page="${i}">${i}</a></li>
+                `;
+            } else {
+                pagination.innerHTML += `
+                <li class="page-item"><a class="page-link" id="page-item-${i}" data-page="${i}" onclick="setPage(${i})">${i}</a></li>`;
+            }
+        }
+        pagination.innerHTML += `
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li> 
+    `;
+    }
+}
+async function setPage(page) {
+    let pageItems = document.querySelectorAll('.page-item');
+    pageItems.forEach(item => {
+        item.classList.remove('active');
+    });
+    let page_links = document.querySelectorAll('.page-link');
+
+    page_links.forEach(link => {
+        link.classList.remove('active');
+    });
+
+    let pageItem = document.getElementById(`page-item-${page}`);
+
+    pageItem.classList.add('active');
+
+    try {
+        await filterProducts(page);
+    } catch (error) {
+        console.log(error);
+    }
+
 }
 
 function buildCard(products) {

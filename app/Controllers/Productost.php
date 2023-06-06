@@ -24,6 +24,10 @@ class Productost extends BaseController
     {
         $brand = json_decode($this->request->getPostGet('brand'));
         $range = json_decode($this->request->getPostGet('range'));
+        $sort = json_decode($this->request->getPostGet('sort'));
+        $page = $this->request->getPostGet('page') ?? 1;
+        $rowsPerPage = 10;
+        $offset = ($page - 1) * $rowsPerPage;
         
         if (isset($brand->brand)) {
             $brands = implode(',', $brand->brand); // Cast to comma-separated string
@@ -39,8 +43,14 @@ class Productost extends BaseController
             $max = 100000000;
         }
 
+        if (isset($sort->sort)) {
+            $sort = $sort->sort;
+        }else{
+            $sort = 'ID_Producto';
+        }
+
         $builder = \Config\Database::connect();
-        $query = $builder->query("CALL search_products(?, ?, ?)", [$brands, $min, $max]);
+        $query = $builder->query("CALL search_products(?, ?, ?, ?, ?)", [$brands, $min, $max, $sort, $offset]);
         $results = $query->getResult();
         $data['productos'] = $results;
         return json_encode($data);
