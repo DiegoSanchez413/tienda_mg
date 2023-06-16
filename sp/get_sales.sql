@@ -1,4 +1,4 @@
-CREATE PROCEDURE get_sales(
+CREATE DEFINER=`diego`@`localhost` PROCEDURE `bd_mgnetworks`.`get_sales`(
 in _client_id int
 )
 BEGIN
@@ -13,6 +13,7 @@ cast(v.Total_Venta as decimal(20,2)) Total_Venta
 FROM venta v 
 left join detalle_venta dv on v.ID_Venta = dv.ID_DetalleVenta
 join cliente c on c.ID_Cliente = _client_id
-where v.ID_Cliente = _client_id;
+where v.ID_Cliente = _client_id
+order by v.ID_Venta desc;
 
 END

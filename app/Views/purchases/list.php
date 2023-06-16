@@ -6,12 +6,12 @@
           <div class="card-body text-center">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
-            <h5 class="my-3">John Smith</h5>
-            <p class="mb-1">Full Stack Developer</p>
-            <p class="mb-4">Bay Area, San Francisco, CA</p>
+            <h5 class="my-3" id="username"></h5>
+            <!-- <p class="mb-1">Full Stack Developer</p> -->
+            <!-- <p class="mb-4">Bay Area, San Francisco, CA</p> -->
             <div class="d-flex justify-content-center mb-2">
-              <button type="button" class="btn btn-primary">Follow</button>
-              <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+              <button type="button" class="btn btn-danger" onclick="removeSession()">Cerrar sesión</button>
+              <!-- <button type="button" class="btn btn-outline-primary ms-1">Message</button> -->
             </div>
           </div>
         </div>
@@ -188,7 +188,20 @@
     </div>
   </div>
 </section>
+<script>
+  if(localStorage.getItem('user')){
+    let user_div = document.getElementById('username');
+    let user = JSON.parse(localStorage.getItem('user'))
+    user_div.innerHTML = user.Nombre_Cliente + " " + user.Apellido_Cliente;
+  }
 
+
+  function removeSession(){
+    // remove local storage and redirect to /tlogin
+    localStorage.removeItem('user');
+    window.location.href = "/tlogin";
+  }
+</script>
 <?=  include "modal.php"  ?>
 
     

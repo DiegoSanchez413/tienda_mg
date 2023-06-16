@@ -23,6 +23,7 @@
                                         <th>Imagen</th>
                                         <th>Cantidad</th>
                                         <th>Costo</th>
+                                        <th>Subtotal</th>
                                         </tr>
                                     </thead>
                                     <tbody>

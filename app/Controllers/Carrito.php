@@ -241,7 +241,7 @@ class Carrito extends BaseController
             $sub_array[]  = $index + 1;
             $sub_array[] = $value->ID_Venta;
             $sub_array[] = $value->cliente;
-            $sub_array[] =  $value->Total_Venta;
+            $sub_array[] =  'S/.' .  $value->Total_Venta;
             $sub_array[] = '
             <div class="btn-group" role="group" aria-label="Button group">
                 <a class="btn btn-primary btn-sm" onClick="checkDetail(' . $value->ID_Venta . ')" title="Visualizar"><i class="fas fa-eye"></i></a>
@@ -269,7 +269,8 @@ class Carrito extends BaseController
             $sub_array[] = $value->Nombre_Producto;
             $sub_array[] = "<div class='text-center'><img src='" . base_url() . "/img/productos/" . $value->Imagen_Producto . "' class='img-thumbnail mx-auto' width='75' height='75' /></div>";
             $sub_array[] = $value->Cantidad_DetalleVenta;
-            $sub_array[] =  $value->Precio_DetalleVenta;
+            $sub_array[] =   'S/.' . $value->Precio_DetalleVenta;
+            $sub_array[] =  'S/.' . ($value->Precio_DetalleVenta * $value->Cantidad_DetalleVenta);
             $data[] = $sub_array;
         }
         $results = array(

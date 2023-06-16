@@ -77,8 +77,8 @@
                             <i class="fa fa-fw  fa-list-alt text-dark mr-1"></i>
                         </button>
                     </a>
-
-                    <a class="nav-icon position-relative text-decoration-none" href="<?= base_url(); ?>tlogin">
+                    <!-- href="<?= base_url(); ?>tlogin" -->
+                    <a class="nav-icon position-relative text-decoration-none" id="client_fullname_link" href="<?= base_url(); ?>tlogin">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                         <span id="client_fullname"></span>
@@ -192,3 +192,16 @@
             }
         }
     </style>
+
+<script>
+    const client_fullname_link = document.getElementById('client_fullname_link');
+
+    if(JSON.parse(localStorage.getItem('user')).Nombre_Cliente){
+        client_fullname_link.setAttribute('href', '/mis-compras');
+    }else{
+        client_fullname_link.setAttribute('href', '/tlogin');
+    }
+   
+
+
+</script>
