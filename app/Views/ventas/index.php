@@ -1,12 +1,14 @@
 <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="fa-solid fa-user-tag"></i>VENTAS
-          </h1>
+          <h1><i class="fa-solid fa-user-tag"></i>VENTAS</h1>
+          <br>
+          <a class="btn btn-sm  bg-primary text-white text-uppercase card__button" href="<?php echo base_url() ?>/RegistrarVenta">Nueva Venta</a>
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
           <li class="breadcrumb-item"><a href="<?= base_url(); ?>inicio">Tienda Virtual</a></li>
+          
         </ul>
       </div>
         <div class="row">
@@ -36,6 +38,5 @@
           </div>
       </div>
     </main>
-    <?php include "modal.php" ?> <!-- llamar al modal (incluir)  -->
-    <script src="<?= base_url()?>/js/ventas/ventas.js"></script>
-    
+<?php include "detalleVenta.php" ?>
+<script src="<?= base_url()?>/js/ventas/ventas.js"></script>

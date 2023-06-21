@@ -117,6 +117,13 @@ $routes->get('mis-compras', 'Carrito::purchases');
 $routes->post('mis-compras/lista', 'Carrito::list_purchases');
 $routes->get('mis-compras/detalle/(:any)', 'Carrito::purchase_detail/$1');
 
+//ventas
+$routes->get('ventas', 'Ventas::index');
+$routes->get('RegistrarVenta', 'Ventas::index2');
+$routes->post('RegistrarVenta', 'Ventas::RegistrarVenta');
+$routes->post('listarVenta', 'Ventas::listar');
+$routes->post('listarDetalleVenta', 'Ventas::listarDetalles');
+
 
 /*
  * --------------------------------------------------------------------
