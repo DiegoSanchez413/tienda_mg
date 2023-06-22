@@ -5,6 +5,7 @@ function openModal(){
     $('#modalFormCategoria').modal('show');
     formulario[0].reset();
     $("#idCategoria").val("");
+    $("#titleModal").html("Nuevo Registro");
 }
 
 
@@ -116,7 +117,7 @@ function EditarCategoria(id){
         function (data, textStatus, jqXHR) {
             
             $('#modalFormCategoria').modal('show'); //muestra el modal
-            
+            $("#titleModal").html("Actualizar Registro");
             $("#idCategoria").val(data.data[0].ID_Categoria);
             $("#txtNombre").val(data.data[0].Nombre_Categoria);
             $("#txtDescripcion").val(data.data[0].Descripcion_Categoria);

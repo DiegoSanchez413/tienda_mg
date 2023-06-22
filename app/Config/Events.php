@@ -63,8 +63,17 @@ Events::on('post_controller_constructor', function () {
         '\APP\CONTROLLERS\PRODUCTOST',
         '\APP\CONTROLLERS\PRODUCTOS',
         '\APP\CONTROLLERS\CONTACTOT',
+<<<<<<< HEAD
         '\APP\CONTROLLERS\VENTAS',
         '\APP\CONTROLLERS\USUARIOS',
+=======
+        '\APP\CONTROLLERS\USUARIOS',
+        '\APP\CONTROLLERS\ROLES',
+        '\APP\CONTROLLERS\CATEGORIAS',
+        '\APP\CONTROLLERS\PRODUCTOS',
+        '\APP\CONTROLLERS\PROVEEDOR',
+        '\APP\CONTROLLERS\COMPRAS',
+>>>>>>> 05159e4b13c814c40b07869a78367fa8266f387c
         
     );
     if (!in_array($class, $nocontrolados)) {

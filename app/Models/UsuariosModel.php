@@ -61,4 +61,14 @@ class UsuariosModel extends Model
             return false;
         }
     }
+
+    public function get_Usuarios($id)
+    {
+        $this->builder->select('*');
+        $this->builder->join('rol as r', 'usuario.ID_Rol=r.ID_Rol');
+        $this->builder->where('ID_Usuario', $id);
+        $query = $this->builder->get(); //traemos los datos de la tabla usuarios y lo almacenamos en la var. query
+        $this->db->close(); //cerramos conexion
+        return $query->getResultArray(); //convertir el query en un array
+    }
 }

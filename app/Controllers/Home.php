@@ -5,12 +5,9 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-   
-    
     public function index()
     {
         $vista = "tienda";
-         $this->estructuraTienda($vista); 
+        $this->estructuraTienda($vista);
     }
-    
 }

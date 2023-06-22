@@ -1,6 +1,3 @@
-
-
-
 //AGREGAR COMPRA
 
 let cant_compras = 0;
@@ -8,9 +5,7 @@ let cont_id = 0;
 let sumaImportes = 0;
 let sumaImportes_mod = 0;
 let total = 0
-let igv= 0.18;
-
-let contadorArticulos = {};
+let igv = 0.18;
 
 function AgregarCompra() {
     let producto_compra = document.getElementById("idProducto").value;
@@ -18,30 +13,23 @@ function AgregarCompra() {
     let cantidad_compra = document.getElementById("cantidad").value;
 
     let precio_Compra = document.getElementById("precio_producto").value;
-    let importe_Compra = parseFloat(cantidad_compra)*parseFloat(precio_Compra);
+    let importe_Compra = parseFloat(cantidad_compra) * parseFloat(precio_Compra);
 
     let fecha_Compra = document.getElementById("fecha_compra").value;
     let usuario_Compra = document.getElementById("listUsuario").value;
-    
-    let estado_Compra= document.getElementById("listEstado").value;
+
+    let estado_Compra = document.getElementById("listEstado").value;
 
     let nombre_producto = document.getElementById("nombre_producto").value;
     let nombre_proveedor = document.getElementById("nombre_proveedor").value;
 
 
-    if (proveedor_compra != "" && producto_compra != "" && cantidad_compra != "" && precio_Compra != "" && importe_Compra != "" && usuario_Compra != "" 
+    if (proveedor_compra != "" && producto_compra != "" && cantidad_compra != "" && precio_Compra != "" && importe_Compra != "" && usuario_Compra != ""
         && fecha_Compra != "" && estado_Compra != "") {
 
-     /*   $.post(ruta + "/getProducto-x-id", { id: producto_compra },
-            function (data, textStatus, jqXHR) {
-                    if (contadorProducto[producto_compra] && contadorProducto[producto_compra] >= 1) {
-                        Swal.fire({
-                            html: 'No se admite registrar 2 veces el mismo producto - Intente en la próxima compra',
-                            icon: 'warning',
-                        }) 
-                    }else { */
-                        let id_row = 'row' + cant_compras;
-                        let fila = `<tr id="${id_row}">
+
+        let id_row = 'row' + cant_compras;
+        let fila = `<tr id="${id_row}">
                                         <td><input type="hidden" value="${cant_compras + 1}" name="cant_compras[]">${cant_compras + 1}</td>
                                         <td><input type="hidden" value="${producto_compra}" name="productoid[]">${nombre_producto}</td>
                                         <td><input type="hidden" value="${proveedor_compra}" name="proveedorid[]">${nombre_proveedor}</td>
@@ -51,40 +39,21 @@ function AgregarCompra() {
                                         <td><a href="#" onclick="eliminar_compra('${id_row}',${cant_compras});" class="btn btn-circle btn-sm btn-danger" title="Eliminar"><i class="fa fa-solid fa-trash"></i></a></td>
                                     </tr>`;
 
-                        
+        sumaImportes = sumaImportes + parseFloat(importe_Compra);
+        $('#subtotal_compra').html(sumaImportes.toFixed(2));
 
-                       
-                        
-                        sumaImportes = sumaImportes+ parseFloat(importe_Compra);
-                        $('#subtotal_compra').html(sumaImportes.toFixed(2));
-
-                        let impuesto = parseFloat(sumaImportes*igv);
-                        total = sumaImportes+impuesto;
-                        $('#total_compra').html(total.toFixed(2));
-                        $('#total').val(total.toFixed(2));
-                        $('#subtotal').val(sumaImportes.toFixed(2));
-                        $('#tbody_compras').append(fila);              //Agrega Fila a la Tabla
-                        $('#idProducto').val("").trigger('change');   //Limpia los select
-                        $('#idProveedor').val("");            //Limpian campos
-                        $('#cantidad').val("");
-                        $('#precio_producto').val("");
-                        $('#importe').val("");
-                        cant_compras++;//ids de la tabla por cada fila agregada + id del row(id)
-                        //let valor_subtotal = parseFloat($('#subtotal_compra').text());
-                        /*let valor_unitario = cant_compras*importe_Compra;
-                        console.log(importe_Compra);
-                        $('#subtotal_compra').html(valor_subtotal+valor_unitario);
-                        
-                        let valor_total = parseFloat($('#total_compra').text());
-                        let valor_unitario_igv=valor_unitario+(valor_unitario*igv_Compra);
-                        $('#total_compra').html(valor_total+valor_unitario_igv);
-                        console.log(valor_unitario,valor_unitario_igv);*/
-                          
-                /*} 
-                
-            },
-            'json'
-        ); */
+        let impuesto = parseFloat(sumaImportes * igv);
+        total = sumaImportes + impuesto;
+        $('#total_compra').html(total.toFixed(2));
+        $('#total').val(total.toFixed(2));
+        $('#subtotal').val(sumaImportes.toFixed(2));
+        $('#tbody_compras').append(fila);              //Agrega Fila a la Tabla
+        $('#idProducto').val("").trigger('change');   //Limpia los select
+        $('#idProveedor').val("");            //Limpian campos
+        $('#cantidad').val("");
+        $('#precio_producto').val("");
+        $('#importe').val("");
+        cant_compras++;
     } else {
         Swal.fire({
             html: 'Advertencia: No se admite campos vacios',
@@ -104,7 +73,7 @@ function eliminar_compra(id_row, row) {
         icon: "warning",
     }).then((result) => {
         if (result.isConfirmed) {
-           
+
             $("#row" + row).remove();
             Swal.fire({
                 html: 'Fila eliminada!',
@@ -112,20 +81,29 @@ function eliminar_compra(id_row, row) {
                 icon: 'success',
                 showConfirmButton: false
             });
-            cant_compras--;
-            //focus despues de agregar  el cursos se queda alli
-            $('#idProducto').val('').focus();
+             // Recalcular subtotal, IGV y total
+             sumaImportes = 0;
+             $('#tbody_compras tr').each(function () {
+                 sumaImportes += parseFloat($(this).find('input[name="importe_det[]"]').val());
+             });
+ 
+             $('#subtotal_compra').html(sumaImportes.toFixed(2));
+ 
+             let impuesto = parseFloat(sumaImportes * igv);
+             $('#igv').html(impuesto.toFixed(2));
+ 
+             total = sumaImportes + impuesto;
+             $('#total_compra').html(total.toFixed(2));
+ 
+             $('#total').val(total.toFixed(2));
+             $('#subtotal').val(sumaImportes.toFixed(2));
+ 
+             cant_compras--;
+             $('#idProducto').val('').focus();
 
         }
     });
 }
-
-
-
-
-
-
-
 
 
 //BUSCAR PRODUCRRTO X ID
@@ -135,13 +113,12 @@ $("#idProducto").change(function (e) {
         function (data, textStatus, jqXHR) {
             if (data && data.data && data.data.length > 0) {
                 $('#nombre_producto').val(data.data[0].Nombre_Producto);
-                
+
             }
         },
         'json'
     );
 });
-
 
 //BUSCAR PROVEEDOR POR ID
 
@@ -151,7 +128,7 @@ $("#idProveedor").change(function (e) {
         function (data, textStatus, jqXHR) {
             if (data && data.data && data.data.length > 0) {
                 $('#nombre_proveedor').val(data.data[0].RazonSocial_Proveedor);
-                
+
             }
         },
         'json'
@@ -160,7 +137,7 @@ $("#idProveedor").change(function (e) {
 
 const formulario = $('#form_compra');
 
-$(formulario).submit(function (e){
+$(formulario).submit(function (e) {
     e.preventDefault();
     $.ajax({
         type: "post",
@@ -170,8 +147,8 @@ $(formulario).submit(function (e){
         cache: false,
         contentType: false,
         processData: false,
-        success: function(response){
-            if(response.error == ""){
+        success: function (response) {
+            if (response.error == "") {
                 formulario[0].reset();
                 swal.fire({
                     title: response.ok,
@@ -179,19 +156,19 @@ $(formulario).submit(function (e){
                     timer: 2000,
                     showConfirmButton: false
                 });
-                location.href= base_url+'/compras'
+                location.href = base_url + '/compras'
             }
-            else{
+            else {
                 swal.fire({
                     title: '¡ERROR!',
                     html: response.error,
-                    icon:'error',
+                    icon: 'error',
                     showConfirmButton: true
                 });
             }
         },
 
-        error: function (){
+        error: function () {
             swal.fire({
                 title: '¡ERROR 500!',
                 html: 'error de servidor interno',
@@ -202,3 +179,117 @@ $(formulario).submit(function (e){
     });
 
 });
+
+
+
+$(document).ready(function () {
+    listar();
+
+});
+
+function listar() {
+    $('#tableCompras').DataTable({
+        "aProcessing": true,
+        "aServerSide": true,
+        dom: "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6'p>>",
+        "ajax": {
+            url: base_url + "/listarCompras",
+            type: "post"
+        },
+        "bDestroy": true,
+        "responsive": true,
+        "bInfo": true,
+        "iDisplayLength": 5,
+        "order": [[0, "desc"]],
+        "language": {
+            "sProcessing": "Procesando...",
+            "sLengthMenu": "Mostrar _MENU_ registros",
+            "sZeroRecords": "No se encontraron resultados",
+            "sEmptyTable": "Ningún dato disponible en esta tabla",
+            "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix": "",
+            "sSearch": "Buscar:",
+            "sUrl": "",
+            "sInfoThousands": ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+        },
+        "pagingType": "simple_numbers",
+        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+    });
+}
+
+function mostrar_compras(id) {
+    $("#modaldetalle").modal("show");
+    $("#lbltitulo").html("Lista Compras");
+    listar_detalle_compras(id);
+}
+
+function listar_detalle_compras(id) {
+    $('#tabla_detalle').DataTable({
+        "aProcessing": true,
+        "aServerSide": true,
+        dom: "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6'p>>",
+        "ajax": {
+            url: base_url + "/listarDetalle",
+            type: "post",
+            data: {
+                //nombre de campo controlar/dato que paso
+                id: id
+            }
+        },
+        "bDestroy": true,
+        "responsive": true,
+        "bInfo": true,
+        "iDisplayLength": 5,
+        "order": [[0, "desc"]],
+        "language": {
+            "sProcessing": "Procesando...",
+            "sLengthMenu": "Mostrar _MENU_ registros",
+            "sZeroRecords": "No se encontraron resultados",
+            "sEmptyTable": "Ningún dato disponible en esta tabla",
+            "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix": "",
+            "sSearch": "Buscar:",
+            "sUrl": "",
+            "sInfoThousands": ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+        },
+        "pagingType": "simple_numbers",
+        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+    });
+}
+
+//PDF
+function pdf(id) {
+    $('#pdf_generar').modal('show');
+    $('#frame').attr('src', base_url + "/pdf/" + id);
+    $('#descargar').attr('href', base_url + "/pdf/" + id);
+}
