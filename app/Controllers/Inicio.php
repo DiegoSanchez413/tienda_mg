@@ -6,9 +6,9 @@ class Inicio extends BaseController
 {
     public function index()
     {
-     $vista = "inicio"; 
-     $this->estructura($vista); //llamar a los archivos
+        $vista = "inicio";
+        $this->estructura($vista); //llamar a los archivos
 
-     
+
     }
 }

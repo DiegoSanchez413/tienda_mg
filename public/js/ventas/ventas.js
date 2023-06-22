@@ -107,20 +107,20 @@ function listar_detalle_venta(id) {
 }
 //buscar producto por ID
 $("#listProducto").change(function (e) {
-if($(this).val()){
-    e.preventDefault();
-    $.post(base_url + "/getProducto-x-id", { id: $(this).val() },
-        function (data, textStatus, jqXHR) {
-            
+    if ($(this).val()) {
+        e.preventDefault();
+        $.post(base_url + "/getProducto-x-id", { id: $(this).val() },
+            function (data, textStatus, jqXHR) {
+
                 $("#nombre_producto").val(data.data[0].Nombre_Producto);
                 $("#txtPrecio").val(data.data[0].Precio_Producto);
-            
 
-        },
-        "JSON"
-    );
-}
-    
+
+            },
+            "JSON"
+        );
+    }
+
 
 });
 
