@@ -62,6 +62,13 @@ Events::on('post_controller_constructor', function () {
         '\APP\CONTROLLERS\CARRITO',
         '\APP\CONTROLLERS\PRODUCTOST',
         '\APP\CONTROLLERS\CONTACTOT',
+        '\APP\CONTROLLERS\USUARIOS',
+        '\APP\CONTROLLERS\ROLES',
+        '\APP\CONTROLLERS\CATEGORIAS',
+        '\APP\CONTROLLERS\PRODUCTOS',
+        '\APP\CONTROLLERS\PROVEEDOR',
+        '\APP\CONTROLLERS\COMPRAS',
+        
     );
     if (!in_array($class, $nocontrolados)) {
         if (!$session->has('id')) {

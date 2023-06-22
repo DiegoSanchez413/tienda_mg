@@ -58,6 +58,7 @@ function openModal() {
     $("#txtPassword").attr("required", true);
     $("#idUsuario").val("");
     $("#nota_password").html("");
+    $("#titleModal").html("Nuevo Registro");
 }
 
 //Registrar y editar usuario (envio de datos al servidor)
@@ -111,6 +112,7 @@ function EditarUsuario(id) {
     $.post(base_url + "/getUsuario-x-id", { id: id },
         function (data, textStatus, jqXHR) {
             $('#modalFormUsuario').modal('show'); //muestra el modal
+            $("#titleModal").html("Actualizar Registro");
             $("#nota_password").html("Nota: Si rellena este campo, la contraseña será cambiada para este miembro.");
             $("#idUsuario").val(data.data[0].ID_Usuario);
             $("#listRolid").val(data.data[0].ID_Rol);

@@ -17,24 +17,37 @@
   <script src="<?= base_url(); ?>/js/jquery-3.3.1.min.js"></script>
   <!-- Sweet Alert 2-->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
-
+  <!--Graficos para dashboard-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="app sidebar-mini">
   <script>
     base_url = '<?= base_url() ?>'
-  </script> 
+  </script> <!-- la ruta base-->
+  <!-- Navbar-->
+  <header class="app-header"><a class="app-header__logo" href="<?= base_url(); ?>/dashboard">Mg - Networks</a>
 
-<header class="app-header"><a class="app-header__logo" href="<?= base_url(); ?>">Mg - Networks</a>
-   <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+    <!-- Navbar Right Menu-->
     <ul class="app-nav">
-      <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+      <!-- User Menu-->
+      <input id="id_usuario" type="hidden" name="id_usuario" value="<?php echo $_SESSION['id']?>">
+      <span class="mr-2 d-none d-lg-inline text-white mt-4" id="nombre_user_sesion" style="text-transform: uppercase;"></span> 
+      <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><div id="perfil_user_sesion" class="imagen">
+      </div></a>
         <ul class="dropdown-menu settings-menu dropdown-menu-right">
           <li><a class="dropdown-item" href="<?= base_url(); ?>/opciones"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-          <li><a class="dropdown-item" href="<?= base_url(); ?>/perfil"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+          <li><a class="dropdown-item" href="<?= base_url(); ?>/Perfil"><i class="fa fa-user fa-lg"></i> Profile</a></li>
           <li><a class="dropdown-item" href="<?= base_url(); ?>cerrar_sesion"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
         </ul>
       </li>
     </ul>
-</header>
+  </header>
+  <style>
+    .img-profile{
+      width: 35px;
+      height: 35px;
+    }
+  </style>
+  <script src="<?php echo base_url() ?>/js/perfil/header.js"></script>

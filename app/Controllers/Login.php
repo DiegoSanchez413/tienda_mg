@@ -8,6 +8,8 @@ use App\Models\ClientesTModel;
 class Login extends BaseController
 {
     protected $ClientesModel;
+    protected $ClientesTModel;
+
     public function __construct()
     {
         $this->ClientesModel = new ClientesModel();

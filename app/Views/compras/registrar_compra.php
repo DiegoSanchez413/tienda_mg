@@ -19,6 +19,12 @@
                 <input type="hidden" id="id_compra" name="id_compra">
 
                 <div class="row">
+                <div class="form-group col-md-4">
+                        <label for="codigo_compra">Código de Compra </label>
+                        <input id="codigo_compra" class="form-control" name="codigo_compra" disabled style="background:rgba(112, 128, 144, 0.5);" value="<?=$generar_codigo;?>">
+
+                        <div class="invalid-feedback">Este campo es requerido</div>
+                    </div>
                     <div class="form-group col-md-6">
                         <label for="listUsuario">Usuario*</label>
                         <select class="form-control" data-live-search="true" id="listUsuario" name="listUsuario" required>
@@ -89,7 +95,7 @@
                         <input type="number" id="precio_producto" class="form-control" name="precio_producto" step="0.01">
                         <div class="invalid-feedback">Este campo es requerido</div>
                     </div>
-
+    
                 </div>
 
 

@@ -30,6 +30,9 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->post('verificar_acceso_usuarios', 'Home::vericacion_acceso');
+$routes->get('cerrar_sesion', 'Home::cerrarSesion');
+
 $routes->get('tlogin', 'Login::index');
 $routes->post('verificar_acceso_clientes', 'Login::verificacion_acceso');
 $routes->get('cerrar_sesion', 'Login::cerrarSesion');
@@ -39,6 +42,12 @@ $routes->post('registro_clientest', 'ClientesT::Registrar');
 //inicio
 $routes->get('inicio', 'Inicio::index');
 
+//Peerfil
+$routes->get('Perfil', 'Perfil::index');
+$routes->post('mostrar_datos', 'Perfil::mostrar_datos');
+$routes->post('actualizarDatosPersonales', 'Perfil::actualizarDatosPersonales');
+$routes->post('actualizar_foto', 'Perfil::actualizar_foto');
+$routes->post('actualizar_contraseña', 'Perfil::actualizar_contraseña');
 
 //ROLES
 $routes->get('roles', 'Roles::index'); //mostrar vista
@@ -91,6 +100,9 @@ $routes->post('eliminar_proveedor', 'Proveedor::eliminar');
 $routes->get('compras', 'Compras::index');
 $routes->get('RegistrarCompra', 'Compras::registrar');
 $routes->post('RegistrarCompra', 'Compras::RegistrarCompra');
+$routes->post('listarCompras', 'Compras::listar');
+$routes->post('listarDetalle', 'Compras::listarDetalles');
+$routes->get('/pdf/(:num)', 'Compras::pdf/$1');
 
 //VENTAS
 $routes->get('ventas', 'Ventas::index');
