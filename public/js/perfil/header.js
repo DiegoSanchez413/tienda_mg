@@ -4,7 +4,6 @@ $(document).ready(function () {
     $.post(base_url + "/getUsuario-x-id", { id: $id },
         function (data, textStatus, jqXHR) 
         {
-            console.log(data);
             $('#nombre_user_sesion').html(data.data[0].Nombre_Usuario);
             if (data.data[0].foto == "") {
                 perfil.innerHTML = '<img class="img-profile rounded-circle" src="https://th.bing.com/th/id/OIP.-LPABXMH-PmgsmQqwgvKaAHaHa?pid=ImgDet&rs=1">';
