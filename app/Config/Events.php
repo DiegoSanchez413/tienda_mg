@@ -68,6 +68,7 @@ Events::on('post_controller_constructor', function () {
         '\APP\CONTROLLERS\PRODUCTOS',
         '\APP\CONTROLLERS\PROVEEDOR',
         '\APP\CONTROLLERS\COMPRAS',
+        '\APP\CONTROLLERS\LOGIND',
         
     );
     if (!in_array($class, $nocontrolados)) {
