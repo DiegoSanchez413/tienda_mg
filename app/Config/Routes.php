@@ -88,6 +88,7 @@ $routes->post('listarProductos', 'Productos::Listar');
 $routes->post('getProducto-x-id', 'Productos::buscar');
 $routes->post('eliminar_productos', 'Productos::eliminar');
 $routes->get('listar_productos', 'Productos::listarproducto');
+$routes->post('comboProducto', 'Productos::combo_producto');
 
 //PROVEEDOR
 

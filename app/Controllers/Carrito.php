@@ -231,6 +231,7 @@ class Carrito extends BaseController
     }
 
     public function list_purchases(){
+        $data=[];
         $clientId = $this->request->getPostGet('id');
         $builder = \Config\Database::connect();
         $query = $builder->query("CALL get_sales(?)",  array($clientId));
@@ -246,14 +247,12 @@ class Carrito extends BaseController
             <div class="btn-group" role="group" aria-label="Button group">
                 <a class="btn btn-primary btn-sm" onClick="checkDetail(' . $value->ID_Venta . ')" title="Visualizar"><i class="fas fa-eye"></i></a>
             </div>';
-         
-  
             $data[] = $sub_array;
         }
         $results = array(
             "sEcho" => 1,
-            "iTotalRecords" => count($data),
-            "iTotalDisplayRecords" => count($data),
+            "iTotalRecords" => count($data) ?? 0,
+            "iTotalDisplayRecords" => count($data) ?? 0,
             "aaData" => $data
         );
         echo json_encode($results);

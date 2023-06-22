@@ -44,9 +44,6 @@
                             <a class="nav-link" href="<?= base_url(); ?>productost">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Servicios</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="<?= base_url(); ?>contacto">Contacto</a>
                         </li>
                     </ul>
@@ -90,28 +87,6 @@
         </div>
     </nav>
 
-    <nav class="navbar navbar-expand-sm navbar-light shadow bg-secondary">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
-                <div class="flex-fill">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="<?= base_url(); ?>">Computadora</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white " href="<?= base_url(); ?>productost">Laptops</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="">Componentes PC</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="<?= base_url(); ?>contacto">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
     <!-- Close Header -->
 
     <!-- Modal -->
