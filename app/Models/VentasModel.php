@@ -6,10 +6,10 @@ use CodeIgniter\Model;
 
 class VentasModel extends Model
 {
-    protected $table      = 'venta';
+    protected $table = 'venta';
     // Uncomment below if you want add primary key
     protected $primaryKey = 'ID_Venta';
-    protected $allowedFields = ['ID_Cliente', 'Fecha_Venta', 'Estado_Venta', 'Igv_Venta', 'Total_Venta', 'SubTotal_Venta'];
+    protected $allowedFields = ['codigo_venta','ID_Cliente', 'Fecha_Venta', 'Estado_Venta', 'Igv_Venta', 'Total_Venta', 'SubTotal_Venta'];
     protected $db;
     protected $builder;
 
@@ -29,15 +29,30 @@ class VentasModel extends Model
         return $query->getResultArray(); //convertir el query en un array
     }
 
-    //esta funcionar me permite hacer una busqueda por ID
-    public function getVentas($id)
+    public function generar_codigo_venta()
     {
-        $this->builder->select('*');
-        $this->builder->where('ID_Venta', $id);
-        $query = $this->builder->get(); //traemos los datos de la tabla ventas y lo almacenamos en la var. query
-        $this->db->close(); //cerramos conexion
-        return $query->getResultArray(); //convertir el query en un array
+        $total = $this->builder->countAllResults() + 1;
+        if ($total < 10 && $total > 0) {
+            //si el valor es de una cifra
+            $generar_codigo = 'V-00000' . $total . '-' . date('M-y');
+        } else if (9 < $total &&  $total < 100) {
+            $generar_codigo = 'V-0000' . $total . '-' . date('M-y');
+        } else if (99 < $total &&  $total < 1000) {
+            //si el valor tiene 3 cifras
+            $generar_codigo = 'V-000' . $total . '-' . date('M-y');
+        } else if (999 < $total &&  $total < 10000) {
+            //si el valor tiene 4 cifras
+            $generar_codigo = 'V-00' . $total . '-' . date('M-y');
+        } else if (9999 < $total &&  $total < 100000) {
+            //si el valor tiene 4 cifras
+            $generar_codigo = 'V-0' . $total . '-' . date('M-y');
+        } else {
+            //si el valor tiene 5 cifras
+            $generar_codigo = 'V-' . $total . '-' . date('M-y');
+        }
+
+        return $generar_codigo;
     }
 
-    
+
 }

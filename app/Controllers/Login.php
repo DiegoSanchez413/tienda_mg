@@ -19,7 +19,7 @@ class Login extends BaseController
     {
         
         $vista = "tlogin";
-         $this->estructuraTienda($vista);
+        $this->estructuraTienda($vista);
     }
     //validaciones
     public function verificacion_acceso()
