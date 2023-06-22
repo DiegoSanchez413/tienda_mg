@@ -14,10 +14,12 @@
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/css/main.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/css/bootstrap-select.min.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/css/style.css">
+  <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/css/select2/dist/css/select2.min.css">
+
   <script src="<?= base_url(); ?>/js/jquery-3.3.1.min.js"></script>
   <!-- Sweet Alert 2-->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 </head>
 

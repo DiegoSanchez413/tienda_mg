@@ -35,11 +35,18 @@
         <span class="app-menu__label">Clientes</span>
       </a>
     </li>
-    <li>
-      <a class="app-menu__item" href="<?= base_url(); ?>ventas">
+    <li class="treeview">
+      <a class="app-menu__item" href="#" data-toggle="treeview">
         <i class="app-menu__icon fa fa-user" aria-hidden="true"></i>
         <span class="app-menu__label">Ventas</span>
+        <i class="treeview-indicator fa fa-angle-right"></i>
       </a>
+      <ul class="treeview-menu">
+        <li><a class="treeview-item" href="<?= base_url(); ?>RegistrarVenta"><i
+              class="icon fa fa-circle-o"></i>Registrar Venta</a></li>
+        <li><a class="treeview-item" href="<?= base_url(); ?>ventas"><i class="icon fa fa-circle-o"></i>Lista
+            Ventas</a></li>
+      </ul>
     </li>
     <li class="treeview">
       <a class="app-menu__item" href="#" data-toggle="treeview">
