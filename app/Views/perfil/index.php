@@ -55,23 +55,6 @@
             <br>
         </div>
         <div class="col-md-6">
-            <div class="card border-left-primary">
-                <div class="card-header text-white bg-dark">
-                    <h5 class="text-center">Firma Digital</h5>
-                </div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <div>
-                            <p id="texto-firma"></p>
-                        </div>
-                        <img class="img-thumbnail" id="firma_digital" alt="Firma_digital">
-                        <div>
-                            <a href="#" onclick="actualizar_firma()"> Actualizar Firma Digital <i class="fa fa-camera "></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
             <div class="card border-left-warning">
                 <div class="card-header text-white bg-dark">
                     <h5 class="text-center">Cambia tu contraseña</h5>
