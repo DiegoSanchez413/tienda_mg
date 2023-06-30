@@ -5,7 +5,7 @@ $(document).ready(function () {
         function (data, textStatus, jqXHR) 
         {
             $('#nombre_user_sesion').html(data.data[0].Nombre_Usuario);
-            if (data.data[0].foto == "") {
+            if (data.data[0].foto == "" || !data.data[0].foto) {
                 perfil.innerHTML = '<img class="img-profile rounded-circle" src="https://th.bing.com/th/id/OIP.-LPABXMH-PmgsmQqwgvKaAHaHa?pid=ImgDet&rs=1">';
             } else {
                 perfil.innerHTML = '<img class="img-profile rounded-circle" src="'+base_url+'/imagenes/fotos_perfil/' + data.data[0].foto + '" alt="Perfil">';

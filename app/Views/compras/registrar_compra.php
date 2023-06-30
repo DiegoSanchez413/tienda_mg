@@ -143,6 +143,17 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td><span class="font-weight-bold">IGV (18%):</span>
+                                    </td>
+                                    <td>
+                                        <input type="hidden" id="igv" class="igv" name="igv">
+                                        <div style="display:flex">
+                                        <span class="text-danger" id="mon_simbolo1">S/. </span>
+                                        <div class="text-danger" id="igv_compra">0</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td><span class="font-weight-bold">Total :</span>
                                     </td>
                                     <td>

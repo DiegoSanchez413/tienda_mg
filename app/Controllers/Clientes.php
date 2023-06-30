@@ -1,27 +1,36 @@
-<?php 
+<?php
+
 namespace App\Controllers;
 
 use App\Models\ClientesModel;
 
 use Exception;
 
-class Clientes extends BaseController{
+class Clientes extends BaseController
+{
 
     protected $ClientesModel;
 
-    public function __construct(){
-        $this->ClientesModel= new ClientesModel(); //llamar al modelo 
+    public function __construct()
+    {
+        $this->ClientesModel = new ClientesModel(); //llamar al modelo 
     }
     public function index()
     {
-        $vista = "clientes/index";
+        if ($_SESSION['rol'] == 2 || $_SESSION['rol'] == 1) {
+            $vista = "clientes/index";
+        } else {
+            $vista = "errors/html/errores_permiso";
+        }
+        
         $this->estructura($vista); //llamar a los archivos
     }
 
 
-    public function Listar(){
-        $datos=$this->ClientesModel->listarClientes(); //traemos datos y lo almacenamos en la variable datos
-        $data=array();
+    public function Listar()
+    {
+        $datos = $this->ClientesModel->listarClientes(); //traemos datos y lo almacenamos en la variable datos
+        $data = array();
 
         foreach ($datos as $row) {
             $sub_array = array();
@@ -37,7 +46,7 @@ class Clientes extends BaseController{
             <a class="btn btn-primary btn-sm" onClick="EditarCliente(' . $row["ID_Cliente"] . ')" title="Actualizar"><i class="fas fa-pencil-alt"></i></a>
             <a class="btn btn-danger btn-sm" onClick="EliminarCliente(' . $row["ID_Cliente"] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></a>
         </div>';
-  
+
             $data[] = $sub_array;
         }
         $results = array(
@@ -49,173 +58,166 @@ class Clientes extends BaseController{
         echo json_encode($results);
     }
 
-    public function RegistrarEditar(){
-        $respuesta=array();
-        $validacion=$this->validate([
-            
-            'txtNombre'=>[
-                'rules'=>'required|min_length[3]|max_length[50]',
-                'errors'=>[
-                    'required'=>'Ingresar Nombre de Cliente',
-                    'min_length'=>'El nombre de Cliente debe ser mayor a dos caracteres',
-                    'max_length'=>'El nombre de Cliente no debe superar 50 caracteres',
+    public function RegistrarEditar()
+    {
+        $respuesta = array();
+        $validacion = $this->validate([
+
+            'txtNombre' => [
+                'rules' => 'required|min_length[3]|max_length[50]',
+                'errors' => [
+                    'required' => 'Ingresar Nombre de Cliente',
+                    'min_length' => 'El nombre de Cliente debe ser mayor a dos caracteres',
+                    'max_length' => 'El nombre de Cliente no debe superar 50 caracteres',
                 ]
             ],
 
-            'txtApellido'=>[
-                'rules'=>'required|min_length[3]|max_length[70]',
-                'errors'=>[
-                    'required'=>'Ingresar Nombre de Cliente',
-                    'min_length'=>'El Apellido del Cliente debe ser mayor a dos caracteres',
-                    'max_length'=>'El Apellido del Cliente no debe superar 70 caracteres',
+            'txtApellido' => [
+                'rules' => 'required|min_length[3]|max_length[70]',
+                'errors' => [
+                    'required' => 'Ingresar Nombre de Cliente',
+                    'min_length' => 'El Apellido del Cliente debe ser mayor a dos caracteres',
+                    'max_length' => 'El Apellido del Cliente no debe superar 70 caracteres',
                 ]
             ],
 
-            'txtIdentificacion'=>[
-                'rules'=>'required',
-                'errors'=>[
-                    'required'=>'Ingresar el número de identificación'
+            'txtIdentificacion' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Ingresar el número de identificación'
                 ]
             ],
 
-            'txtTelefono'=>[
-                'rules'=>'required',
-                'errors'=>[
-                    'required'=>'Ingresar el número del Cliente',
-                    
+            'txtTelefono' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Ingresar el número del Cliente',
+
                 ]
             ],
 
-            
-            'txtEmail'=>[
-                'rules'=>'required|valid_email',
-                'errors'=>[
-                    'required'=>'Ingresar el correo electrónico',
-                    'valid_email'=>'Ingresar un email válido'
+
+            'txtEmail' => [
+                'rules' => 'required|valid_email',
+                'errors' => [
+                    'required' => 'Ingresar el correo electrónico',
+                    'valid_email' => 'Ingresar un email válido'
                 ]
             ],
 
-            'txtDireccion'=>[
-                'rules'=>'required',
-                'errors'=>[
-                    'required'=>'Ingresar el número del Cliente',
-                    
+            'txtDireccion' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Ingresar el número del Cliente',
+
                 ]
             ],
 
         ]); //para que se valide los campos requeridos
 
-        $id=$this->request->getPostGet('idCliente'); //traer el dato del formulario
-        $contraseña=$this->request->getPostGet('txtPassword');
-        if(empty($id))
-        {
-            $validacion=$this->validate([
-                'txtEmail'=>[
-                    'rules'=>'is_unique[Cliente.Correo_Cliente]',
-                    'errors'=>[
-                        'is_unique'=>'El correo electrónico ingresado, ya existe'
+        $id = $this->request->getPostGet('idCliente'); //traer el dato del formulario
+        $contraseña =strval($this->request->getPostGet('txtPassword'));
+        if (empty($id)) {
+            $validacion = $this->validate([
+                'txtEmail' => [
+                    'rules' => 'is_unique[Cliente.Correo_Cliente]',
+                    'errors' => [
+                        'is_unique' => 'El correo electrónico ingresado, ya existe'
                     ]
                 ],
 
-                'txtPassword'=>[
-                    'rules'=>'required|min_length[8]',
-                    'errors'=>[
-                        'required'=>'Contraseña obligatoria',
-                        'min_length'=>'La contraseña debe ser mayor o igual a 8 caracteres'
+                'txtPassword' => [
+                    'rules' => 'required|min_length[8]',
+                    'errors' => [
+                        'required' => 'Contraseña obligatoria',
+                        'min_length' => 'La contraseña debe ser mayor o igual a 8 caracteres'
 
                     ]
                 ],
             ]);
+        } else {
+            $datosCliente = $this->ClientesModel->getClientexEmail($this->request->getPostGet('txtEmail'));
 
-        }else{
-            $datosCliente=$this->ClientesModel->getClientexEmail($this->request->getPostGet('txtEmail'));
-            
-            if($datosCliente){
-                if($datosCliente[0]['ID_Cliente']!= $id){
-                    $validacion=$this->validate([
-                        'txtEmail'=>[
-                            'rules'=>'is_unique[Cliente.Correo_Cliente]',
-                            'errors'=>[
-                                'is_unique'=>'El correo electrónico ingresado, ya existe'
+            if ($datosCliente) {
+                if ($datosCliente[0]['ID_Cliente'] != $id) {
+                    $validacion = $this->validate([
+                        'txtEmail' => [
+                            'rules' => 'is_unique[Cliente.Correo_Cliente]',
+                            'errors' => [
+                                'is_unique' => 'El correo electrónico ingresado, ya existe'
                             ]
                         ],
-        
-                        
+
+
                     ]);
                 }
             }
 
-            if(!empty($contraseña))
-            {
-                
-                $validacion=$this->validate([
-                   
-                    'txtPassword'=>[
-                        'rules'=>'required | min_length[8]',
-                        'errors'=>[
-                            'required'=>'Contraseña obligatoria',
-                            'min_length'=>'La contraseña debe ser mayor o igual a 8 caracteres'
-    
+            if (!empty($contraseña)) {
+
+                $validacion = $this->validate([
+
+                    'txtPassword' => [
+                        'rules' => 'required | min_length[8]',
+                        'errors' => [
+                            'required' => 'Contraseña obligatoria',
+                            'min_length' => 'La contraseña debe ser mayor o igual a 8 caracteres'
+
                         ]
                     ],
                 ]);
-    
             }
         }
 
-        if(!$validacion)
-        {
-            $respuesta['error'] =$this->validator->listErrors();
-        } else{
-            $contraHash=password_hash($contraseña,PASSWORD_DEFAULT); //encriptamos LA CONTRASEÑA
-            $data=['ID_Cliente'=>$this->request->getPostGet('idCliente'),
-                    'Nombre_Cliente'=>$this->request->getPostGet('txtNombre'),
-                    'Apellido_Cliente'=>$this->request->getPostGet('txtApellido'),
-                    'Dni_Cliente'=>$this->request->getPostGet('txtIdentificacion'),
-                    'Telefono_Cliente'=>$this->request->getPostGet('txtTelefono'),
-                    'Correo_Cliente'=>$this->request->getPostGet('txtEmail'),
-                    'Contraseña_Cliente'=>$contraHash,
-                    'Direccion_Cliente'=>$this->request->getPostGet('txtDireccion'),
-                    'Estado_Cliente' => $this->request->getPostGet('listEstado')];
-            if(empty($id))
-            {
-                try{
+        if (!$validacion) {
+            $respuesta['error'] = $this->validator->listErrors();
+        } else {
+            $contraHash = password_hash($contraseña, PASSWORD_DEFAULT); //encriptamos LA CONTRASEÑA
+            $data = [
+                'ID_Cliente' => $this->request->getPostGet('idCliente'),
+                'Nombre_Cliente' => $this->request->getPostGet('txtNombre'),
+                'Apellido_Cliente' => $this->request->getPostGet('txtApellido'),
+                'Dni_Cliente' => $this->request->getPostGet('txtIdentificacion'),
+                'Telefono_Cliente' => $this->request->getPostGet('txtTelefono'),
+                'Correo_Cliente' => $this->request->getPostGet('txtEmail'),
+                'Contraseña_Cliente' => $contraHash,
+                'Direccion_Cliente' => $this->request->getPostGet('txtDireccion'),
+                'Estado_Cliente' => $this->request->getPostGet('listEstado')
+            ];
+            if (empty($id)) {
+                try {
                     $this->ClientesModel->insert($data);
-                    $respuesta['error']='';
+                    $respuesta['error'] = '';
                     $respuesta['ok'] = 'Datos registrados correctamente';
+                } catch (Exception $e) {
+                    $respuesta['error'] = 'Error en el servidor';
                 }
-                catch(Exception $e){
-                    $respuesta['error']='Error en el servidor';
-                }
-            }
-            else{
-                if(empty($contraseña)){
-                    $data2= ['ID_Cliente'=>$this->request->getPostGet('idCliente'),
-                    'Nombre_Cliente'=>$this->request->getPostGet('txtNombre'),
-                    'Apellido_Cliente'=>$this->request->getPostGet('txtApellido'),
-                    'Dni_Cliente'=>$this->request->getPostGet('txtIdentificacion'),
-                    'Telefono_Cliente'=>$this->request->getPostGet('txtTelefono'),
-                    'Correo_Cliente'=>$this->request->getPostGet('txtEmail'),
-                    'Direccion_Cliente'=>$this->request->getPostGet('txtDireccion'),
-                    'Estado_Cliente' => $this->request->getPostGet('listEstado')];
-                    try{
-                        $this->ClientesModel->update($id,$data2);
-                        $respuesta['error']='';
+            } else {
+                if (empty($contraseña)) {
+                    $data2 = [
+                        'ID_Cliente' => $this->request->getPostGet('idCliente'),
+                        'Nombre_Cliente' => $this->request->getPostGet('txtNombre'),
+                        'Apellido_Cliente' => $this->request->getPostGet('txtApellido'),
+                        'Dni_Cliente' => $this->request->getPostGet('txtIdentificacion'),
+                        'Telefono_Cliente' => $this->request->getPostGet('txtTelefono'),
+                        'Correo_Cliente' => $this->request->getPostGet('txtEmail'),
+                        'Direccion_Cliente' => $this->request->getPostGet('txtDireccion'),
+                        'Estado_Cliente' => $this->request->getPostGet('listEstado')
+                    ];
+                    try {
+                        $this->ClientesModel->update($id, $data2);
+                        $respuesta['error'] = '';
                         $respuesta['ok'] = 'Datos actualizados correctamente';
-                    } 
-                    catch(Exception $e){
-                        $respuesta['error']='Error en el servidor';
+                    } catch (Exception $e) {
+                        $respuesta['error'] = 'Error en el servidor';
                     }
-                }
-
-                else{
-                    try{
-                        $this->ClientesModel->update($id,$data);
-                        $respuesta['error']='';
+                } else {
+                    try {
+                        $this->ClientesModel->update($id, $data);
+                        $respuesta['error'] = '';
                         $respuesta['ok'] = 'Datos actualizados correctamente';
-                    }
-                    catch(Exception $e){
-                        $respuesta['error']='Error en el servidor';
+                    } catch (Exception $e) {
+                        $respuesta['error'] = 'Error en el servidor';
                     }
                 }
             }

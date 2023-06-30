@@ -9,7 +9,7 @@ class UsuariosModel extends Model
     protected $table      = 'usuario';
     // Uncomment below if you want add primary key
     protected $primaryKey = 'ID_Usuario';
-    protected $allowedFields = ['ID_Rol', 'Nombre_Usuario', 'DNI_Usuario', 'Correo_Usuario', 'Contraseña_Usuario', 'Estado_Usuario'];
+    protected $allowedFields = ['ID_Rol', 'Nombre_Usuario', 'DNI_Usuario', 'Correo_Usuario', 'Contraseña_Usuario', 'Estado_Usuario','foto'];
     protected $db;
     protected $builder;
 

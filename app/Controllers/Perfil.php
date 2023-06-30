@@ -81,10 +81,10 @@ class Perfil extends BaseController
     {
         $respuesta = array();
         $validacion = $this->validate([
-            'foto' => [
-                'uploaded[foto]',
-                'mime_in[foto,image/jpg,image/jpeg,image/png]',
-                'max_size[foto,1024]',
+            'foto_usuario' => [
+                'uploaded[foto_usuario]',
+                'mime_in[foto_usuario,image/jpg,image/jpeg,image/png]',
+                'max_size[foto_usuario,1024]',
                 'errors' => [
                     'uploaded' => 'No se envio una imagen',
                     'mime_in' => 'No se envio un formato aceptado(jpg,jpeg,png)',
@@ -98,30 +98,32 @@ class Perfil extends BaseController
             $id = $this->request->getPostGet('ID_Usuario');
             $usuario = $this->UsuariosModel->where('ID_Usuario', $id)->get()->getResult()[0];
             $foto = $usuario->foto;
-            $file = $this->request->getFile('foto');
-            $nombre_image = $file->getRandomName();
-            $file->move(ROOTPATH . 'public/imagenes/fotos_perfil', $nombre_image);
+            $file = $this->request->getFile('foto_usuario');
+            $nombre_image = $file->getName();
+            $file->move(ROOTPATH .'public/imagenes/fotos_perfil',$nombre_image);
             $data = [
                 'foto' => $nombre_image
             ];
             if (empty($foto)) {
-                $this->UsuariosModel->update($id, $data);
                 try {
                     $this->UsuariosModel->update($id, $data);
                     $respuesta['error'] = '';
                     $respuesta['ok'] = 'Dato actualizado correctamente';
+                    
                 } catch (Exception $e) {
-                    $respuesta['error'] = 'Problemas al realizar operación!';
+                 $respuesta['error'] = 'Problemas al realizar operación!';
+                    
                 }
             } else {
-                $ruta = ROOTPATH . 'public/imagenes/fotos_perfil/' . $foto;
+                $ruta = ROOTPATH.'public/imagenes/fotos_perfil/'.$foto;
                 unlink($ruta);
                 try {
                     $this->UsuariosModel->update($id, $data);
                     $respuesta['error'] = '';
                     $respuesta['ok'] = 'Dato actualizado correctamente';
                 } catch (Exception $e) {
-                    $respuesta['error'] = 'Problemas al realizar operación!';
+                   $respuesta['error'] = 'Problemas al realizar operación!';
+                   
                 }
             }
         }

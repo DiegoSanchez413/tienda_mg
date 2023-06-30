@@ -6,6 +6,7 @@ use CodeIgniter\Controller;
 use App\Models\ProductosModel;
 use App\Models\CategoriasModel;
 use Exception;
+
 class Productos extends BaseController
 {
 
@@ -21,7 +22,12 @@ class Productos extends BaseController
 
     public function index()
     {
-        $vista = "productos/producto/index";
+        if ($_SESSION['rol'] == 2 || $_SESSION['rol'] == 1) {
+            $vista = "productos/producto/index";
+        } else {
+            $vista = "errors/html/errores_permiso";
+        }
+
         $dato['dato'] = $this->CategoriasModel->listarCategorias();
         $this->estructura($vista, $dato); // llama a los archivos
 

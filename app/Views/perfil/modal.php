@@ -9,7 +9,7 @@
                 <form class="needs-validation" id="form_foto" novalidate >
                     <div class="form-group">
                         <label for="my-input">Foto: <span class="text-danger">*</span></label>
-                        <input id="foto" class="form-control" type="file" name="foto" required>
+                        <input id="foto_usuario" class="form-control" type="file" name="foto_usuario" required>
                         <div class="invalid-feedback">
                             Campo Obligatorio*
                         </div>

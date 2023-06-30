@@ -1,3 +1,10 @@
+<?php 
+use App\Models\UsuariosModel;
+  
+$UsuariosModel;
+$this->UsuariosModel = new UsuariosModel();
+
+?>
 <!-- Sidebar menu-->
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 <aside class="app-sidebar">
@@ -9,12 +16,18 @@
     </div>
   </div>
   <ul class="app-menu">
+  <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2 || $_SESSION['rol']==3){
+  ?>
     <li>
       <a class="app-menu__item" href="<?= base_url(); ?>inicio">
         <i class="app-menu__icon fa fa-dashboard"></i>
         <span class="app-menu__label">Dashboard</span>
       </a>
-    </li>
+    </li>  
+    <?php } ?>
+
+    <?php if($_SESSION['rol']==1){
+    ?>
     <li class="treeview">
       <a class="app-menu__item" href="#" data-toggle="treeview">
         <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>
@@ -29,12 +42,20 @@
         </li>
       </ul>
     </li>
+    <?php } ?>
+
+    <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2){
+    ?>
     <li>
       <a class="app-menu__item" href="<?= base_url(); ?>clientes">
         <i class="app-menu__icon fa fa-user" aria-hidden="true"></i>
         <span class="app-menu__label">Clientes</span>
       </a>
     </li>
+    <?php }?>
+
+    <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2 || $_SESSION['rol']==3){
+    ?>
     <li class="treeview">
       <a class="app-menu__item" href="#" data-toggle="treeview">
         <i class="app-menu__icon fa fa-user" aria-hidden="true"></i>
@@ -48,6 +69,10 @@
             Ventas</a></li>
       </ul>
     </li>
+    <?php }?>
+
+    <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2){
+    ?>
     <li class="treeview">
       <a class="app-menu__item" href="#" data-toggle="treeview">
         <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>
@@ -62,12 +87,20 @@
 
       </ul>
     </li>
+    <?php }?>
+
+    <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2){
+    ?>
     <li>
       <a class="app-menu__item" href="<?= base_url(); ?>/proveedor">
         <i class=" app-menu__icon fa fa-shopping-cart" aria-hidden="true"></i>
         <span class="app-menu__label">Proveedor</span>
       </a>
     </li>
+    <?php }?>
+
+    <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2){
+    ?>
     <li class="treeview">
       <a class="app-menu__item" href="#" data-toggle="treeview">
         <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>
@@ -82,6 +115,7 @@
 
       </ul>
     </li>
+    <?php }?>
     <li>
       <a class="app-menu__item" href="<?= base_url(); ?>cerrar_sesion">
         <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>

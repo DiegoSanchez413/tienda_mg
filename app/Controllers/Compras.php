@@ -35,8 +35,11 @@ class Compras extends BaseController
 
     public function index()
     {
-
-        $vista = "compras/index";
+        if ($_SESSION['rol'] == 2 || $_SESSION['rol'] == 1) {
+            $vista = "compras/index";
+        } else {
+            $vista = "errors/html/errores_permiso";
+        }
         $this->estructura($vista); // llama a los archivos
 
     }
@@ -76,14 +79,14 @@ class Compras extends BaseController
 
                 ]
             ],
-
+            /*
             'igv' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => 'ingresar el igv',
 
                 ]
-            ],
+            ], */
 
             'listEstado' => [
                 'rules' => 'required',
@@ -172,12 +175,13 @@ class Compras extends BaseController
             $sub_array[] = $row['Codigo_Compra'];
             $sub_array[] = $row['Nombre_Usuario'];
             $sub_array[] = $row['Fecha_Compra'];
-            $sub_array[] = $row['IGV_Compra'];
+            //$sub_array[] = $row['IGV_Compra'];
+            $sub_array[] = number_format(intval($row['SubTotal_Compra']) * 0.18, '2', '.', '');
             $sub_array[] = $row['Total_Compra'];
             $sub_array[] = $row['SubTotal_Compra'];
             $sub_array[] = '<div class="btn-group" role="group" aria-label="Button group">
             <a class="btn btn-success text-white" onClick="mostrar_compras(' . $row["ID_Compra"] . ')" title="DetalleCompras"><i class="fas fa-eye"></i></a>
-            <a download="' . $row['Codigo_Compra'].'Orden-compra.pdf" class="btn btn-danger text-white" onClick="pdf(' . $row["ID_Compra"] . ')" title="Reporte"><i class="fas fa-file-pdf"></i></a>
+            <a download="' . $row['Codigo_Compra'] . 'Orden-compra.pdf" class="btn btn-danger text-white" onClick="pdf(' . $row["ID_Compra"] . ')" title="Reporte"><i class="fas fa-file-pdf"></i></a>
             </div>';
             $data[] = $sub_array;
         }
@@ -239,7 +243,7 @@ class Compras extends BaseController
         $pdf->SetY($pdf->GetY() + 11);
         $pdf->Cell(180, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'ORDEN DE COMPRA'), 0, 1, 'C');
         //$pdf->SetFont('Arial', 'B', 12);
-        
+
         $pdf->Ln(5);
         $pdf->SetFont('Arial', 'B', 9);
         $pdf->Cell(154, 7,  iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'CODIGO:'), 0, 0, 'R');
@@ -306,18 +310,18 @@ class Compras extends BaseController
             $pdf->SetFont('Arial', 'B', 9);
             $pdf->Cell(139, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'SUB TOTAL:'), 0, 0, 'R');
             $pdf->SetFont('Arial', '', 9);
-            $pdf->Cell(33, 7,'S/. '. iconv("UTF-8", "ISO-8859-1//TRANSLIT", $datos[0]['SubTotal_Compra']), 0, 1, 'R');
+            $pdf->Cell(33, 7, 'S/. ' . iconv("UTF-8", "ISO-8859-1//TRANSLIT", $datos[0]['SubTotal_Compra']), 0, 1, 'R');
             $pdf->SetFont('Arial', 'B', 9);
             $pdf->Cell(140, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'IGV(%): '), 0, 0, 'R');
             $pdf->SetFont('Arial', 'B', 9);
-            $pdf->Cell(33, 7,'%. '. iconv("UTF-8", "ISO-8859-1//TRANSLIT", $datos[0]['IGV_Compra']), 0, 1, 'R');
+            $pdf->Cell(33, 7, '%. ' . iconv("UTF-8", "ISO-8859-1//TRANSLIT", $datos[0]['IGV_Compra']), 0, 1, 'R');
             $pdf->Cell(90, 1, '', '', 1);
             $pdf->Line($pdf->GetX() + 120, $pdf->GetY(), $pdf->GetX() + 172, $pdf->GetY());
             $pdf->SetFont('Arial', 'B', 9);
             $pdf->Ln(1);
             $pdf->Cell(140, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'TOTAL: '), 0, 0, 'R');
             $pdf->SetFont('Arial', '', 9);
-            $pdf->Cell(32, 7,'S/. '. iconv("UTF-8", "ISO-8859-1//TRANSLIT", $datos[0]['Total_Compra']), 0, 1, 'R');
+            $pdf->Cell(32, 7, 'S/. ' . iconv("UTF-8", "ISO-8859-1//TRANSLIT", $datos[0]['Total_Compra']), 0, 1, 'R');
 
             $pdf->Output($datos[0]['Codigo_Compra'] . '-Orden-de-compra.pdf', 'I');
         }

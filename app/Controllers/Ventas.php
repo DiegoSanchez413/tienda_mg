@@ -27,7 +27,12 @@ class Ventas extends BaseController
 
     public function index()
     {
-        $vista = "ventas/index";
+        if ($_SESSION['rol'] == 3 || $_SESSION['rol'] == 2 || $_SESSION['rol'] == 1) {        
+            $vista = "ventas/index";
+        } else {
+            $vista = "errors/html/errores_permiso";
+        }
+
         $this->estructura($vista, ); //llamar a los archivos
     }
 
