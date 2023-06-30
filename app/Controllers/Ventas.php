@@ -130,7 +130,6 @@ class Ventas extends BaseController
             $sub_array[] = $row["codigo_venta"];
             $sub_array[] = $row["Nombre_Cliente"];
             $sub_array[] = $row["Fecha_Venta"];
-            $sub_array[] = $row["Igv_Venta"];
             $sub_array[] = $row["Total_Venta"];
             $sub_array[] = $row["SubTotal_Venta"];
             $sub_array[] = '<div class="btn-group" role="group" aria-label="Button group">
