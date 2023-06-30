@@ -44,7 +44,6 @@ class Clientes extends BaseController
             $sub_array[] = $row["Estado_Cliente"] == 1 ? '<span class="badge badge-success">Activo</span>' : '<span class="badge badge-danger">Inactivo</span>';
             $sub_array[] = '<div class="btn-group" role="group" aria-label="Button group">
             <a class="btn btn-primary btn-sm" onClick="EditarCliente(' . $row["ID_Cliente"] . ')" title="Actualizar"><i class="fas fa-pencil-alt"></i></a>
-            <a class="btn btn-danger btn-sm" onClick="EliminarCliente(' . $row["ID_Cliente"] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></a>
         </div>';
 
             $data[] = $sub_array;
