@@ -70,7 +70,8 @@ Events::on('post_controller_constructor', function () {
         '\APP\CONTROLLERS\PRODUCTOS',
         '\APP\CONTROLLERS\PROVEEDOR',
         '\APP\CONTROLLERS\COMPRAS',
-        '\APP\CONTROLLERS\LOGIND',        
+        '\APP\CONTROLLERS\LOGIND', 
+        '\APP\CONTROLLERS\NOSOTROS', 
     );
     if (!in_array($class, $nocontrolados)) {
         if (!$session->has('id')) {

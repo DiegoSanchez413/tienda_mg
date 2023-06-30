@@ -7010,7 +7010,7 @@ a.close.disabled {
   display: none;
   float: left;
   width: 100%;
-
+  margin-right: -100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transition: -webkit-transform 0.6s ease-in-out;
@@ -12125,8 +12125,8 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  border-right-width: 2px;
-  border-bottom-width: 2px;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
   color: #333333;
   font-size: 13px;
   line-height: 1.42857143;
@@ -15326,7 +15326,7 @@ be a descendant of the grid when it is being dragged.
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #114f74;
+  background-color: #1f618d;
   z-index: 1030;
   padding-right: 15px;
 }
@@ -15349,7 +15349,7 @@ be a descendant of the grid when it is being dragged.
   flex: 1 0 auto;
   color: #fff;
   text-align: center;
-  font-family: "Sanvito";
+  font-family: "Niconne";
   padding: 0 15px;
   font-size: 26px;
   font-weight: 400;
@@ -15363,7 +15363,7 @@ be a descendant of the grid when it is being dragged.
     flex: 0 0 auto;
     display: block;
     width: 230px;
-    background-color: #343a40;
+    background-color: #007d71;
   }
 }
 
@@ -15568,7 +15568,7 @@ be a descendant of the grid when it is being dragged.
   width: 230px;
   overflow: auto;
   z-index: 10;
-  background-color: #114f74;
+  background-color: #222d32;
   -webkit-box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
   -webkit-transition: left 0.3s ease, width 0.3s ease;

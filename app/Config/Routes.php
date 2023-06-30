@@ -30,11 +30,12 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-
+//LOGIN DASHBOARD
 $routes->get('login', 'LoginD::index');
 $routes->post('verificar_acceso_usuarios', 'LoginD::vericacion_acceso');
 $routes->get('cerrar_sesion', 'LoginD::cerrarSesion');
 
+//LOGIN CLIENTE
 $routes->get('tlogin', 'Login::index');
 $routes->post('verificar_acceso_clientes', 'Login::verificacion_acceso');
 $routes->get('cerrar_sesion', 'Login::cerrarSesion');
@@ -139,6 +140,8 @@ $routes->post('RegistrarVenta', 'Ventas::RegistrarVenta');
 $routes->post('listarVenta', 'Ventas::listar');
 $routes->post('listarDetalleVenta', 'Ventas::listarDetalles');
 
+//Tienda nosotros
+$routes->get('nosotros', 'Nosotros::index');
 
 /*
  * --------------------------------------------------------------------
