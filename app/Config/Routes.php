@@ -34,7 +34,10 @@ $routes->get('/', 'Home::index');
 $routes->get('login', 'LoginD::index');
 $routes->post('verificar_acceso_usuarios', 'LoginD::vericacion_acceso');
 $routes->get('cerrar_sesion', 'LoginD::cerrarSesion');
-
+//INICIO DASHBOARD-REPORTES
+$routes->post('reporte_ventas','Inicio::reporte_ventas');
+$routes->post('reporte_productos','Inicio::reporte_productos');
+$routes->post('suma_ventas','Inicio::suma_ventas');
 //LOGIN CLIENTE
 $routes->get('tlogin', 'Login::index');
 $routes->post('verificar_acceso_clientes', 'Login::verificacion_acceso');

@@ -46,33 +46,6 @@ $this->UsuariosModel = new UsuariosModel();
 
     <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2){
     ?>
-    <li>
-      <a class="app-menu__item" href="<?= base_url(); ?>clientes">
-        <i class="app-menu__icon fa fa-user" aria-hidden="true"></i>
-        <span class="app-menu__label">Clientes</span>
-      </a>
-    </li>
-    <?php }?>
-
-    <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2 || $_SESSION['rol']==3){
-    ?>
-    <li class="treeview">
-      <a class="app-menu__item" href="#" data-toggle="treeview">
-        <i class="app-menu__icon fa fa-user" aria-hidden="true"></i>
-        <span class="app-menu__label">Ventas</span>
-        <i class="treeview-indicator fa fa-angle-right"></i>
-      </a>
-      <ul class="treeview-menu">
-        <li><a class="treeview-item" href="<?= base_url(); ?>RegistrarVenta"><i
-              class="icon fa fa-circle-o"></i>Registrar Venta</a></li>
-        <li><a class="treeview-item" href="<?= base_url(); ?>ventas"><i class="icon fa fa-circle-o"></i>Lista
-            Ventas</a></li>
-      </ul>
-    </li>
-    <?php }?>
-
-    <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2){
-    ?>
     <li class="treeview">
       <a class="app-menu__item" href="#" data-toggle="treeview">
         <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>
@@ -116,6 +89,34 @@ $this->UsuariosModel = new UsuariosModel();
       </ul>
     </li>
     <?php }?>
+
+    <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2){
+    ?>
+    <li>
+      <a class="app-menu__item" href="<?= base_url(); ?>clientes">
+        <i class="app-menu__icon fa fa-user" aria-hidden="true"></i>
+        <span class="app-menu__label">Clientes</span>
+      </a>
+    </li>
+    <?php }?>
+    
+    <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2 || $_SESSION['rol']==3){
+    ?>
+    <li class="treeview">
+      <a class="app-menu__item" href="#" data-toggle="treeview">
+        <i class="app-menu__icon fa fa-user" aria-hidden="true"></i>
+        <span class="app-menu__label">Ventas</span>
+        <i class="treeview-indicator fa fa-angle-right"></i>
+      </a>
+      <ul class="treeview-menu">
+        <li><a class="treeview-item" href="<?= base_url(); ?>RegistrarVenta"><i
+              class="icon fa fa-circle-o"></i>Registrar Venta</a></li>
+        <li><a class="treeview-item" href="<?= base_url(); ?>ventas"><i class="icon fa fa-circle-o"></i>Lista
+            Ventas</a></li>
+      </ul>
+    </li>
+    <?php }?>
+
     <li>
       <a class="app-menu__item" href="<?= base_url(); ?>cerrar_sesion">
         <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>

@@ -15398,8 +15398,8 @@ be a descendant of the grid when it is being dragged.
 
 .app-sidebar__toggle:focus,
 .app-sidebar__toggle:hover {
-  color: #fff;
-  background-color: #00635a;
+  background: rgba(0, 0, 0, 0.15);
+  color: #f6f6f6;
   text-decoration: none;
 }
 
@@ -15433,8 +15433,9 @@ be a descendant of the grid when it is being dragged.
 
 .app-nav__item:hover,
 .app-nav__item:focus {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.15);
   color: #f6f6f6;
+  text-decoration: none;
 }
 
 .app-search {

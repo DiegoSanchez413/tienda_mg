@@ -24,6 +24,7 @@
 
   <!--Graficos para dashboard-->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body class="app sidebar-mini">

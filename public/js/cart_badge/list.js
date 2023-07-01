@@ -53,10 +53,14 @@ async function filterByPrice() {
 function listCart() {
     const cart = JSON.parse(localStorage.getItem('cart'));
     const cart_total = document.getElementById('cart_total');
+    const cart_igv = document.getElementById('cart_igv');
     const url = window.location.href;
     if (cart) {
         const total = cart.reduce((acc, item) => acc + item.Precio_Producto * item.quantity, 0);
+        const total1 = (total*0.18)+total;
         cart_total.innerHTML = `S/.${total}`;
+        cart_igv.innerHTML = `S/.${total1}`;
+        cart_list.innerHTML="";
         cart.forEach(item => {
             const div = document.createElement('div');
             div.classList.add('d-flex', 'align-items-center', 'mb-4');
@@ -116,7 +120,7 @@ async function listProducts() {
         });
         const data = await response.json();
         const total_product_list = document.getElementById('total-product-list');
-        total_product_list.innerHTML = data.productos.length + ' Productos encontrados';
+        total_product_list.innerHTML = data.productos.length + ' productos encontrados ';
         buildCard(data.productos);
         buildPagination(data.productos[0]._total_rows);
     } catch (error) {
