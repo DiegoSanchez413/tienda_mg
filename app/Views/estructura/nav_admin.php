@@ -48,7 +48,7 @@ $this->UsuariosModel = new UsuariosModel();
     ?>
     <li class="treeview">
       <a class="app-menu__item" href="#" data-toggle="treeview">
-        <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>
+        <i class="app-menu__icon fa fa-tags" aria-hidden="true"></i>
         <span class="app-menu__label">Productos</span>
         <i class="treeview-indicator fa fa-angle-right"></i>
       </a>
@@ -66,7 +66,7 @@ $this->UsuariosModel = new UsuariosModel();
     ?>
     <li>
       <a class="app-menu__item" href="<?= base_url(); ?>/proveedor">
-        <i class=" app-menu__icon fa fa-shopping-cart" aria-hidden="true"></i>
+        <i class=" app-menu__icon fa fa-truck" aria-hidden="true"></i>
         <span class="app-menu__label">Proveedor</span>
       </a>
     </li>
@@ -76,7 +76,7 @@ $this->UsuariosModel = new UsuariosModel();
     ?>
     <li class="treeview">
       <a class="app-menu__item" href="#" data-toggle="treeview">
-        <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>
+        <i class="app-menu__icon fa fa-clipboard" aria-hidden="true"></i>
         <span class="app-menu__label">Compras</span>
         <i class="treeview-indicator fa fa-angle-right"></i>
       </a>
@@ -104,7 +104,7 @@ $this->UsuariosModel = new UsuariosModel();
     ?>
     <li class="treeview">
       <a class="app-menu__item" href="#" data-toggle="treeview">
-        <i class="app-menu__icon fa fa-user" aria-hidden="true"></i>
+        <i class="app-menu__icon fa fa-shopping-cart" aria-hidden="true"></i>
         <span class="app-menu__label">Ventas</span>
         <i class="treeview-indicator fa fa-angle-right"></i>
       </a>

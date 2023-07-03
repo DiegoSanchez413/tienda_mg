@@ -14,106 +14,98 @@
     <div>
       <h3> Bienvenido al sistema <?= $_SESSION['nombre'] ?></h3>
     </div>
+    <br>
+  </div>
+  <div class="row">
 
-    <div class="row">
 
-      <!-- Earnings (Monthly) Card Example -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                  Cantidad Ventas</div>
-                <h1 id="totalVentas"></h1>
-              </div>
-              <div class="col-auto">
-                <i class="fa fa-line-chart fa-2x text-gray-300"></i>
-              </div>
+    <!-- CARD CANTIDAD DE Ventas -->
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                Cantidad Ventas</div>
+              <h1 id="totalVentas"></h1>
+            </div>
+            <div class="col-auto">
+              <i class="fa fa-line-chart fa-2x text-gray-300"></i>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Earnings (Monthly) Card Example -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                  GANANCIAS</div>
-                  <h1 id="sumaVentas"></h1>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Earnings (Monthly) Card Example -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-info shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
-                </div>
-                <div class="row no-gutters align-items-center">
-                  <div class="col-auto">
-                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                  </div>
-                  <div class="col">
-                    <div class="progress progress-sm mr-2">
-                      <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pending Requests Card Example -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                  Pending Requests</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-comments fa-2x text-gray-300"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-          <div class="card-body">
-
-            <h1 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-              Stock Productos</h1>
-            <canvas id="" width="800" height="450"></canvas>
-          </div>
-
-        </div>
-      </div>
-
     </div>
 
+    <!-- CARD SumaVentas -->
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-md font-weight-bold text-success text-uppercase mb-1">
+                Ganancias</div>
+              <h1 id="sumaVentas"></h1>
+            </div>
+            <div class="col-auto">
+              <h1 class="text-gray-300">S/.</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD Clientes -->
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                clientes</div>
+              <h1 id="totalClientes"></h1>
+            </div>
+            <div class="col-auto">
+              <h1 class="fa fa-users text-gray-300"></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
+
+  <div class="row">
+    <!-- Usuarios -->
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left-info shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Usuarios
+              </div>
+              <h1 id="totalUsuarios"></h1>
+            </div>
+            <div class="col-auto">
+              <i class="fa fa-users fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+  </div>
+
 
 
 

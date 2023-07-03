@@ -1,6 +1,8 @@
 $(document).ready(function () {
     reporte_ventas()
     reporte_sumaventas()
+    reporte_usuarios()
+    reporte_clientes()
     //reporte_productos()
 });
 
@@ -16,13 +18,46 @@ function reporte_ventas() {
 
 }
 
-function reporte_sumaventas() {
-    $.post(base_url + "/suma_ventas",
+function reporte_usuarios() {
+    $.post(base_url + "/reporte_usuarios",
         function (response) {
+
             // Mostrar los datos en tu vista
-            document.getElementById("sumaVentas").textContent = response.sumaVentas;
+            document.getElementById("totalUsuarios").textContent = response.totalUsuarios;
         }, "json"
     );
+
+}
+
+function reporte_clientes() {
+    $.post(base_url + "/reporte_clientes",
+        function (response) {
+
+            // Mostrar los datos en tu vista
+            document.getElementById("totalClientes").textContent = response.totalClientes;
+        }, "json"
+    );
+
+}
+
+function reporte_sumaventas() {
+    $.ajax({
+        url: base_url + '/suma_ventas',
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            // Formatear el valor de la suma de las ventas con puntos y decimales
+            var sumaVentasFormatted = response.sumaVentas.toLocaleString(undefined, {minimumFractionDigits: 2,
+                useGrouping: true});
+
+
+            // Actualizar el contenido del elemento <h1> con el valor formateado
+            document.getElementById("sumaVentas").textContent = sumaVentasFormatted;
+        },
+        error: function() {
+            console.log('Error al obtener la suma de las ventas.');
+        }
+    });
 }
 
 function reporte_productos() {
