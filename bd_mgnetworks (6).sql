@@ -241,12 +241,13 @@ INSERT INTO `usuario` (`ID_Usuario`, `ID_Rol`, `Nombre_Usuario`, `DNI_Usuario`, 
 
 CREATE TABLE `venta` (
   `ID_Venta` int(10) NOT NULL,
+  `codigo_venta` varchar(5) NOT NULL,
   `ID_Cliente` int(10) NOT NULL,
   `Fecha_Venta` date NOT NULL,
   `Estado_Venta` varchar(10) NOT NULL,
-  `Igv_Venta` decimal(4,0) NOT NULL,
-  `Total_Venta` decimal(11,0) NOT NULL,
-  `SubTotal_Venta` decimal(11,0) NOT NULL
+  `Igv_Venta` decimal(4,2) NOT NULL,
+  `Total_Venta` decimal(11,2) NOT NULL,
+  `SubTotal_Venta` decimal(11,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

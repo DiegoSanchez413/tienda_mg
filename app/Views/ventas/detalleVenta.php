@@ -14,7 +14,7 @@
                                     <th>ID</th>
                                     <th>Producto</th>
                                     <th>Cantidad</th>
-                                    <th>Importe</th>
+                                    <th>Precio de producto</th>
                                 </tr>
                             </thead>
                         </table>

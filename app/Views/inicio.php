@@ -1,4 +1,5 @@
 <main class="app-content">
+
   <div class="app-title">
     <div>
       <h1><i class="fa-solid fa-dashboard"></i> Dashboard
@@ -9,34 +10,109 @@
       <li class="breadcrumb-item"><a href="<?= base_url(); ?>inicio">Tienda Virtual</a></li>
     </ul>
   </div>
-  <div>
-    Bienvenido al sistema <?=$_SESSION['nombre']?>
+  <div class="container">
+    <div>
+      <h3> Bienvenido al sistema <?= $_SESSION['nombre'] ?></h3>
+    </div>
+    <br>
   </div>
-  <div class="col-md-6">
-  <canvas id="pie-chart" width="800" height="450"></canvas>
-</div>
-  <script>
-  new Chart(document.getElementById("pie-chart"), {
-    type: 'pie',
-    data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-      datasets: [{
-        label: "Population (millions)",
-        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-        data: [2478,5267,734,784,433]
-      }]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }
-    }
-});
-</script>
+  <div class="row">
+
+
+    <!-- CARD CANTIDAD DE Ventas -->
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                Cantidad Ventas</div>
+              <h1 id="totalVentas"></h1>
+            </div>
+            <div class="col-auto">
+              <i class="fa fa-line-chart fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD SumaVentas -->
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-md font-weight-bold text-success text-uppercase mb-1">
+                Ganancias</div>
+              <h1 id="sumaVentas"></h1>
+            </div>
+            <div class="col-auto">
+              <h1 class="text-gray-300">S/.</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD Clientes -->
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                clientes</div>
+              <h1 id="totalClientes"></h1>
+            </div>
+            <div class="col-auto">
+              <h1 class="fa fa-users text-gray-300"></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="row">
+    <!-- Usuarios -->
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left-info shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Usuarios
+              </div>
+              <h1 id="totalUsuarios"></h1>
+            </div>
+            <div class="col-auto">
+              <i class="fa fa-users fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
+
+
+
+
+  </div>
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+  <script src="<?= base_url() ?>/js/inicio/inicio.js"></script>
 
 
 

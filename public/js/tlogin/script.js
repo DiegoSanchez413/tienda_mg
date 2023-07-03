@@ -21,7 +21,7 @@ formulario.submit(function (e) {
                 // });
                 saveUserInStorage(response.user);
                 // location.href = base_url + 'inicio';
-                location.href = base_url;
+               location.href = base_url;
             } else {
                 swal.fire({
                     title: "¡Error!",

@@ -60,6 +60,7 @@ const formulario = $('#formCliente');
 function openModal() {
     $('#modalFormCliente').modal('show'); //muestra el modal
     formulario[0].reset(); //para limpiar el formulario
+    $("#titleModal").html("Nuevo Registro");
 }
 
 $(formulario).submit(function (e) {
@@ -113,6 +114,7 @@ function EditarCliente(id) {
     $.post(base_url + "/getCliente-x-id", { id: id },
         function (data, textStatus, jqXHR) {
             $('#modalFormCliente').modal('show'); //muestra el modal
+            $("#titleModal").html("Actualizar Registro");
             $("#nota_password").html("Nota: Si rellena este campo, la contraseña será cambiada para este miembro.");
             $("#idCliente").val(data.data[0].ID_Cliente);
             $("#txtNombre").val(data.data[0].Nombre_Cliente);
