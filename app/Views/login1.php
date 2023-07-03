@@ -68,6 +68,7 @@
 						<input id="contraseña" type="password" name="contraseña" class="input" required >
 					</Div>
 				</Div>
+				<a href="#">Olvidé mi contraseña</a>
 				<input type="submit" class="btn" value="Iniciar Sesión">
 			</form>
 		</Div>

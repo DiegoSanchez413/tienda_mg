@@ -39,12 +39,19 @@ function AgregarCompra() {
                                         <td><a href="#" onclick="eliminar_compra('${id_row}',${cant_compras});" class="btn btn-circle btn-sm btn-danger" title="Eliminar"><i class="fa fa-solid fa-trash"></i></a></td>
                                     </tr>`;
 
+        //SUBTOTAL
         sumaImportes = sumaImportes + parseFloat(importe_Compra);
-        $('#subtotal_compra').html(sumaImportes.toFixed(2));
+        let sumaconComas = sumaImportes.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        $('#subtotal_compra').html(sumaconComas);
+        //IGV
         let impuesto = parseFloat(sumaImportes * igv);
-        $('#igv_compra').html(impuesto.toFixed(2));
+        let impuestoconComas = impuesto.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        $('#igv_compra').html(impuestoconComas);
+        //TOTAL
         total = sumaImportes + impuesto;
-        $('#total_compra').html(total.toFixed(2));
+        let totalConComas = total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        $('#total_compra').html(totalConComas);
+        
         $('#total').val(total.toFixed(2));
         $('#subtotal').val(sumaImportes.toFixed(2));
         $('#igv').val(impuesto.toFixed(2));

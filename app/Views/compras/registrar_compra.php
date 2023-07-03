@@ -67,6 +67,7 @@
                         <input type="hidden" id="nombre_producto" name="nombre_producto">
                         <label for="idProducto">Producto <span class="text-danger"></span></label>
                         <select id="idProducto" class="form-control select2 selectarticulos" style="width:100%" data-placeholder="--seleccionar--" name="idProducto">
+                        <option value="">---Seleccionar Producto---</option>
                         <?php foreach ($prod as $row) : ?>
                             <option value="<?= $row['ID_Producto'] ?>"><?= $row['Nombre_Producto'] ?></option>
                             <?php endforeach ?>
@@ -78,6 +79,7 @@
                         <input type="hidden" id="nombre_proveedor" name="nombre_proveedor">
                         <label for="idProveedor">Proveedor <span class="text-danger"></span></label>
                         <select id="idProveedor" class="form-control select2 selectarticulos" style="width:100%" data-placeholder="--seleccionar--" name="idProveedor">
+                        <option value="">---Seleccionar---</option>
                         <?php foreach ($prov as $row) : ?>
                             <option value="<?= $row['ID_Proveedor'] ?>"><?= $row['RazonSocial_Proveedor'] ?></option>
                             <?php endforeach ?>

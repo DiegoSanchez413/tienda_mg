@@ -15,6 +15,7 @@
                                     <th>Producto</th>
                                     <th>Proveedor</th>
                                     <th>Cantidad</th>
+                                    <th>Precio</th>
                                     <th>Importe</th>
                                 </tr>
                             </thead>
