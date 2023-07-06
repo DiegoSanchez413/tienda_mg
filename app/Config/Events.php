@@ -73,6 +73,7 @@ Events::on('post_controller_constructor', function () {
         '\APP\CONTROLLERS\LOGIND', 
         '\APP\CONTROLLERS\PERFIL', 
         '\APP\CONTROLLERS\NOSOTROS', 
+        '\APP\CONTROLLERS\KARDEX', 
     );
     if (!in_array($class, $nocontrolados)) {
         if (!$session->has('id')) {

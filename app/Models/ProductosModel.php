@@ -54,4 +54,12 @@ class ProductosModel extends Model{
         $this->db->close();
         return $query->getResultArray();
     }
+
+    public function cant_productos(){
+        $db=\Config\Database::connect();
+        $builder=$db->table('producto');
+        return $builder->countAllResults();
+    }
+
+    
 }

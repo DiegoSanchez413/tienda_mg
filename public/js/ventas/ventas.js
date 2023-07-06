@@ -1,18 +1,47 @@
 $(document).ready(function () {
-    listar();
-    listar_detalle_venta();
+    listar()
     combo_productos();
 
-    $('.select2').select2();
+    //$('.select2').select2();
 });
-
+function mostrar_ventas(id) {
+    $("#modaldetalle").modal("show");
+    $("#lbltitulo").html("Lista Ventas");
+    listar_detalle_venta(id);
+}
 function listar() {
     $('#tableVentas').DataTable({
         "aProcessing": true,
         "aServerSide": true,
-        dom: "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
-            "<'row'<'col-sm-12'tr>>" +
-            "<'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6'p>>",
+        dom:"<'row'<'col-sm-12 col-md-6'B><'col-sm-12 col-md-6'f>>" +
+        "<'row'<'col-sm-12'tr>>" +
+        "<'row'<'col-sm-12'i><'col-sm-12'p>>",
+            buttons: [
+                {
+                    extend: 'pdfHtml5',
+                    text: 'Exportar a PDF',
+                    exportOptions: {
+                        columns: ':not(:last-child)'
+                    },
+                    orientation: 'portrait',
+                  
+                   
+                },
+                {
+                    extend: 'excelHtml5',
+                    text: 'Exportar a Excel',
+                    exportOptions: {
+                        columns: ':not(:last-child)'
+                    },
+                },
+                {
+                    extend: 'csvHtml5',
+                    text: 'Exportar a CSV',
+                    exportOptions: {
+                        columns: ':not(:last-child)'
+                    }
+                },
+            ],
         "ajax": {
             url: base_url + '/listarVenta',
             type: "post"
@@ -125,9 +154,6 @@ $("#listProducto").change(function (e) {
 });
 
 
-
-
-
 //agregar venta
 let igv = 0.18;
 let cant_ventas = 0;
@@ -172,23 +198,26 @@ function AgregarVenta() {
             <td><input type="hidden" value="${producto_venta}" name="productoid[]">${nombre_producto}</td>
             <td><input type="hidden" value="${cantidad_venta}" name="cantidad[]">${cantidad_venta}</td>
             <td><input type="hidden" value="${precio_venta}" name="precio[]">${precio_venta}</td>
-            <td><input type="hidden" value="${importe_venta}" name="importe_det[]">${importe_venta.toFixed(2)}</td>
+            <td><input type="hidden" value="${importe_venta}" name="importe_det[]">${importe_venta}</td>
             <td><a href="#" onclick="eliminar_venta('${id_row}',${cant_ventas});" class="btn btn-circle btn-sm btn-danger" title="Eliminar"><i class="fa fa-solid fa-trash"></i></a></td>
             </tr>`;
 
+        //subtotal
         sumaImportes = sumaImportes + parseFloat(importe_venta);
-        $('#subtotal_venta').html(sumaImportes.toFixed(2));
-
+        let sumaconComas = sumaImportes.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        $('#subtotal_venta').html(sumaconComas);
+        //igv
         let impuesto = parseFloat(sumaImportes * igv);
+        let impuestoconComas = impuesto.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        $('#igv_venta').html(impuestoconComas);
+        //total
         total = sumaImportes + impuesto;
-
-        $('#total_venta').html(total.toFixed(2));
+        let totalConComas = total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        $('#total_venta').html(totalConComas);
 
         $('#total').val(total.toFixed(2));
         $('#subtotal').val(sumaImportes.toFixed(2));
-
-        $('#igv_venta').html(impuesto.toFixed(2));
-
+        $('#igv').val(impuesto.toFixed(2));
         $('#tbody_ventas').append(fila);
         $('#listProducto').val("").trigger('change');
         $('#cantidad').val("");
@@ -246,11 +275,7 @@ function eliminar_venta(id_row, row) {
     });
 }
 
-function mostrar_ventas(id) {
-    $("#modaldetalle").modal("show");
-    $("#lbltitulo").html("Lista Ventas");
-    listar_detalle_venta(id);
-}
+
 
 const formulario = $('#form_venta');
 $(formulario).submit(function (e) {
@@ -378,3 +403,11 @@ function EliminarVenta(id) {
         }
     });
 }
+
+//PDF
+function pdf(id) {
+    $('#pdf_generar2').modal('show');
+    $('#frame2').attr('src', base_url + "/pdf2/" + id);
+    $('#descargar').attr('href', base_url + "/pdf2/" + id);
+}
+

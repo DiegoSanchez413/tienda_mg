@@ -8,6 +8,8 @@ use App\Models\ClientesModel;
 use App\Models\ProductosModel;
 use App\Models\VentasDetalleModel;
 use Exception;
+use FPDF;
+use DateTime;
 
 class Ventas extends BaseController
 {
@@ -139,8 +141,9 @@ class Ventas extends BaseController
             $sub_array[] = $row["SubTotal_Venta"];
             $sub_array[] = '<div class="btn-group" role="group" aria-label="Button group">
             
-            <a class="btn btn-primary btn-sm" onClick="mostrar_ventas(' . $row["ID_Venta"] . ')" title="DetalleVentas"><i class="fas fa-eye"></i></a>
-        </div>';
+            <a class="btn btn-success text-white" onClick="mostrar_ventas(' . $row["ID_Venta"] . ')" title="Detalleventas"><i class="fas fa-eye"></i></a>
+            <a download="' . $row['codigo_venta'] . 'Orden-compra.pdf" class="btn btn-danger text-white" onClick="pdf(' . $row["ID_Venta"] . ')" title="Reporte"><i class="fas fa-file-pdf"></i></a>
+            </div>';
             $data[] = $sub_array;
         }
         $results = array(
@@ -178,7 +181,164 @@ class Ventas extends BaseController
     }
 
 
-    
+    public function pdfventa($id)
+    {
 
+        $datos = $this->VentasModel->buscar_x_id_datosPDF($id);
+        $detalles = $this->VentasDetalleModel->listar_por_venta($id);
+        $datos = $this->VentasModel->buscar($id);
 
+        
+        $respons = service('response');
+        $pdf = new FPDF('P', 'mm', 'A4');
+        $pdf->AddPage('P', 'A4');
+        $pdf->SetMargins(17,17,17);
+        $respons->setHeader('Content-Type', 'application/pdf');
+        $pdf->SetTitle($datos[0]['codigo_venta'] . ' - BOLETA VENTA');
+        # Logo de la empresa formato png #
+	    $pdf->Image(ROOTPATH . '/public/images/mg.png',165,12,35,35,'PNG');
+
+        // Agregar contenido al PDF
+        $pdf->SetFont('Arial', 'B', 17);
+        $pdf->SetTextColor(27,107,147);
+        $pdf->SetY($pdf->GetY() + 11);
+        $pdf->Cell(180, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'BOLETA'), 0, 1, 'L');
+        $pdf->Ln(5);
+        $pdf->SetFont('Arial', 'B', 9);
+        $pdf->Cell(154, 7,  iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'CODIGO:'), 0, 0, 'L');
+        $pdf->SetX(32); 
+        $pdf->SetFont('Arial', 'B', 9);
+        $pdf->Cell(22, 6.5, iconv("UTF-8", "ISO-8859-1//TRANSLIT", $datos[0]['codigo_venta']), 0, 1, 'L');
+        //$pdf->SetFont('Arial', 'B', 12);
+        
+        $pdf->SetFont('Arial','B',10);
+	    $pdf->SetTextColor(39,39,51);
+	    $pdf->Cell(150,9,utf8_decode("RUC: 20605915494"),0,0,'L');
+       
+	    $pdf->Ln(5);
+        $pdf->SetFont('Arial', 'B', 9);
+        $pdf->Cell(150, 9, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'MG NETWORKS E.I.R.L.'), 0, 0, 'L');
+        $pdf->Ln(5);
+        $pdf->SetFont('Arial', '', 9);
+        $pdf->Cell(150, 9, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'Av. San Martin de Porres Nro. 1320 Dpto. 504 INT. S'), 0, 0, 'L');
+        $pdf->Ln(5);
+        $pdf->SetFont('Arial', '', 9);
+        $pdf->Cell(150, 9, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'LIMA - LIMA - ATE'), 0, 0, 'L');
+        $pdf->Ln(7);
+        $pdf->SetFont('Arial', 'B', 9);
+        $pdf->Cell(152, 5, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'FECHA:'), 0, 0, 'L');
+        $pdf->SetX(30); 
+        $pdf->SetFont('Arial', '', 9);
+        $pdf->Cell(24,5, iconv("UTF-8", "ISO-8859-1//TRANSLIT",  date("d-m-Y", strtotime($datos[0]['Fecha_Venta']))), 0, 1, 'L');
+        //$pdf->Ln(1);
+        $pdf->Ln(7);   
+        $pdf->SetFont('Arial', 'B', 9);
+        $pdf->Cell(20, 5, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'CLIENTE: '), 0, 0, 'L'); 
+        $pdf->SetX(35);                         //  - salto de linea
+        $pdf->SetFont('Arial', '', 9);
+        //$pdf->Cell(160, 5, iconv("UTF-8", "ISO-8859-1//TRANSLIT", $datos[0]['Nombre_Cliente']), 0, 1, 'L');
+        $nombreCompleto = $datos[0]['Nombre_Cliente'] . ' ' . $datos[0]['Apellido_Cliente'];
+        $pdf->Cell(160, 5, iconv("UTF-8", "ISO-8859-1//TRANSLIT", $nombreCompleto), 0, 1, 'L');
+        
+        $pdf->Ln(2);
+
+        # Tabla de productos #
+	    $pdf->SetFont('Arial','B',8);
+	    $pdf->SetFillColor(50,72,115);
+	    $pdf->SetDrawColor(50,72,115);
+	    $pdf->SetTextColor(255,255,255);
+
+        $pdf->Cell(10,8,utf8_decode("#"),1,0,'C',true);
+	    $pdf->Cell(65,8,utf8_decode("PRODUCTOS"),1,0,'C',true);
+	    $pdf->Cell(35,8,utf8_decode("MARCA"),1,0,'C',true);
+	    $pdf->Cell(19,8,utf8_decode("CANTIDAD"),1,0,'C',true);
+        $pdf->Cell(19,8,utf8_decode("PRECIO"),1,0,'C',true);
+	    $pdf->Cell(30,8,utf8_decode("IMPORTE"),1,0,'C',true);
+
+	    $pdf->Ln(9);
+
+	
+	    $pdf->SetTextColor(39,39,51);
+
+        $contador = 0;
+        $espacioBlanco = 7;
+        foreach ($detalles as $row) {
+            $nombre_producto_lines = str_split($row->Nombre_Producto, 14);
+            $elementos = count($nombre_producto_lines);
+            $elementos = $elementos + ($elementos - 1);
+            $pdf->SetFont('Arial', '', 8);
+            $x = $pdf->GetX();
+            $y = $pdf->GetY();
+            $contador++;
+            $pdf->SetDrawColor(0,0,0);
+            $pdf->SetXY($x, $y);
+            $pdf->MultiCell(10, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", $contador) ,0, 'C');
+            $pdf->SetXY($x + 12, $y + 0);
+            $pdf->MultiCell(60, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", $row->Nombre_Producto), 0, 'C');
+            
+            $pdf->SetXY($x + 55, $y);
+            $pdf->MultiCell(75, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", $row->Marca_Producto), 0, 'C');
+            $pdf->SetXY($x + 85, $y);
+            $pdf->MultiCell(68, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", $row->Cantidad_DetalleVenta), 0, 'C');
+            $pdf->SetXY($x + 85, $y);
+            $pdf->MultiCell(108, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", $row->Precio_DetalleVenta), 0, 'C');
+            //$precio=number_format($row['Precio_DetalleVenta'], 2, '.', ',');
+            //$pdf->MultiCell(108, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", $precio), 0, 'C');
+            //$pdf->SetXY($x + 10, $y+1);
+            //$pdf->MultiCell(45, 3, iconv("UTF-8", "ISO-8859-1//TRANSLIT", $row['Precio_DetalleVenta']), 0, 'C');
+           // $pdf->MultiCell(108, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", $row->Precio_Detalle), 0, 'C');
+
+            $pdf->SetXY($x + 115, $y);
+            //$importec=number_format($row['ImporteVenta_DetalleVenta'], 2, '.', ',');
+            $pdf->MultiCell(100, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT",$row->ImporteVenta_DetalleVenta), 0, 'C');
+
+            $y = $pdf->GetY() + $espacioBlanco; // Agrega un espacio en blanco de 10 unidades
+            $pdf->SetY($y); // Establece la nueva posición Y
+
+            $pdf->Ln(7);
+        }
+            $pdf->Cell(90, 1, '', '', 1);
+            $pdf->Line($pdf->GetX() + 120, $pdf->GetY(), $pdf->GetX() + 172, $pdf->GetY());
+            
+            $pdf->SetFont('Arial', 'B', 9);
+            $pdf->Cell(139, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'SUB TOTAL:'), 0, 0, 'R');
+            $pdf->SetFont('Arial', '', 9);
+            $subtotal=number_format($datos[0]['SubTotal_Venta'], 2, '.', ',');
+            $pdf->Cell(33, 7,'S/. '. iconv("UTF-8", "ISO-8859-1//TRANSLIT", $subtotal), 0, 1, 'R');
+            $pdf->SetFont('Arial', 'B', 9);
+            $pdf->Cell(140, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'IGV(%): '), 0, 0, 'R');
+            $pdf->SetFont('Arial', 'B', 9);
+            $igv2=number_format(intval($datos[0]['SubTotal_Venta'])*0.18,'2','.',',');
+            $pdf->Cell(33, 7,'S/. '. iconv("UTF-8", "ISO-8859-1//TRANSLIT", $igv2), 0, 1, 'R');
+            
+            $pdf->Cell(90, 1, '', '', 1);
+            $pdf->Line($pdf->GetX() + 120, $pdf->GetY(), $pdf->GetX() + 172, $pdf->GetY());
+            $pdf->SetFont('Arial', 'B', 9);
+            $pdf->Ln(1);
+            $pdf->Cell(140, 7, iconv("UTF-8", "ISO-8859-1//TRANSLIT", 'TOTAL: '), 0, 0, 'R');
+            $pdf->SetFont('Arial', '', 9);
+            $total=number_format($datos[0]['Total_Venta'], 2, '.', ',');
+            $pdf->Cell(32, 7,'S/. '. iconv("UTF-8", "ISO-8859-1//TRANSLIT", $total), 0, 1, 'R');
+
+            $pdf->Output($datos[0]['codigo_venta'] . '-Orden-de-compra.pdf', 'I');
+
+        // Generar el PDF
+        $pdfContent = $pdf->Output('S'); // Obtener el contenido del PDF como una cadena
+
+        // Retornar el PDF desde el controlador
+        $response = service('response');
+        $response->setHeader('Content-Type', 'application/pdf');
+        $response->setBody($pdfContent);
+
+        return $response;
+
+        // Creamos una instancia de la clase DateTime con la fecha actual
+        $fecha_actual = new DateTime();
+
+        // Formateamos la fecha en el formato deseado
+        $fecha_formateada = $fecha_actual->format('j \d\e F \d\e\l Y');
+    }
 }
+
+
+

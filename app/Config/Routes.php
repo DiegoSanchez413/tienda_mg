@@ -38,10 +38,16 @@ $routes->get('cerrar_sesion', 'LoginD::cerrarSesion');
 
 //INICIO DASHBOARD-REPORTES
 $routes->post('reporte_ventas','Inicio::reporte_ventas');
-$routes->post('reporte_productos','Inicio::reporte_productos');
 $routes->get('suma_ventas','Inicio::suma_ventas');
 $routes->post('reporte_usuarios','Inicio::reporte_usuarios');
 $routes->post('reporte_clientes','Inicio::reporte_clientes');
+$routes->get('reporte_ventas_mes','Inicio::obtenerVentasPorMes');
+$routes->post('reporterotacion','Inicio::rotacion_productos');
+
+//KARDEX
+$routes->get('kardex', 'Kardex::index');
+$routes->post('listarMovimientos', 'Kardex::Listar');
+$routes->post('registrar_movimiento', 'Kardex::create_movimiento');
 
 //LOGIN CLIENTE
 $routes->get('tlogin', 'Login::index');
@@ -118,6 +124,12 @@ $routes->get('/pdf/(:num)', 'Compras::pdf/$1');
 
 //VENTAS
 $routes->get('ventas', 'Ventas::index');
+$routes->get('RegistrarVenta', 'Ventas::index2');
+$routes->post('RegistrarVenta', 'Ventas::RegistrarVenta');
+$routes->post('listarVenta', 'Ventas::listar');
+$routes->post('listarDetalleVenta', 'Ventas::listarDetalles');
+$routes->get('/pdf2/(:num)', 'Ventas::pdfventa/$1');
+
 
 //CARRITO
 $routes->get('carrito', 'Carrito::index');
@@ -141,12 +153,6 @@ $routes->get('mis-compras', 'Carrito::purchases');
 $routes->post('mis-compras/lista', 'Carrito::list_purchases');
 $routes->get('mis-compras/detalle/(:any)', 'Carrito::purchase_detail/$1');
 
-//ventas
-$routes->get('ventas', 'Ventas::index');
-$routes->get('RegistrarVenta', 'Ventas::index2');
-$routes->post('RegistrarVenta', 'Ventas::RegistrarVenta');
-$routes->post('listarVenta', 'Ventas::listar');
-$routes->post('listarDetalleVenta', 'Ventas::listarDetalles');
 
 //Tienda nosotros
 $routes->get('nosotros', 'Nosotros::index');

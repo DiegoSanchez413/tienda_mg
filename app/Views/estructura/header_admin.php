@@ -20,10 +20,9 @@
   <script src="<?= base_url(); ?>/js/sweetalert2.min.js"></script>
   <!-- Sweet Alert 2-->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link href="//cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
-  <!--Graficos para dashboard-->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
@@ -38,10 +37,12 @@
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
       <!-- User Menu-->
-      <input id="id_usuario" type="hidden" name="id_usuario" value="<?php echo $_SESSION['id']?>">
-      <span class="mr-2 d-none d-lg-inline text-white mt-4" id="nombre_user_sesion" style="text-transform: uppercase;"></span> 
-      <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><div id="perfil_user_sesion" class="imagen">
-      </div></a>
+      <input id="id_usuario" type="hidden" name="id_usuario" value="<?php echo $_SESSION['id'] ?>">
+      <span class="mr-2 d-none d-lg-inline text-white mt-4" id="nombre_user_sesion" style="text-transform: uppercase;"></span>
+      <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu">
+          <div id="perfil_user_sesion" class="imagen">
+          </div>
+        </a>
         <ul class="dropdown-menu settings-menu dropdown-menu-right">
           <li><a class="dropdown-item" href="<?= base_url(); ?>/opciones"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
           <li><a class="dropdown-item" href="<?= base_url(); ?>/Perfil"><i class="fa fa-user fa-lg"></i> Profile</a></li>
@@ -51,7 +52,7 @@
     </ul>
   </header>
   <style>
-    .img-profile{
+    .img-profile {
       width: 35px;
       height: 35px;
     }

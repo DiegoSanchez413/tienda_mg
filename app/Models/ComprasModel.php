@@ -74,4 +74,5 @@ public function generar_codigo_compra()
     return $generar_codigo;
 }
 
+
 }

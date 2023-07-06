@@ -6,15 +6,27 @@ use App\Models\VentasModel;
 use App\Models\ProductosModel;
 use App\Models\UsuariosModel;
 use App\Models\ClientesModel;
+use App\Models\VentasDetalleModel;
+
+use CodeIgniter\CLI\Console;
 
 class Inicio extends BaseController
 {
+    protected  $ProductosModel;
+    protected $VentasDetalleModel;
+    protected $VentasModel;
+
+    public function __construct()
+    {
+        $this->ProductosModel = new ProductosModel();
+        $this->VentasDetalleModel = new VentasDetalleModel();
+        $this->VentasModel = new VentasModel();
+    }
     public function index()
     {
         $vista = "inicio";
-        $this->estructura($vista); //llamar a los archivos
-
-
+        $data = ['CantInventario' => $this->ProductosModel->cant_productos()];
+        $this->estructura($vista,$data); //llamar a los archivos
     }
 
     public function reporte_ventas()
@@ -66,7 +78,41 @@ class Inicio extends BaseController
         echo json_encode($data);
     }
 
+    public function obtenerVentasPorMes()
+    {
+        $data = array();
+        $data['data'] = $this->VentasModel->obtenerVentasPorMes();
+        return $this->response->setJSON($data);
 
+    }
+
+    public function rotacion_productos()
+    {
+        $data = array();
+        $data['data'] = $this->VentasDetalleModel->reporte_rotacion_productos();
+        echo json_encode($data);
+    }
+
+    public function mostrarGrafica()
+    {
+        $productosModel = new ProductosModel();
+        $productos = $productosModel->findAll(); // Obtener todos los productos de la base de datos
+
+        $productos_nombres = [];
+        $productos_cantidades = [];
+
+        foreach ($productos as $producto) {
+            $productos_nombres[] = $producto['Nombre_Producto'];
+            $productos_cantidades[] = $producto['Stock_Producto'];
+        }
+
+        $datos = [
+            'productos_nombres' => $productos_nombres,
+            'productos_cantidades' => $productos_cantidades
+        ];
+
+        return json_encode($datos);
+    }
     /*public function reporte_productos()
     {
         $productosModel = new ProductosModel();

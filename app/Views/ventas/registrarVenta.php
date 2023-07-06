@@ -44,8 +44,8 @@
                         <div class="invalid-feedback">Campo obligatorio</div>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="igv">IGV </label>
-                        <input type="hidden" id="igv" name="igv" value="0.18">
+                        <label for="">IGV </label>
+                        <input type="hidden" id="" name="" value="0.18">
                         <input type="text" value="18%" class="form-control" disabled>
 
                         <div class="invalid-feedback">Este campo es requerido</div>

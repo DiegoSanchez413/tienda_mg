@@ -9,7 +9,7 @@ class VentasModel extends Model
     protected $table = 'venta';
     // Uncomment below if you want add primary key
     protected $primaryKey = 'ID_Venta';
-    protected $allowedFields = ['codigo_venta','ID_Cliente', 'Fecha_Venta', 'Estado_Venta', 'Igv_Venta', 'Total_Venta', 'SubTotal_Venta'];
+    protected $allowedFields = ['codigo_venta', 'ID_Cliente', 'Fecha_Venta', 'Estado_Venta', 'Igv_Venta', 'Total_Venta', 'SubTotal_Venta'];
     protected $db;
     protected $builder;
 
@@ -54,5 +54,36 @@ class VentasModel extends Model
         return $generar_codigo;
     }
 
+    public function buscar_x_id_datosPDF($id)
+    {
+        $this->builder->select("*");
+        $this->builder->join('cliente as c', 'c.ID_Cliente= venta.ID_Cliente');
+        $this->builder->where('ID_Venta', $id);
+        $query = $this->builder->get();
+        $this->db->close();
+        return $query->getResultArray();
+    }
 
+    public function buscar($id)
+    {
+        $this->builder->select('*');
+        $this->builder->join('cliente as c', 'c.ID_Cliente= venta.ID_Cliente');
+        $this->builder->where('ID_Venta', $id);
+        $query = $this->builder->get();
+        $this->db->close();
+        return $query->getResultArray();
+    }
+
+    public function obtenerVentasPorMes()
+    {
+        $db=\Config\Database::connect();
+        $builder=$db->table('venta as v');
+        $builder-> select('MONTH(Fecha_Venta) AS Mes, COUNT(*) AS Ventas FROM venta GROUP BY MONTH(Fecha_Venta)');
+        $query=$builder->get();
+        $db->close();
+        return $query->getResultArray();
+    }
+
+
+    
 }

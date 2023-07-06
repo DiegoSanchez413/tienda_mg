@@ -1,4 +1,3 @@
-
 <section class="py-5">
   <div class="container">
     <div class="row gx-5">
@@ -39,24 +38,14 @@
             <span class="h5">S/. <?= $producto['Precio_Producto']; ?></span>
           </div>
 
-          <p class="text-uppercase">
-            <?= $producto['Descripcion_Producto']; ?>
-          </p>
-
           <div class="row">
             <dt class="col-3">Marca:</dt>
             <dd class="col-9 text-uppercase"> <?= $producto['Marca_Producto']; ?></dd>
-
-            <!-- <dt class="col-3">Color</dt>
-            <dd class="col-9">Brown</dd>
-
-            <dt class="col-3">Material</dt>
-            <dd class="col-9">Cotton, Jeans</dd>
-
-            <dt class="col-3">Brand</dt>
-            <dd class="col-9">Reebook</dd> -->
           </div>
 
+          <p class="text-uppercase">
+            <?= $producto['Descripcion_Producto']; ?>
+          </p>
           <hr />
 
           <div class="row mb-4">
@@ -72,11 +61,11 @@
             <div class="col-md-4 col-6 mb-3">
               <label class="mb-2 d-block">Cantidad</label>
               <div class="input-group mb-3" style="width: 170px;">
-                <button class="btn btn-white border border-secondary px-3" type="button"  id="decrease" onClick="decreaseQuantity()" data-mdb-ripple-color="dark">
+                <button class="btn btn-white border border-secondary px-3" type="button" id="decrease" onClick="decreaseQuantity()" data-mdb-ripple-color="dark">
                   <i class="fas fa-minus"></i>
                 </button>
 
-                <input type="text" class="form-control text-center border border-secondary" placeholder="1" value="1" id="quantity"/>
+                <input type="text" class="form-control text-center border border-secondary" placeholder="1" value="1" id="quantity" />
 
                 <button class="btn btn-white border border-secondary px-3" type="button" id="increase" onClick="increaseQuantity()" data-mdb-ripple-color="dark">
                   <i class="fas fa-plus"></i>
@@ -85,7 +74,7 @@
             </div>
           </div>
           <!-- redirect to cart -->
-          <a href="#" class="btn btn-warning shadow-0" > Comprar ahora </a>
+          <a href="#" class="btn btn-warning shadow-0"> Comprar ahora </a>
           <a href="#" class="btn btn-primary shadow-0" id="buy" onClick="addToCart()"> <i class="me-1 fa fa-shopping-basket"></i> Añadir al carrito </a>
           <!-- <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> <i class="me-1 fa fa-heart fa-lg"></i> Save </a> -->
         </div>
@@ -96,38 +85,37 @@
 
 
 <script>
-    function increaseQuantity() {
-        var quantity = document.getElementById('quantity');
-        quantity.value = parseInt(quantity.value) + 1;
+  function increaseQuantity() {
+    var quantity = document.getElementById('quantity');
+    quantity.value = parseInt(quantity.value) + 1;
+  }
+
+  function decreaseQuantity() {
+    var quantity = document.getElementById('quantity');
+    if (parseInt(quantity.value) > 1) {
+      quantity.value = parseInt(quantity.value) - 1;
+    }
+  }
+
+  function addToCart() {
+    const producto = <?php echo json_encode($producto); ?>;
+    const quantity = document.getElementById('quantity').value;
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    producto.quantity = quantity;
+    checkIfExistProduct(producto);
+  }
+
+  function checkIfExistProduct(producto) {
+    // if product exists sum quantity previus and new
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const productExist = cart.find(product => product.ID_Producto == producto.ID_Producto);
+    if (productExist) {
+      productExist.quantity = parseInt(productExist.quantity) + parseInt(producto.quantity);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    } else {
+      cart.push(producto);
+      localStorage.setItem('cart', JSON.stringify(cart));
     }
 
-    function decreaseQuantity() {
-        var quantity = document.getElementById('quantity');
-        if (parseInt(quantity.value) > 1) {
-            quantity.value = parseInt(quantity.value) - 1;
-        }
-    }
-
-    function addToCart() {
-        const producto = <?php echo json_encode($producto); ?>;
-        const quantity = document.getElementById('quantity').value;
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        producto.quantity = quantity;
-        checkIfExistProduct(producto);
-    }
-
-    function checkIfExistProduct(producto){
-        // if product exists sum quantity previus and new
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const productExist = cart.find(product => product.ID_Producto == producto.ID_Producto);
-        if(productExist){
-            productExist.quantity = parseInt(productExist.quantity) + parseInt(producto.quantity);
-            localStorage.setItem('cart', JSON.stringify(cart));
-        }else{
-            cart.push(producto);
-            localStorage.setItem('cart', JSON.stringify(cart));
-        }
-
-    }
+  }
 </script>
-       
