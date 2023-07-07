@@ -2,23 +2,24 @@
 
   <div class="app-title">
     <div>
-      <h1><i class="fa-solid fa-dashboard"></i> Dashboard
+      <h1><i class="fa fa-home fa-sm mr-1"> </i> Inicio
       </h1>
     </div>
     <ul class="app-breadcrumb breadcrumb">
-      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+      
       <li class="breadcrumb-item"><a href="<?= base_url(); ?>inicio">Tienda Virtual</a></li>
     </ul>
   </div>
-  <div class="container">
-    <div>
-      <h3> Bienvenido al sistema <?= $_SESSION['nombre'] ?></h3>
-    </div>
-    <br>
+  
+  <div class="col-md-12 mb-4">
+        <div class="card border-left-success shadow h-100 py-0">
+            <div class="card-body">
+                <h2>Bienvenido al sistema " <?=$_SESSION['nombre']?> "</h2>
+            </div>
+        </div>
   </div>
+
   <div class="row">
-
-
     <!-- CARD CANTIDAD DE Ventas -->
     <div class="col-xl-4 col-md-6 mb-4">
       <div class="card border-left-primary shadow h-100 py-2">
@@ -144,11 +145,8 @@
 
   </div>
 
-
-
-
-
-
+<!--STYLE LOGIN-->
+<link rel="stylesheet" href="<?php echo base_url(); ?>//css/inicio.css" type="text/css">
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="<?= base_url() ?>/js/chart/Chart.min.js"></script>
