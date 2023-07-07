@@ -11,7 +11,7 @@
   <script type="text/javascript" src="<?= base_url(); ?>/js/plugins/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="<?= base_url(); ?>/js/plugins/dataTables.bootstrap.min.js"></script>
   <script type="text/javascript" src="<?= base_url(); ?>/js/plugins/bootstrap-select.min.js"></script>
-  <script type="text/javascript" src="<?= base_url(); ?>/js/jquery/jquery.min.js"></script>
+ 
 
 
   <!--Datatables-->

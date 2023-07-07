@@ -74,15 +74,6 @@ class VentasModel extends Model
         return $query->getResultArray();
     }
 
-    public function obtenerVentasPorMes()
-    {
-        $db=\Config\Database::connect();
-        $builder=$db->table('venta as v');
-        $builder-> select('MONTH(Fecha_Venta) AS Mes, COUNT(*) AS Ventas FROM venta GROUP BY MONTH(Fecha_Venta)');
-        $query=$builder->get();
-        $db->close();
-        return $query->getResultArray();
-    }
 
 
     

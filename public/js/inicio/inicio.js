@@ -119,11 +119,11 @@ function reporte_rotacion_productos() {
                 datasets: [{
                     data: array_cantidad,
                     backgroundColor: [
-                        "#ffff00",
-                        "#bd081c",
-                        "#000000",
-                        "#3B5998",
-                        "#1da1f2",
+                        "#1BAFBF",
+                        "#038C73",
+                        "#29A63C",
+                        "#F2A007",
+                        "#4CFFEA",
                         "#a6b1b7",
                     ],
                     label: 'My dataset', // for legend
@@ -149,7 +149,9 @@ function reporte_rotacion_productos() {
 }
 
 function reporte_productos_cantidades(productos_nombres, productos_cantidades) {
-    // Crea la instancia de Chart.js y configura la gráfica de barras
+    $.post(base_url + "/reportecantidad", {},
+    
+    function (data) {// Crea la instancia de Chart.js y configura la gráfica de barras
     var ctx = document.getElementById('grafica').getContext('2d');
     var grafica = new Chart(ctx, {
         type: 'bar',
@@ -171,6 +173,6 @@ function reporte_productos_cantidades(productos_nombres, productos_cantidades) {
             }
         }
     });
+})
 }
-
 

@@ -41,8 +41,9 @@ $routes->post('reporte_ventas','Inicio::reporte_ventas');
 $routes->get('suma_ventas','Inicio::suma_ventas');
 $routes->post('reporte_usuarios','Inicio::reporte_usuarios');
 $routes->post('reporte_clientes','Inicio::reporte_clientes');
-$routes->get('reporte_ventas_mes','Inicio::obtenerVentasPorMes');
 $routes->post('reporterotacion','Inicio::rotacion_productos');
+
+
 
 //KARDEX
 $routes->get('kardex', 'Kardex::index');

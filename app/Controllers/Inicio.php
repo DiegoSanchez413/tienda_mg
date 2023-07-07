@@ -29,6 +29,7 @@ class Inicio extends BaseController
         $this->estructura($vista,$data); //llamar a los archivos
     }
 
+    //REPORTE PARA CANTIDAD DE VENTAS
     public function reporte_ventas()
     {
         $ventasModel = new VentasModel();
@@ -40,6 +41,7 @@ class Inicio extends BaseController
         echo json_encode($data);
     }
 
+    //REPORTE PARA VER LAS GANANCIAS-SUMA DE TODAS LAS VENTAS
     public function suma_ventas()
     {
         $db = \Config\Database::connect();
@@ -56,6 +58,7 @@ class Inicio extends BaseController
         echo json_encode($data);
     }
 
+    //REPORTE PARA CANTIDAD DE USUARIOS
     public function reporte_usuarios()
     {
         $usuariosModel = new UsuariosModel();
@@ -67,6 +70,7 @@ class Inicio extends BaseController
         echo json_encode($data);
     }
 
+    //REPORTE PARA CANTIDAD DE CLIENTES
     public function reporte_clientes()
     {
         $clientesModel = new ClientesModel();
@@ -78,14 +82,7 @@ class Inicio extends BaseController
         echo json_encode($data);
     }
 
-    public function obtenerVentasPorMes()
-    {
-        $data = array();
-        $data['data'] = $this->VentasModel->obtenerVentasPorMes();
-        return $this->response->setJSON($data);
-
-    }
-
+    //REPORTE PARA VER PRODUCTOS MAS VENDIDOS
     public function rotacion_productos()
     {
         $data = array();
@@ -93,39 +90,5 @@ class Inicio extends BaseController
         echo json_encode($data);
     }
 
-    public function mostrarGrafica()
-    {
-        $productosModel = new ProductosModel();
-        $productos = $productosModel->findAll(); // Obtener todos los productos de la base de datos
-
-        $productos_nombres = [];
-        $productos_cantidades = [];
-
-        foreach ($productos as $producto) {
-            $productos_nombres[] = $producto['Nombre_Producto'];
-            $productos_cantidades[] = $producto['Stock_Producto'];
-        }
-
-        $datos = [
-            'productos_nombres' => $productos_nombres,
-            'productos_cantidades' => $productos_cantidades
-        ];
-
-        return json_encode($datos);
-    }
-    /*public function reporte_productos()
-    {
-        $productosModel = new ProductosModel();
-        $productos = $productosModel->findAll();
-
-        $data = array();
-        foreach ($productos as $producto) {
-            $item['nombre'] = $producto['Nombre_Producto'];
-            $item['cantidad'] = $producto['Stock_Producto'];
-            $data[] = $item;
-        }
-
-        header('Content-Type: application/json');
-        echo json_encode($data);
-    }*/
+    
 }

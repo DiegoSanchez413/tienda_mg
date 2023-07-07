@@ -39,5 +39,6 @@
 </main>
 <?php include 'modal2.php' ?>
 <?php include 'detalleVenta.php' ?>
-
+<script type="text/javascript" src="<?= base_url(); ?>/js/jquery/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="<?= base_url() ?>/js/ventas/ventas.js"></script>
