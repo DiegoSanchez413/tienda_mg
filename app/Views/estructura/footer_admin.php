@@ -1,3 +1,40 @@
+<style>
+    body {
+        min-height: 100vh;
+        margin: 0; /* Asegura que no haya margen alrededor del body */
+        padding-bottom: 60px; /* Añade un espacio al final del contenido para evitar que el footer se superponga */
+        position: relative; /* Establece el cuerpo como posición relativa */
+    }
+
+    .content {
+        flex: 1;
+    }
+
+    footer {
+        background-color: #114f74;
+        padding:9px 30px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: white; /* Cambia el color del texto a blanco */
+        line-height: 0.5; /* Ajusta el espacio entre líneas según tus preferencias */
+        text-align: center; /* Centra el texto */
+        font-size: 12px; /* Ajusta el tamaño de la letra según tus preferencias */
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+  
+    <footer class="text-center">
+        <div class="container">
+            <p>MG NETWORKS E.I.R.L</p>
+            <p>Av. San Martin De Porres Nro. 1320 Dpto. 504 int. S</p>
+        </div>
+    </footer>
+</body>
+  
   <!-- Essential javascripts for application to work-->
   <script src="<?= base_url(); ?>/js/popper.min.js"></script>
   <script src="<?= base_url(); ?>/js/bootstrap.min.js"></script>
