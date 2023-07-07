@@ -49,7 +49,7 @@
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
-                    
+
                     <a class="nav-icon position-relative text-decoration-none" href="<?= base_url(); ?>carrito">
                         <button type="button" class="btn btn-outline-light position-relative">
                             <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -57,12 +57,12 @@
                             </span>
                         </button>
                     </a>
-                    
-                    <a class="nav-icon position-relative text-decoration-none" href="<?= base_url(); ?>mis-compras">
+
+                    <!--<a class="nav-icon position-relative text-decoration-none" href="<?= base_url(); ?>mis-compras">
                         <button type="button" class="btn btn-outline-light position-relative">
                             <i class="fa fa-fw  fa-list-alt text-dark mr-1"></i>
                         </button>
-                    </a>
+                    </a>-->
                     <!-- href="<?= base_url(); ?>tlogin" -->
                     <a class="nav-icon position-relative text-decoration-none" id="client_fullname_link" href="<?= base_url(); ?>tlogin">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
@@ -108,6 +108,7 @@
             padding-top: 60px;
             transition: 0.5s;
         }
+
         .sidebar a {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
@@ -141,6 +142,7 @@
         .openbtn:hover {
             background-color: #444;
         }
+
         #main {
             transition: margin-left .5s;
             padding: 20px;
@@ -157,15 +159,12 @@
         }
     </style>
 
-<script>
-    const client_fullname_link = document.getElementById('client_fullname_link');
+    <script>
+        const client_fullname_link = document.getElementById('client_fullname_link');
 
-    if(JSON.parse(localStorage.getItem('user')).Nombre_Cliente){
-        client_fullname_link.setAttribute('href', '/mis-compras');
-    }else{
-        client_fullname_link.setAttribute('href', '/tlogin');
-    }
-   
-
-
-</script>
+        if (JSON.parse(localStorage.getItem('user')).Nombre_Cliente) {
+            client_fullname_link.setAttribute('href', '/mis-compras');
+        } else {
+            client_fullname_link.setAttribute('href', '/tlogin');
+        }
+    </script>

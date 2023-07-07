@@ -24,8 +24,6 @@ function listar() {
                         columns: ':not(:last-child)'
                     },
                     orientation: 'portrait',
-                  
-                   
                 },
                 {
                     extend: 'excelHtml5',
