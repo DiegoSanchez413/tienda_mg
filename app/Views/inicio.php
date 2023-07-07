@@ -125,15 +125,15 @@
       </div>
     </div>
 
-    <!------VENTAS POR MES-------->
+    <!------VENTAS POR MES--
     <div class="col-md-6 mb-4">
-      <div class="card card-style border-left-primary">
+      <div class="card card-style border-left-success">
         <div class="card-body">
-          <h6 class="text-center text-gray-800">VENTAS POR MES</h6>
-          <canvas id="grafica" height="200" width="400"></canvas>
+          <h3 class="text-xs text-center font-weight-bold text-warning text-uppercase mb-1">VENTAS POR MES</h3>
+          <canvas id="grafico-ventas-por-mes" height="200" width="400"></canvas>
         </div>
       </div>
-    </div>
+    </div>------>
 
   </div>
 

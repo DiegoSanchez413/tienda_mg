@@ -65,7 +65,7 @@ class Carrito extends BaseController
                 "reference_id" => $item->ID_Producto,
                 "amount" => array(
                     "currency_code" => "USD",
-                    "value" => $item->Precio_Producto * $item->quantity
+                    "value" => (($item->Precio_Producto * $item->quantity)*0.18)+($item->Precio_Producto * $item->quantity)
 
                 ),
                 "shipping" => array(

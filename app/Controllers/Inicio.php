@@ -90,5 +90,19 @@ class Inicio extends BaseController
         echo json_encode($data);
     }
 
+    /*REPORTE VENTAS POR MES
+    public function reporteVentas()
+    {
+        $ventasModel = new VentasModel();
+
+        // Obtener la cantidad de ventas por mes desde el modelo
+        $cantidadVentasPorMes = $ventasModel->obtenerCantidadVentasPorMes();
+
+        $data['$cantidadVentasPorMes']= $cantidadVentasPorMes;
+
+        echo json_encode($data);
+        // Enviar los datos al frontend
+        //return $this->response->setJSON($cantidadVentasPorMes);
+    }*/
     
 }
