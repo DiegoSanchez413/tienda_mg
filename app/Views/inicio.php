@@ -119,7 +119,7 @@
     <div class="col-md-6 mb-4">
       <div class="card card-style border-left-success">
         <div class="card-body">
-          <h3 class="text-xs text-center font-weight-bold text-primary text-uppercase mb-1">Productos mas vendidos</h3>
+          <h3 class="text-xs text-center font-weight-bold text-primary text-uppercase mb-1">Productos más vendidos</h3>
           <canvas id="reporte_rotacion_productos" height="200" width="400"></canvas>
         </div>
       </div>
