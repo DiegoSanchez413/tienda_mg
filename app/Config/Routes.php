@@ -42,6 +42,7 @@ $routes->get('suma_ventas','Inicio::suma_ventas');
 $routes->post('reporte_usuarios','Inicio::reporte_usuarios');
 $routes->post('reporte_clientes','Inicio::reporte_clientes');
 $routes->post('reporterotacion','Inicio::rotacion_productos');
+$routes->post('menos_productos','Inicio::menos_productos');
 
 
 

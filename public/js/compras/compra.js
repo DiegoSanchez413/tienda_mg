@@ -51,7 +51,7 @@ function AgregarCompra() {
         total = sumaImportes + impuesto;
         let totalConComas = total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         $('#total_compra').html(totalConComas);
-        
+
         $('#total').val(total.toFixed(2));
         $('#subtotal').val(sumaImportes.toFixed(2));
         $('#igv').val(impuesto.toFixed(2));
@@ -89,26 +89,26 @@ function eliminar_compra(id_row, row) {
                 icon: 'success',
                 showConfirmButton: false
             });
-             // Recalcular subtotal, IGV y total
-             sumaImportes = 0;
-             $('#tbody_compras tr').each(function () {
-                 sumaImportes += parseFloat($(this).find('input[name="importe_det[]"]').val());
-             });
- 
-             $('#subtotal_compra').html(sumaImportes.toFixed(2));
- 
-             let impuesto = parseFloat(sumaImportes * igv);
-             $('#igv_compra').html(impuesto.toFixed(2));
- 
-             total = sumaImportes + impuesto;
-             $('#total_compra').html(total.toFixed(2));
- 
-             $('#total').val(total.toFixed(2));
-             $('#subtotal').val(sumaImportes.toFixed(2));
-             $('#igv').val(impuesto.toFixed(2));
- 
-             cant_compras--;
-             $('#idProducto').val('').focus();
+            // Recalcular subtotal, IGV y total
+            sumaImportes = 0;
+            $('#tbody_compras tr').each(function () {
+                sumaImportes += parseFloat($(this).find('input[name="importe_det[]"]').val());
+            });
+
+            $('#subtotal_compra').html(sumaImportes.toFixed(2));
+
+            let impuesto = parseFloat(sumaImportes * igv);
+            $('#igv_compra').html(impuesto.toFixed(2));
+
+            total = sumaImportes + impuesto;
+            $('#total_compra').html(total.toFixed(2));
+
+            $('#total').val(total.toFixed(2));
+            $('#subtotal').val(sumaImportes.toFixed(2));
+            $('#igv').val(impuesto.toFixed(2));
+
+            cant_compras--;
+            $('#idProducto').val('').focus();
 
         }
     });
@@ -200,35 +200,35 @@ function listar() {
     $('#tableCompras').DataTable({
         "aProcessing": true,
         "aServerSide": true,
-        dom:"<'row'<'col-sm-12 col-md-6'B><'col-sm-12 col-md-6'f>>" +
-        "<'row'<'col-sm-12'tr>>" +
-        "<'row'<'col-sm-12'i><'col-sm-12'p>>",
-            buttons: [
-                {
-                    extend: 'pdfHtml5',
-                    text: 'Exportar a PDF',
-                    exportOptions: {
-                        columns: ':not(:last-child)'
-                    },
-                    orientation: 'portrait',
-                  
-                   
+        dom: "<'row'<'col-sm-12 col-md-6'B><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-12'i><'col-sm-12'p>>",
+        buttons: [
+            {
+                extend: 'pdfHtml5',
+                text: 'Exportar a PDF',
+                exportOptions: {
+                    columns: ':not(:last-child)'
                 },
-                {
-                    extend: 'excelHtml5',
-                    text: 'Exportar a Excel',
-                    exportOptions: {
-                        columns: ':not(:last-child)'
-                    },
+                orientation: 'portrait',
+
+
+            },
+            {
+                extend: 'excelHtml5',
+                text: 'Exportar a Excel',
+                exportOptions: {
+                    columns: ':not(:last-child)'
                 },
-                {
-                    extend: 'csvHtml5',
-                    text: 'Exportar a CSV',
-                    exportOptions: {
-                        columns: ':not(:last-child)'
-                    }
-                },
-            ],
+            },
+            {
+                extend: 'csvHtml5',
+                text: 'Exportar a CSV',
+                exportOptions: {
+                    columns: ':not(:last-child)'
+                }
+            },
+        ],
         "ajax": {
             url: base_url + "/listarCompras",
             type: "post"

@@ -5,6 +5,7 @@ $(document).ready(function () {
     reporte_clientes()
     reporte_mes_venta()
     reporte_rotacion_productos()
+    reporte_menos_productos()
 
 });
 
@@ -150,29 +151,78 @@ function reporte_rotacion_productos() {
 
 function reporte_productos_cantidades(productos_nombres, productos_cantidades) {
     $.post(base_url + "/reportecantidad", {},
-    
-    function (data) {// Crea la instancia de Chart.js y configura la gráfica de barras
-    var ctx = document.getElementById('grafica').getContext('2d');
-    var grafica = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: productos_nombres,
-            datasets: [{
-                label: 'Cantidad',
-                data: productos_cantidades,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+
+        function (data) {// Crea la instancia de Chart.js y configura la gráfica de barras
+            var ctx = document.getElementById('grafica').getContext('2d');
+            var grafica = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: productos_nombres,
+                    datasets: [{
+                        label: 'Cantidad',
+                        data: productos_cantidades,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
                 }
-            }
-        }
-    });
-})
+            });
+        })
 }
 
+//MENOS PRODUCTOS
+
+$(function () {
+    $('#select_cant').change(function () {
+        var cant = $(this).val();
+        reporte_menos_productos(cant);
+    });
+});
+
+function reporte_menos_productos(cant) {
+    $.post(base_url + "/menos_productos", { cant: cant },
+        function (data) {
+            var productos = [];
+            var cantidad = [];
+            for (var c = 0; c < data.data.length; c++) {
+                productos.push(data.data[c]['Nombre_Producto']);
+                cantidad.push(parseFloat(data.data[c]['Stock_Producto']));
+            }
+            var ctx = document.getElementById("reporte_menos_productos");
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: productos,
+                    datasets: [{
+                        label: '# Total de productos',
+                        data: cantidad,
+                        backgroundColor:
+                            'rgb(6, 141, 169)',
+
+                        borderColor:
+                            'rgb(6, 141, 169)',
+
+                        borderWidth: 2,
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        },
+        "json"
+    );
+}

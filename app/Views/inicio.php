@@ -125,17 +125,29 @@
       </div>
     </div>
 
-    <!------VENTAS POR MES-------->
-    <div class="col-md-6 mb-4">
-      <div class="card card-style border-left-primary">
-        <div class="card-body">
-          <h6 class="text-center text-gray-800">VENTAS POR MES</h6>
-          <canvas id="grafica" height="200" width="400"></canvas>
-        </div>
+ <!------INVENTARIO BAJO-------->
+ <?php $cant = 5; ?>
+  <div class="col-md-6 mb-4">
+    <div class="card card-style border-left-success">
+      <div class="card-body">
+        <h3 class="text-center font-weight-bold text-uppercase">PRODUCTOS CON BAJO STOCK</h3> <br>
+        <span>PRODUCTOS CON MENOR CANTIDAD A -----------------> </span>
+        <select id="select_cant" class="float-right ">
+          <?php
+          for ($i = 0; $i <= 100; $i++) {
+            $selected = ($i == $cant) ? 'selected' : '';
+            echo "
+                            <option value='" . $i . "' " . $selected . ">" . $i . "</option>";
+          }
+          ?>
+        </select>
+        <canvas id="reporte_menos_productos" height="200" width="400"></canvas>
       </div>
     </div>
-
   </div>
+
+
+
 
   <!--STYLE LOGIN-->
   <link rel="stylesheet" href="<?php echo base_url(); ?>//css/inicio.css" type="text/css">

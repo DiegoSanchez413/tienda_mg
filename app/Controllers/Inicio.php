@@ -90,5 +90,20 @@ class Inicio extends BaseController
         echo json_encode($data);
     }
 
+
+    //REPORTE PARA VER INVENTARIO BAJO
+
+    public function menos_productos(){
+         
+        $c = $this->request->getPostGet('cant');
+        if (empty($c)) {
+            $cant = '5';
+        } else {
+            $cant = $c;
+        }
+        $data = array();
+        $data['data'] = $this->ProductosModel->menos_productos($cant);
+        echo json_encode($data);
+    }
     
 }
