@@ -74,7 +74,6 @@
             </div>
           </div>
           <!-- redirect to cart -->
-          <a href="#" class="btn btn-warning shadow-0"> Comprar ahora </a>
           <a href="#" class="btn btn-primary shadow-0" id="buy" onClick="addToCart()"> <i class="me-1 fa fa-shopping-basket"></i> Añadir al carrito </a>
           <!-- <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> <i class="me-1 fa fa-heart fa-lg"></i> Save </a> -->
         </div>

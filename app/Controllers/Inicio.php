@@ -90,10 +90,9 @@ class Inicio extends BaseController
         echo json_encode($data);
     }
 
+     //REPORTE PARA VER INVENTARIO BAJO
 
-    //REPORTE PARA VER INVENTARIO BAJO
-
-    public function menos_productos(){
+     public function menos_productos(){
          
         $c = $this->request->getPostGet('cant');
         if (empty($c)) {
@@ -105,5 +104,8 @@ class Inicio extends BaseController
         $data['data'] = $this->ProductosModel->menos_productos($cant);
         echo json_encode($data);
     }
+
+
+
     
 }

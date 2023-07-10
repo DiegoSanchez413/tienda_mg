@@ -1,10 +1,11 @@
 <div class="registration-form">
     <form id="formClientet" name="formClientet" class="needs-validation" prevent-default>
         <input type="hidden" id="idCliente" name="idCliente" value="">
-        <div class="form-icon">
-            <span><i class="icon icon-user"></i></span>
-        </div>
-        <p class="text-danger mt-4 mb-2 ">Todos los campos son obligatorios*.</p>
+        <h1 class="text-center">¿No estás registrado?</h1>
+        <br>
+        <h4 class="text-center">Regístrate y disfrutarás de una experiencia de compra más rápida</h4>
+        
+        <h6 class="text-danger mt-4 mb-2 ">Todos los campos son obligatorios*.</h6>
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="txtNombre">Nombre</label><span class="text-danger">*</span>

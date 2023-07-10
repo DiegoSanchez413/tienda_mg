@@ -312,7 +312,7 @@ function buildCard(products) {
                 <span>310</span>
                 </div> -->
                 <div class="mt-1 mb-0 text-muted small">
-                <span> Marca: ${product.Nombre_Producto}</span><br>
+                <span> Stock disponible: ${product.Stock_Producto}</span><br>
                 <!-- <span class="text-primary"> • </span>
                 <span>Light weight</span>
                 <span class="text-primary"> • </span>

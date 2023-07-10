@@ -72,7 +72,7 @@
           <div class="form-row">
           <div class="form-group col-md-6">
               <label for="txtDescripcion">Descripcion*</label>
-              <input type="text" class="form-control" id="txtDescripcion" name="txtDescripcion" required>
+              <textarea type="text" class="form-control" id="txtDescripcion" name="txtDescripcion" required></textarea>
               <div class="invalid-feedback">Campo obligatorio</div>
          </div>
         </div>

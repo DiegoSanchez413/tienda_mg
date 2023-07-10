@@ -74,6 +74,19 @@ class VentasModel extends Model
         return $query->getResultArray();
     }
 
+    /*VENTAS POR MES REPORTE 
+
+    public function obtenerCantidadVentasPorMes()
+    {
+        $builder = $this->db->table($this->table);
+
+        // Seleccionar el mes de la fecha y contar la cantidad de ventas por mes
+        $builder->select('MONTH(Fecha_Venta) as mes, COUNT(*) as cantidad');
+        $builder->groupBy('mes');
+        $query = $builder->get();
+
+        return $query->getResultArray();
+    }*/
 
 
     

@@ -22,8 +22,8 @@
                   <th>ID</th>
                   <th>Cliente</th>
                   <th>Fecha</th>
-                  <th>Total</th>
                   <th>SubTotal</th>
+                  <th>Total</th>
                   <th>Acciones</th>
                 </tr>
               </thead>

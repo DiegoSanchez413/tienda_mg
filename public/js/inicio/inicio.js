@@ -3,10 +3,8 @@ $(document).ready(function () {
     reporte_sumaventas()
     reporte_usuarios()
     reporte_clientes()
-    reporte_mes_venta()
     reporte_rotacion_productos()
-    reporte_menos_productos()
-
+    
 });
 
 
@@ -65,45 +63,6 @@ function reporte_sumaventas() {
     });
 }
 
-function reporte_mes_venta() {
-
-    $.post(base_url + "/reporte_venta_mes", {},
-        function (data) {
-            var meses = [];
-            var ventas = [];
-            for (var i = 0; i < data.data.length; i++) {
-                meses.push(parseFloat(data.data[i]['MONTH']));
-                ventas.push(data.data[i]['COUNT']);
-            }
-            var datos = {
-                datasets: [{
-                    label: 'Ventas por mes',
-                    data: ventas,
-                    backgroundColor: 'rgba(54, 162, 235, 0.5)', // Color de fondo de las barras
-                    borderColor: 'rgba(54, 162, 235, 1)', // Color del borde de las barras
-                    borderWidth: 1
-                }],
-                labels: meses,
-            };
-            var ctx = $("#ventaspormes");
-
-            new Chart(ctx, {
-                data: datos,
-                type: 'bar',
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        },
-        "json"
-    );
-}
-
-
 function reporte_rotacion_productos() {
     $.post(base_url + "/reporterotacion", {},
         function (data) {
@@ -149,6 +108,7 @@ function reporte_rotacion_productos() {
     );
 }
 
+
 function reporte_productos_cantidades(productos_nombres, productos_cantidades) {
     $.post(base_url + "/reportecantidad", {},
 
@@ -175,7 +135,58 @@ function reporte_productos_cantidades(productos_nombres, productos_cantidades) {
                 }
             });
         })
+    }
+/*
+function reporte_ventas_por_mes() {
+    $.post(base_url + "/reporteVentas", {},
+        function (data) {
+            var meses = [];
+            var cantidades = [];
+            for (var i = 0; i < data.length; i++) {
+                meses.push(data[i].mes);
+                cantidades.push(data[i].cantidad);
+            }
+            // Crear el gráfico de barras
+            var datos = {
+                labels: meses,
+                datasets: [{
+                    data: cantidades,
+                    backgroundColor: [
+                        "#1BAFBF",
+                        "#038C73",
+                        "#29A63C",
+                        "#F2A007",
+                        "#4CFFEA",
+                        "#a6b1b7",
+                    ],
+                    label: 'Cantidad de Ventas por Mes', // para la leyenda
+                }],
+            };
+            var ctx = $("#grafico-ventas-por-mes");
+            new Chart(ctx, {
+                type: 'bar',
+                data: datos,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1 // Ajusta el tamaño del intervalo en el eje y según sea necesario
+                            }
+
+                        }
+                    }
+                }
+            });
+
+        })
 }
+
+        },
+        "json"
+    );
+}*/
+
 
 //MENOS PRODUCTOS
 
@@ -226,3 +237,4 @@ function reporte_menos_productos(cant) {
         "json"
     );
 }
+
