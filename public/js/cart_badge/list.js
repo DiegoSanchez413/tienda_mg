@@ -3,14 +3,17 @@ const cart_container = document.getElementById('cart_container');
 const cart_container_empty = document.getElementById('cart_container_empty');
 const product_list = document.getElementById('product-list');
 const brand_list = document.getElementById('brand-list');
+const category_list = document.getElementById('category-list');
 const product_list_range = document.getElementById('product-list-range');
 const min_range = document.getElementById('min-range');
 const max_range = document.getElementById('max-range');
 const sor_by = document.getElementById('sort-by');
+const total_product_list = document.getElementById('total-product-list');
 
 $(document).ready(function () {
     if (product_list) {
         listBrands();
+        listCategories();
         listProducts();
 
         product_list_range.addEventListener('change', () => {
@@ -115,8 +118,11 @@ async function listProducts() {
             },
         });
         const data = await response.json();
-        const total_product_list = document.getElementById('total-product-list');
-        total_product_list.innerHTML = data.productos.length + ' Productos encontrados';
+        if (data.productos.length > 0) {
+            total_product_list.innerHTML = data.productos[0]._total_rows + ' Productos encontrados';
+        } else {
+            total_product_list.innerHTML = 'No se encontraron productos';
+        }
         buildCard(data.productos);
         buildPagination(data.productos[0]._total_rows);
     } catch (error) {
@@ -134,6 +140,21 @@ async function listBrands() {
         });
         const data = await response.json();
         await buildBrand(data);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function listCategories() {
+    try {
+        const response = await fetch("/category/list", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        const data = await response.json();
+        await buildCategorie(data);
     } catch (error) {
         console.log(error);
     }
@@ -173,6 +194,40 @@ async function buildBrand(brands) {
     })
 
 }
+async function buildCategorie(categories) {
+    categories.forEach(categorie => {
+        category_list.innerHTML += `
+        <div class="form-check">
+            <input class="form-check-input" name="categorie" type="checkbox" value="${categorie.ID_Categoria}" id="${categorie.ID_Categoria}" />
+            <label class="form-check-label" for="${categorie.Nombre_Categoria}">${categorie.Nombre_Categoria}</label>
+        </div>
+        `;
+    })
+
+    const categorie_checkboxes = document.querySelectorAll('input[name="categorie"]');
+    categorie_checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', async function () {
+            const checked = Array.from(categorie_checkboxes).filter(i => i.checked).map(i => i.value);
+            if (checked.length > 0) {
+                let categorie = checked
+                if (localStorage.getItem('categorie')) {
+                    localStorage.setItem('categorie', JSON.stringify({
+                        categorie: categorie
+                    }));
+                } else {
+                    localStorage.setItem('categorie', JSON.stringify({
+                        categorie: categorie
+                    }));
+                }
+                await filterProducts();
+            } else {
+                localStorage.removeItem('categorie');
+                await listProducts();
+            }
+        })
+    })
+
+}
 
 if (sor_by) {
     sor_by.addEventListener('change', async function () {
@@ -197,6 +252,7 @@ async function filterProducts(page = null) {
     try {
         let formData = new FormData();
         formData.append('brand', JSON.stringify(JSON.parse(localStorage.getItem('brand'))));
+        formData.append('categorie', JSON.stringify(JSON.parse(localStorage.getItem('categorie'))));
         formData.append('range', JSON.stringify(JSON.parse(localStorage.getItem('range'))));
         formData.append('sort', JSON.stringify(JSON.parse(localStorage.getItem('sort'))));
 
@@ -277,6 +333,13 @@ async function setPage(page) {
 }
 
 function buildCard(products) {
+
+    if (products.length > 0) {
+        total_product_list.innerHTML = products[0]._total_rows + ' Productos encontrados';
+    } else {
+        total_product_list.innerHTML = 'No se encontraron productos';
+    }
+
     product_list.innerHTML = '';
     products.forEach(product => {
         product_list.innerHTML += `

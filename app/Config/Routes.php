@@ -109,6 +109,7 @@ $routes->get('productost', 'Productost::index');
 $routes->get('producto/(:any)', 'Productost::search/$1');
 $routes->post('product/list', 'Productost::list');
 $routes->get('brand/list', 'Productost::brand_list');
+$routes->get('/category/list', 'Productost::categorie_list');
 
 $routes->get('contacto', 'Contactot::index');
 

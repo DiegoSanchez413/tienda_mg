@@ -41,6 +41,21 @@
                   </div>
                 </div>
               </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="categoria-collapse">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapse">
+                    Categorias
+                  </button>
+                </h2>
+                <!-- Categorias -->
+                <div id="flush-collapse" class="accordion-collapse collapse show" aria-labelledby="categoria-collapse" >
+                  <div class="accordion-body">
+                    <div id="category-list">
+                    </div>
+                  </div>
+                </div>
+              </div>
               <!-- Rango -->
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingThree">

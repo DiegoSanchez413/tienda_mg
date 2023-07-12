@@ -1,11 +1,11 @@
 CREATE PROCEDURE search_products(
 in _brands TEXT,
+in _categories TEXT,
 in _min_range int,
 in _max_range int,
 in _sort_by int,
 in _offset int
 )
-
 BEGIN
 
 DECLARE _total_rows INT;
@@ -21,6 +21,7 @@ LEFT JOIN (
 WHERE 
 
 IF(_brands is null or _brands = '', true, FIND_IN_SET(p.Marca_Producto, _brands) > 0)
+and IF(_categories is null or _categories = '', true, FIND_IN_SET(p.ID_Categoria, _categories) > 0)
 AND
 CASE
 	WHEN (_max_range is not null and _min_range is not null or _max_range != '' and _min_range != '') THEN
@@ -45,6 +46,7 @@ LEFT JOIN (
 WHERE 
 
 IF(_brands is null or _brands = '', true, FIND_IN_SET(p.Marca_Producto, _brands) > 0)
+and IF(_categories is null or _categories = '', true, FIND_IN_SET(p.ID_Categoria, _categories) > 0)
 AND
 CASE
 	WHEN (_max_range is not null and _min_range is not null or _max_range != '' and _min_range != '') THEN
@@ -68,4 +70,4 @@ END
         END ASC
 LIMIT 10
 OFFSET _offset;
-END;
+END

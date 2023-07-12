@@ -23,16 +23,28 @@ class Productost extends BaseController
     public function list()
     {
         $brand = json_decode($this->request->getPostGet('brand'));
+        $categorie = json_decode($this->request->getPostGet('categorie')); 
         $range = json_decode($this->request->getPostGet('range'));
         $sort = json_decode($this->request->getPostGet('sort'));
         $page = $this->request->getPostGet('page') ?? 1;
         $rowsPerPage = 10;
-        $offset = ($page - 1) * $rowsPerPage;
+
+        if ($page === null || $page === 0 || $page === "null") {
+            $page = 1;
+        }
+
+        $offset = ($page - 1) * $rowsPerPage ;
         
         if (isset($brand->brand)) {
             $brands = implode(',', $brand->brand); // Cast to comma-separated string
         }else{
             $brands = '';
+        }
+
+        if (isset($categorie->categorie)) {
+            $categorie = implode(',', $categorie->categorie); // Cast to comma-separated string
+        }else{
+            $categorie = '';
         }
         
         if (isset($range->range)) {
@@ -50,7 +62,7 @@ class Productost extends BaseController
         }
 
         $builder = \Config\Database::connect();
-        $query = $builder->query("CALL search_products(?, ?, ?, ?, ?)", [$brands, $min, $max, $sort, $offset]);
+        $query = $builder->query("CALL search_products(?, ?, ?, ?, ?, ?)", [$brands, $categorie, $min, $max, $sort, $offset]);
         $results = $query->getResult();
         $data['productos'] = $results;
         return json_encode($data);
@@ -58,6 +70,14 @@ class Productost extends BaseController
 
     public function brand_list(){
         $statement = "select Marca_Producto from producto group by Marca_Producto;";
+        $builder = \Config\Database::connect();
+        $query = $builder->query($statement);
+        $results = $query->getResult();
+        return json_encode($results);
+    }
+
+    public function categorie_list(){
+        $statement = "select * from categoria_producto;";
         $builder = \Config\Database::connect();
         $query = $builder->query($statement);
         $results = $query->getResult();
