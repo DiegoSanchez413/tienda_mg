@@ -59,6 +59,7 @@ function openModal(){
     $('#modalFormProveedor').modal('show');
     formulario[0].reset();
     $("#idProveedor").val("");
+    $("#titleModal").html("Nuevo Registro");
 }
 
 
@@ -117,7 +118,7 @@ function EditarProveedor(id){
         function (data, textStatus, jqXHR) {
             
             $('#modalFormProveedor').modal('show'); //muestra el modal
-            
+            $("#titleModal").html("Actualizar Registro");
             $("#idProveedor").val(data.data[0].ID_Proveedor);
             $("#txtRuc").val(data.data[0].Ruc_Proveedor);
             $("#txtRazon").val(data.data[0].RazonSocial_Proveedor);

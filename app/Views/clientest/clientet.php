@@ -1,76 +1,65 @@
-<div class="container text-center">
-  <div class="row">
-    <div class="col-lg-6">
+<div class="registration-form">
     <form id="formClientet" name="formClientet" class="needs-validation" prevent-default>
         <input type="hidden" id="idCliente" name="idCliente" value="">
-        <p class="text-primary mt-4 mb-2 ">Todos los campos son obligatorios*.</p>
-
-        <div class="form-row">
-            <div class="form-group col-md-6 mb-2">
-                <label for="txtNombre">Nombre*</label>
-                <input type="type" class="form-control" id="txtNombre" name="txtNombre" required>
-                <div class="invalid-feedback">Campo obligatorio</div>
-            </div>
-            <div class="form-group col-md-6  mb-2">
-                <label for="txtApellido">Apellido*</label>
-                <input type="type" class="form-control" id="txtApellido" name="txtApellido" required>
-                <div class="invalid-feedback">Campo obligatorio</div>
-            </div>
-        </div>
-        <div class="form-row ">
-            <div class="form-group col-md-6 mb-2">
-                <label for="txtIdentificacion">DNI*</label>
-                <input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" required>
-                <div class="invalid-feedback">Campo obligatorio</div>
-            </div>
-            <div class="form-group col-md-6 mb-2">
-                <label for="txtTelefono">Telefono*</label>
-                <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" required>
-                <div class="invalid-feedback">Campo obligatorio</div>
-            </div>
-        </div>
-
-        <div class="form-row">
+        <h1 class="text-center">¿No estás registrado?</h1>
+        <br>
+        <h4 class="text-center">Regístrate y disfrutarás de una experiencia de compra más rápida</h4>
+        
+        <h6 class="text-danger mt-4 mb-2 ">Todos los campos son obligatorios*.</h6>
+        <div class="row">
             <div class="form-group col-md-6">
-                <label for="listEstado">Estado*</label>
-                <select class="form-control selectpicker" id="listEstado" name="listEstado" required>
-                    <option value="1">Activo</option>
-                    <option value="2">Inactivo</option>
-                </select>
+                <label for="txtNombre">Nombre</label><span class="text-danger">*</span>
+                <input type="type" class="form-control item" id="txtNombre" name="txtNombre" required>
                 <div class="invalid-feedback">Campo obligatorio</div>
             </div>
-            <div class="form-group col-md-6 mb-2">
-                <label for="txtEmail">Email*</label>
-                <input type="email" class="form-control" id="txtEmail" name="txtEmail" required>
+            <div class="form-group col-md-6">
+                <label for="txtApellido">Apellido</label><span class="text-danger">*</span>
+                <input type="type" class="form-control item" id="txtApellido" name="txtApellido" required>
                 <div class="invalid-feedback">Campo obligatorio</div>
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-6 mb-2">
-                <label for="txtPassword">Password*</label>
-                <input type="password" class="form-control" id="txtPassword" name="txtPassword">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="txtIdentificacion">DNI</label><span class="text-danger">*</span>
+                <input type="text" class="form-control item" id="txtIdentificacion" name="txtIdentificacion" required>
+                <div class="invalid-feedback">Campo obligatorio</div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="txtTelefono">Telefono</label><span class="text-danger">*</span>
+                <input type="text" class="form-control item" id="txtTelefono" name="txtTelefono" required>
+                <div class="invalid-feedback">Campo obligatorio</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="txtEmail">Email</label><span class="text-danger">*</span>
+                <input type="email" class="form-control item" id="txtEmail" name="txtEmail" required>
+                <div class="invalid-feedback">Campo obligatorio</div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="txtPassword">Password</label><span class="text-danger">*</span>
+                <input type="password" class="form-control item" id="txtPassword" name="txtPassword">
                 <div class="invalid-feedback">Campo obligatorio</div>
                 <small id="nota_password"></small>
             </div>
-            <div class="form-group col-md-6 mb-2">
-                <label for="txtDireccion">Dirección*</label>
-                <input type="type" class="form-control" id="txtDireccion" name="txtDireccion" required>
-                <div class="invalid-feedback">Campo obligatorio</div>
+        </div>
+        <div class="form-group">
+            <label for="txtDireccion">Dirección</label><span class="text-danger">*</span>
+            <input type="type" class="form-control item" id="txtDireccion" name="txtDireccion" required>
+            <div class="invalid-feedback">Campo obligatorio</div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <button class="btn btn-block create-account form-control item" type="submit"><span id="btnGuardar">Crear Cuenta</span></button>
+            </div>
+            <div class="form-group col-md-6">
+                <a class="btn create-account form-control item" href="<?= base_url(); ?>tlogin"><span>Regresar</span></a>
             </div>
 
         </div>
 
-        <div class="tile-footer">
-            <button class="btn btn-primary mb-2" type="submit"><i class="fa fa-fw fa-lg 
-                    fa-check-circle"></i><span id="btnGuardar">Guardar</span></button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-danger mb-2"><i class="fa fa-fw fa-lg 
-                    fa-check-circle"></i><span id="btnCerrar">Cerrar</span></button>
-
-        </div>
-        <div class="mb-4 text-center">
-
-            <a class="btn btn-link  " href="<?= base_url(); ?>tlogin">Ingresar</a>
     </form>
-    </div>
-  </div>
 </div>
+<link rel="stylesheet" href="<?= base_url(); ?>/css/login_tienda/registro.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">

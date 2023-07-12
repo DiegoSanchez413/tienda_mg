@@ -44,25 +44,11 @@
                             <a class="nav-link" href="<?= base_url(); ?>productost">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Servicios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url(); ?>contacto">Contacto</a>
+                            <a class="nav-link" href="<?= base_url(); ?>nosotros">Nosotros</a>
                         </li>
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
-                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-                            <div class="input-group-text">
-                                <i class="fa fa-fw fa-search"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
-                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
-                    </a>
 
                     <a class="nav-icon position-relative text-decoration-none" href="<?= base_url(); ?>carrito">
                         <button type="button" class="btn btn-outline-light position-relative">
@@ -71,12 +57,12 @@
                             </span>
                         </button>
                     </a>
-                    
-                    <a class="nav-icon position-relative text-decoration-none" href="<?= base_url(); ?>mis-compras">
+
+                    <!--<a class="nav-icon position-relative text-decoration-none" href="<?= base_url(); ?>mis-compras">
                         <button type="button" class="btn btn-outline-light position-relative">
                             <i class="fa fa-fw  fa-list-alt text-dark mr-1"></i>
                         </button>
-                    </a>
+                    </a>-->
                     <!-- href="<?= base_url(); ?>tlogin" -->
                     <a class="nav-icon position-relative text-decoration-none" id="client_fullname_link" href="<?= base_url(); ?>tlogin">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
@@ -90,28 +76,6 @@
         </div>
     </nav>
 
-    <nav class="navbar navbar-expand-sm navbar-light shadow bg-secondary">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
-                <div class="flex-fill">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="<?= base_url(); ?>">Computadora</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white " href="<?= base_url(); ?>productost">Laptops</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="">Componentes PC</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="<?= base_url(); ?>contacto">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
     <!-- Close Header -->
 
     <!-- Modal -->
@@ -144,6 +108,7 @@
             padding-top: 60px;
             transition: 0.5s;
         }
+
         .sidebar a {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
@@ -177,6 +142,7 @@
         .openbtn:hover {
             background-color: #444;
         }
+
         #main {
             transition: margin-left .5s;
             padding: 20px;
@@ -193,15 +159,12 @@
         }
     </style>
 
-<script>
-    const client_fullname_link = document.getElementById('client_fullname_link');
+    <script>
+        const client_fullname_link = document.getElementById('client_fullname_link');
 
-    if(JSON.parse(localStorage.getItem('user')).Nombre_Cliente){
-        client_fullname_link.setAttribute('href', '/mis-compras');
-    }else{
-        client_fullname_link.setAttribute('href', '/tlogin');
-    }
-   
-
-
-</script>
+        if (JSON.parse(localStorage.getItem('user')).Nombre_Cliente) {
+            client_fullname_link.setAttribute('href', '/mis-compras');
+        } else {
+            client_fullname_link.setAttribute('href', '/tlogin');
+        }
+    </script>

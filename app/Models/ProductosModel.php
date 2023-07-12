@@ -54,4 +54,21 @@ class ProductosModel extends Model{
         $this->db->close();
         return $query->getResultArray();
     }
+
+    public function cant_productos(){
+        $db=\Config\Database::connect();
+        $builder=$db->table('producto');
+        return $builder->countAllResults();
+    }
+
+    public function menos_productos($cant){
+        $db=\Config\Database::connect();
+        $builder=$db->table('producto as p');
+        $builder->select('*');
+        $builder->where('p.Stock_Producto<', $cant);
+        $query=$builder->get();
+        $db->close();
+        return $query->getResultArray();
+    }
+    
 }

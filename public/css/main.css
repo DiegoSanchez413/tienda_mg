@@ -7010,7 +7010,7 @@ a.close.disabled {
   display: none;
   float: left;
   width: 100%;
-  margin-right: -100%;
+
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transition: -webkit-transform 0.6s ease-in-out;
@@ -12125,8 +12125,8 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  *border-right-width: 2px;
-  *border-bottom-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
   color: #333333;
   font-size: 13px;
   line-height: 1.42857143;
@@ -15270,7 +15270,7 @@ be a descendant of the grid when it is being dragged.
   min-height: calc(100vh - 50px);
   margin-top: 50px;
   padding: 30px;
-  background-color: #e5e5e5;
+  background-color: #f7f8f5;
   -webkit-transition: margin-left 0.3s ease;
   -o-transition: margin-left 0.3s ease;
   transition: margin-left 0.3s ease;
@@ -15326,7 +15326,7 @@ be a descendant of the grid when it is being dragged.
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #1f618d;
+  background-color: #114f74;
   z-index: 1030;
   padding-right: 15px;
 }
@@ -15349,7 +15349,7 @@ be a descendant of the grid when it is being dragged.
   flex: 1 0 auto;
   color: #fff;
   text-align: center;
-  font-family: "Niconne";
+  font-family: "Sanvito";
   padding: 0 15px;
   font-size: 26px;
   font-weight: 400;
@@ -15363,7 +15363,7 @@ be a descendant of the grid when it is being dragged.
     flex: 0 0 auto;
     display: block;
     width: 230px;
-    background-color: #007d71;
+    background-color: #343a40;
   }
 }
 
@@ -15398,8 +15398,8 @@ be a descendant of the grid when it is being dragged.
 
 .app-sidebar__toggle:focus,
 .app-sidebar__toggle:hover {
-  color: #fff;
-  background-color: #00635a;
+  background: rgba(0, 0, 0, 0.15);
+  color: #f6f6f6;
   text-decoration: none;
 }
 
@@ -15433,8 +15433,9 @@ be a descendant of the grid when it is being dragged.
 
 .app-nav__item:hover,
 .app-nav__item:focus {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.15);
   color: #f6f6f6;
+  text-decoration: none;
 }
 
 .app-search {
@@ -15568,7 +15569,7 @@ be a descendant of the grid when it is being dragged.
   width: 230px;
   overflow: auto;
   z-index: 10;
-  background-color: #222d32;
+  background-color: #114f74;
   -webkit-box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
   -webkit-transition: left 0.3s ease, width 0.3s ease;

@@ -9,7 +9,7 @@ class UsuariosModel extends Model
     protected $table      = 'usuario';
     // Uncomment below if you want add primary key
     protected $primaryKey = 'ID_Usuario';
-    protected $allowedFields = ['ID_Rol', 'Nombre_Usuario', 'DNI_Usuario', 'Correo_Usuario', 'Contraseña_Usuario', 'Estado_Usuario'];
+    protected $allowedFields = ['ID_Rol', 'Nombre_Usuario', 'DNI_Usuario', 'Correo_Usuario', 'Contraseña_Usuario', 'Estado_Usuario','foto'];
     protected $db;
     protected $builder;
 
@@ -60,5 +60,15 @@ class UsuariosModel extends Model
         } else {
             return false;
         }
+    }
+
+    public function get_Usuarios($id)
+    {
+        $this->builder->select('*');
+        $this->builder->join('rol as r', 'usuario.ID_Rol=r.ID_Rol');
+        $this->builder->where('ID_Usuario', $id);
+        $query = $this->builder->get(); //traemos los datos de la tabla usuarios y lo almacenamos en la var. query
+        $this->db->close(); //cerramos conexion
+        return $query->getResultArray(); //convertir el query en un array
     }
 }

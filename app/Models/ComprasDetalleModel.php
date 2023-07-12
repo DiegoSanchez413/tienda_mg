@@ -10,7 +10,7 @@ class ComprasDetalleModel extends Model
     protected $primaryKey = 'ID_DetalleCompra';
     protected $allowedFields = [
         'ID_Producto', 'ID_Proveedor', 'ID_Compra',
-        'CantidadProducto_DetalleCompra', 'ImporteCompra_DetalleCompra'
+        'CantidadProducto_DetalleCompra','Precio_Detalle', 'ImporteCompra_DetalleCompra'
     ];
     public function __construct()
     {

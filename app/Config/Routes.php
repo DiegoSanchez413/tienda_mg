@@ -30,6 +30,30 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+
+//LOGIN DASHBOARD
+$routes->get('login', 'LoginD::index');
+$routes->post('verificar_acceso_usuarios', 'LoginD::vericacion_acceso');
+$routes->get('cerrar_sesion', 'LoginD::cerrarSesion');
+
+//INICIO DASHBOARD-REPORTES
+$routes->post('reporte_ventas','Inicio::reporte_ventas');
+$routes->get('suma_ventas','Inicio::suma_ventas');
+$routes->post('reporte_usuarios','Inicio::reporte_usuarios');
+$routes->post('reporte_clientes','Inicio::reporte_clientes');
+$routes->post('reporterotacion','Inicio::rotacion_productos');
+$routes->post('menos_productos','Inicio::menos_productos');
+//$routes->post('reporteVentas','Inicio::reporteVentas');
+
+
+
+
+//KARDEX
+$routes->get('kardex', 'Kardex::index');
+$routes->post('listarMovimientos', 'Kardex::Listar');
+$routes->post('registrar_movimiento', 'Kardex::create_movimiento');
+
+//LOGIN CLIENTE
 $routes->get('tlogin', 'Login::index');
 $routes->post('verificar_acceso_clientes', 'Login::verificacion_acceso');
 $routes->get('cerrar_sesion', 'Login::cerrarSesion');
@@ -39,6 +63,12 @@ $routes->post('registro_clientest', 'ClientesT::Registrar');
 //inicio
 $routes->get('inicio', 'Inicio::index');
 
+//Peerfil
+$routes->get('Perfil', 'Perfil::index');
+$routes->post('mostrar_datos', 'Perfil::mostrar_datos');
+$routes->post('actualizarDatosPersonales', 'Perfil::actualizarDatosPersonales');
+$routes->post('actualizar_foto', 'Perfil::actualizar_foto');
+$routes->post('actualizar_contraseña', 'Perfil::actualizar_contraseña');
 
 //ROLES
 $routes->get('roles', 'Roles::index'); //mostrar vista
@@ -77,6 +107,7 @@ $routes->post('listarProductos', 'Productos::Listar');
 $routes->post('getProducto-x-id', 'Productos::buscar');
 $routes->post('eliminar_productos', 'Productos::eliminar');
 $routes->get('listar_productos', 'Productos::listarproducto');
+$routes->post('comboProducto', 'Productos::combo_producto');
 
 //PROVEEDOR
 
@@ -91,9 +122,18 @@ $routes->post('eliminar_proveedor', 'Proveedor::eliminar');
 $routes->get('compras', 'Compras::index');
 $routes->get('RegistrarCompra', 'Compras::registrar');
 $routes->post('RegistrarCompra', 'Compras::RegistrarCompra');
+$routes->post('listarCompras', 'Compras::listar');
+$routes->post('listarDetalle', 'Compras::listarDetalles');
+$routes->get('/pdf/(:num)', 'Compras::pdf/$1');
 
 //VENTAS
 $routes->get('ventas', 'Ventas::index');
+$routes->get('RegistrarVenta', 'Ventas::index2');
+$routes->post('RegistrarVenta', 'Ventas::RegistrarVenta');
+$routes->post('listarVenta', 'Ventas::listar');
+$routes->post('listarDetalleVenta', 'Ventas::listarDetalles');
+$routes->get('/pdf2/(:num)', 'Ventas::pdfventa/$1');
+
 
 //CARRITO
 $routes->get('carrito', 'Carrito::index');
@@ -118,6 +158,9 @@ $routes->get('mis-compras', 'Carrito::purchases');
 $routes->post('mis-compras/lista', 'Carrito::list_purchases');
 $routes->get('mis-compras/detalle/(:any)', 'Carrito::purchase_detail/$1');
 
+
+//Tienda nosotros
+$routes->get('nosotros', 'Nosotros::index');
 
 /*
  * --------------------------------------------------------------------

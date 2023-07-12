@@ -56,10 +56,14 @@ async function filterByPrice() {
 function listCart() {
     const cart = JSON.parse(localStorage.getItem('cart'));
     const cart_total = document.getElementById('cart_total');
+    const cart_igv = document.getElementById('cart_igv');
     const url = window.location.href;
     if (cart) {
         const total = cart.reduce((acc, item) => acc + item.Precio_Producto * item.quantity, 0);
+        const total1 = (total*0.18)+total;
         cart_total.innerHTML = `S/.${total}`;
+        cart_igv.innerHTML = `S/.${total1}`;
+        cart_list.innerHTML="";
         cart.forEach(item => {
             const div = document.createElement('div');
             div.classList.add('d-flex', 'align-items-center', 'mb-4');
@@ -371,7 +375,7 @@ function buildCard(products) {
                 <span>310</span>
                 </div> -->
                 <div class="mt-1 mb-0 text-muted small">
-                <span> Marca: ${product.Nombre_Producto}</span><br>
+                <span> Stock disponible: ${product.Stock_Producto}</span><br>
                 <!-- <span class="text-primary"> • </span>
                 <span>Light weight</span>
                 <span class="text-primary"> • </span>

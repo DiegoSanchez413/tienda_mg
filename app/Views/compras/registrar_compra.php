@@ -19,6 +19,12 @@
                 <input type="hidden" id="id_compra" name="id_compra">
 
                 <div class="row">
+                <div class="form-group col-md-4">
+                        <label for="codigo_compra">Código de Compra </label>
+                        <input id="codigo_compra" class="form-control" name="codigo_compra" disabled style="background:rgba(112, 128, 144, 0.5);" value="<?=$generar_codigo;?>">
+
+                        <div class="invalid-feedback">Este campo es requerido</div>
+                    </div>
                     <div class="form-group col-md-6">
                         <label for="listUsuario">Usuario*</label>
                         <select class="form-control" data-live-search="true" id="listUsuario" name="listUsuario" required>
@@ -61,6 +67,7 @@
                         <input type="hidden" id="nombre_producto" name="nombre_producto">
                         <label for="idProducto">Producto <span class="text-danger"></span></label>
                         <select id="idProducto" class="form-control select2 selectarticulos" style="width:100%" data-placeholder="--seleccionar--" name="idProducto">
+                        <option value="">---Seleccionar Producto---</option>
                         <?php foreach ($prod as $row) : ?>
                             <option value="<?= $row['ID_Producto'] ?>"><?= $row['Nombre_Producto'] ?></option>
                             <?php endforeach ?>
@@ -72,6 +79,7 @@
                         <input type="hidden" id="nombre_proveedor" name="nombre_proveedor">
                         <label for="idProveedor">Proveedor <span class="text-danger"></span></label>
                         <select id="idProveedor" class="form-control select2 selectarticulos" style="width:100%" data-placeholder="--seleccionar--" name="idProveedor">
+                        <option value="">---Seleccionar---</option>
                         <?php foreach ($prov as $row) : ?>
                             <option value="<?= $row['ID_Proveedor'] ?>"><?= $row['RazonSocial_Proveedor'] ?></option>
                             <?php endforeach ?>
@@ -89,7 +97,7 @@
                         <input type="number" id="precio_producto" class="form-control" name="precio_producto" step="0.01">
                         <div class="invalid-feedback">Este campo es requerido</div>
                     </div>
-
+    
                 </div>
 
 
@@ -133,6 +141,17 @@
                                         <div style="display:flex">
                                         <span class="text-danger" id="mon_simbolo1">S/. </span>
                                         <div class="text-danger" id="subtotal_compra">0</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="font-weight-bold">IGV (18%):</span>
+                                    </td>
+                                    <td>
+                                        <input type="hidden" id="igv" class="igv" name="igv">
+                                        <div style="display:flex">
+                                        <span class="text-danger" id="mon_simbolo1">S/. </span>
+                                        <div class="text-danger" id="igv_compra">0</div>
                                         </div>
                                     </td>
                                 </tr>

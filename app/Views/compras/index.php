@@ -15,16 +15,17 @@
             <div class="tile">
                 <div class="tle-body">
                     <div class="table-responsive">
-                        <table class="table table-hover table-bordered" id="tableProveedor">
+                        <table class="table table-hover table-bordered" id="tableCompras">
                             <thead>
                                 <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
+                                    <th>ID</th>
+                                    <th>Codigo Compra</th>
+                                    <th>Usuario</th>
+                                    <th>Fecha</th>
+                                    <th>IGV</th>
+                                    <th>Total</th>
+                                    <th>SubTotal</th>
+                                    <th>Opciones</th>
 
                                 </tr>
                             </thead>
@@ -36,3 +37,8 @@
         </div>
     </div>
 </main>
+
+
+<?php include 'detalle_compra.php' ?>
+<?php include 'modal.php' ?>
+<script src="<?= base_url()?>/js/compras/compra.js"></script>

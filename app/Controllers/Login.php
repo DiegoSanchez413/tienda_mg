@@ -8,6 +8,8 @@ use App\Models\ClientesTModel;
 class Login extends BaseController
 {
     protected $ClientesModel;
+    protected $ClientesTModel;
+
     public function __construct()
     {
         $this->ClientesModel = new ClientesModel();
@@ -17,7 +19,7 @@ class Login extends BaseController
     {
         
         $vista = "tlogin";
-         $this->estructuraTienda($vista);
+        $this->estructuraTienda($vista);
     }
     //validaciones
     public function verificacion_acceso()

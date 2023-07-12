@@ -21,7 +21,11 @@ class Usuarios extends BaseController
 
     public function index()
     {
-        $vista = "usuarios/users/index";
+        if ($_SESSION['rol'] == 1) {
+            $vista = "usuarios/users/index";
+        } else {
+            $vista = "errors/html/errores_permiso";
+        }
         $dato['dato'] = $this->RolesModel->listarRoles();
         $this->estructura($vista, $dato); //llamar a los archivos
     }
@@ -197,7 +201,7 @@ class Usuarios extends BaseController
         echo json_encode($respuesta, JSON_UNESCAPED_UNICODE);
     }
 
-//FUNCION BUSCAR USUARIO
+    //FUNCION BUSCAR USUARIO
 
     public function buscar()
     {
@@ -209,7 +213,7 @@ class Usuarios extends BaseController
 
 
     // FUNCION ELIMINAR 
-    
+
     public function eliminar()
     {
         $id = $this->request->getPostGet('id');

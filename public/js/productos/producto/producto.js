@@ -5,6 +5,7 @@ function openModal(){
     $('#modalFormProducto').modal('show');
     formulario[0].reset();
     $("#idProducto").val("");
+    $("#titleModal").html("Nuevo Registro");
 }
 
 //REGISTRAR Y EDITAR PRODUCTO
@@ -167,6 +168,7 @@ function EditarProducto(id){
         function (data, textStatus, jqXHR) {
             
             $('#modalFormProducto').modal('show'); //muestra el modal
+            $("#titleModal").html("Actualizar Registro");
             $("#idProducto").val(data.data[0].ID_Producto);
             $("#listCatid").val(data.data[0].ID_Categoria);
             $("#txtProducto").val(data.data[0].Codigo_Producto);
