@@ -1,30 +1,44 @@
 <script src="https://www.paypal.com/sdk/js?client-id=AYJ4va2pFD3uGmMW0d4xUwXADUhCXO2FEF3G3aX-T9fsWKgLWSbNKOaCJ0ZjKPm-qe8QcNz03dCmjKja&currency=USD"></script>
-<section class="bg-light py-5" id="cart_container">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <h6 class="text-dark my-4">Artículos en el carrito</h6>
-        <div id="cart_list">
-        </div>
+<style>
+  .bg-gradient-primary {
+    background-color: #a1c2c6;
+    background-image: linear-gradient(180deg, #3C9BA6 10%, #a1c2c6 100%);
+    background-size: cover
+}
+</style>
+<div class="bg-gradient-primary">
+  <section class=" py-5" id="cart_container">
+    <div class="container border p-4 bg-white">
+
+      <div class="row gx-1 col-lg-1">
+        <span class="btn btn-secondary " onclick="history.back()">
+          <i class="fa fa-arrow-left"></i>
+        </span>
       </div>
-      <div class="col-md-4">
-        <h6 class="mb-3">Resumen</h6>
-        <div class="d-flex justify-content-between">
-          <p class="mb-2">Precio total:</p>
-          <p class="mb-2 fw-bold" id="cart_total"></p>
+      <br />
+
+      <div class="row">
+        <div class="col-md-8 border p-3">
+          <h4 class="text-dark my-4">Artículos en el carrito</h4>
+          <div id="cart_list">
+          </div>
         </div>
-        <div class="d-flex justify-content-between">
-          <p class="mb-2">Precio con igv:</p>
-          <p class="mb-2 fw-bold" id="cart_igv"></p>
+        <div class="col-md-4">
+          <h6 class="mb-3">Resumen</h6>
+          <div class="d-flex justify-content-between">
+            <p class="mb-2">Precio total:</p>
+            <p class="mb-2 fw-bold" id="cart_total"></p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="mb-2">Precio con igv:</p>
+            <p class="mb-2 fw-bold" id="cart_igv"></p>
+          </div>
+          <div id="paypal-button-container"></div>
         </div>
-        <div id="paypal-button-container"></div>
       </div>
     </div>
-  </div>
-  </div>
-  </div>
-</section>
-
+  </section>
+</div>
 <section id="cart_container_empty" style="min-height: 75vh">
   <div class="container">
     <div class="row">
@@ -52,6 +66,7 @@
     </div>
   </div>
 </section>
+
 <!-- https://developer.paypal.com/docs/checkout/standard/integrate/ -->
 <!-- https://developer.paypal.com/dashboard/dashboard/sandbox -->
 <!-- https://developer.paypal.com/docs/api/orders/v2/#orders_get -->
@@ -100,7 +115,7 @@
           }
         });
         const orderData = await response2.json();
-        console.log (orderData);
+        console.log(orderData);
         if (orderData.status === 'COMPLETED') {
           let postData = new FormData();
           postData.append('orderData', JSON.stringify(orderData));

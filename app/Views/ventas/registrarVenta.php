@@ -19,13 +19,12 @@
                 <input type="hidden" id="id_venta" name="id_venta">
 
                 <div class="row">
-                    <div class="form-group col-md-5">
+                    <div class="form-group col-md-4">
                         <label for="codigo_venta">Código de Compra </label>
-                        <input id="codigo_venta" class="form-control" name="codigo_venta" disabled  value="<?= $generar_codigo; ?>">
-
+                        <input id="codigo_venta" class="form-control" name="codigo_venta" disabled value="<?= $generar_codigo; ?>">
                         <div class="invalid-feedback">Este campo es requerido</div>
                     </div>
-                    <div class="form-group col-md-7">
+                    <div class="form-group col-md-5">
                         <label for="listCliente">Cliente<span class="text-danger">*</span></label>
                         <select class="form-control select2" style="width:100%" id="listCliente" name="listCliente" required>
                             <option value="" selected disabled>No seleccionado</option>
@@ -35,7 +34,10 @@
                         </select>
                         <div class="invalid-feedback">Campo obligatorio</div>
                     </div>
-
+                    <div class="form-group col-md-3">
+                        <br>
+                        <a class="btn form-control bg-primary text-white text-uppercase card__button" href="<?php echo base_url() ?>/clientes">Nuevo cliente</a>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-4">

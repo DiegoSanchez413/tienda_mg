@@ -84,45 +84,7 @@ class Carrito extends BaseController
         }
 
 
-        // $data = array(
-        //     "intent" => "CAPTURE",
-        //     "purchase_units" => array(
-        //         array(
-        //             "reference_id" => "1",
-        //             "amount" => array(
-        //                 "currency_code" => "USD",
-        //                 "value" => "10.00"
-        //             ),
-        //             "shipping" => array(
-        //                 "address" => array(
-        //                     "address_line_1" => "2211 N First Street",
-        //                     "address_line_2" => "Building 17",
-        //                     "admin_area_2" => "San Jose",
-        //                     "admin_area_1" => "CA",
-        //                     "postal_code" => "95131",
-        //                     "country_code" => "US"
-        //                 )
-        //             )
-        //                 ),
-        //         array(
-        //             "reference_id" => "2",
-        //             "amount" => array(
-        //                 "currency_code" => "USD",
-        //                 "value" => "20.00"
-        //             ),
-        //             "shipping" => array(
-        //                 "address" => array(
-        //                     "address_line_1" => "2211 N First Street",
-        //                     "address_line_2" => "Building 17",
-        //                     "admin_area_2" => "San Jose",
-        //                     "admin_area_1" => "CA",
-        //                     "postal_code" => "95131",
-        //                     "country_code" => "US"
-        //                 )
-        //             )
-        //         )
-        //     ),
-        // );
+        
 
         $headers = array(
             "Content-Type: application/json",
@@ -281,4 +243,6 @@ class Carrito extends BaseController
         );
         echo json_encode($results);
     }
+
+    
 }

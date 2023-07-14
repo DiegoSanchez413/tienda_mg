@@ -8,13 +8,6 @@ $this->UsuariosModel = new UsuariosModel();
 <!-- Sidebar menu-->
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 <aside class="app-sidebar">
-  <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<?= base_url(); ?>/images/avatar.png"
-      alt="User Image">
-    <div>
-      <p class="app-sidebar__user-name"></p>
-      <p class="app-sidebar__user-designation">Administrador</p>
-    </div>
-  </div>
   <ul class="app-menu">
   <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2 || $_SESSION['rol']==3){
   ?>

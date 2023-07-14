@@ -66,7 +66,7 @@ function listCart() {
         cart_list.innerHTML="";
         cart.forEach(item => {
             const div = document.createElement('div');
-            div.classList.add('d-flex', 'align-items-center', 'mb-4');
+            div.classList.add('d-flex', 'align-items-center','mb-4');
             div.innerHTML = `
                     <div class="me-3 position-relative">
                         <img src="${base_url}/img/productos/${item.Imagen_Producto}" style="height: 96px; width: 96x;" class="img-sm rounded border" />
@@ -76,7 +76,7 @@ function listCart() {
                         <div class="col-10 text-uppercase">
                             <div>${item.Nombre_Producto} (${item.quantity})</div>
                         </div>
-                    <div class="col-2">
+                    <div class="col-2 ">
                         <button class="btn btn-danger btn-sm" onclick="removeItem(${item.ID_Producto})">x</button>
                     </div>
                         <a href="${base_url}producto/${item.Nombre_Producto}-${item.ID_Producto}" class="nav-link text-uppercase">

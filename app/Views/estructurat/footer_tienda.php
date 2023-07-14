@@ -28,6 +28,7 @@
                     <li><a class="text-decoration-none" href="<?= base_url(); ?>">Inicio</a></li>
                     <li><a class="text-decoration-none" href="<?= base_url(); ?>productost">Productos</a></li>
                     <li><a class="text-decoration-none" href="<?= base_url(); ?>nosotros">Nosotros</a></li>
+                    <li>Si eres colaborador<a class="text-decoration-none " href="<?= base_url(); ?>login"><sub>  ¡Ingrese aquí!</sub></a></li>
                 </ul>
             </div>
 

@@ -1,4 +1,4 @@
-
+<div class="bg-gradient-primary">
 <section class="mt-3">
   <div class="container">
     <div class="row">
@@ -6,27 +6,6 @@
       <div class="col-lg-3">
         <div class="collapse card d-lg-block mb-5" id="navbarSupportedContent">
         <div class="accordion accordion-flush" id="accordionFlushExample">
-              <!-- <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Categorías
-                  </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" >
-                  <div class="accordion-body">
-                    <ul class="list-unstyled">
-                      <li><a href="#" class="text-dark">Electronics </a></li>
-                      <li><a href="#" class="text-dark">Home items </a></li>
-                      <li><a href="#" class="text-dark">Books, Magazines </a></li>
-                      <li><a href="#" class="text-dark">Men's clothing </a></li>
-                      <li><a href="#" class="text-dark">Interiors items </a></li>
-                      <li><a href="#" class="text-dark">Underwears </a></li>
-                      <li><a href="#" class="text-dark">Shoes for men </a></li>
-                      <li><a href="#" class="text-dark">Accessories </a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div> -->
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
@@ -93,45 +72,6 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingFour">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                    Puntuación
-                  </button>
-                </h2>
-                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" >
-                  <div class="accordion-body">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-secondary"></i>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-secondary"></i>
-                        <i class="fas fa-star text-secondary"></i>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>
-                        <i class="fas fa-star text-secondary"></i>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
           </div>
         </div>
       </div>
@@ -185,8 +125,13 @@
     </div>
   </div>
 </section>
-
+</div>
 <style>
+  .bg-gradient-primary {
+    background-color: #a1c2c6;
+    background-image: linear-gradient(180deg, #3C9BA6 10%, #a1c2c6 100%);
+    background-size: cover
+}
     .product{
         cursor: pointer;
     }
